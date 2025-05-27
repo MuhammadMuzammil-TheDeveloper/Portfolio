@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Muzammil | Full Stack Developer</title>
+    <meta name="description" content="Portfolio of Muhammad Muzammil, a Computer Science undergraduate specializing in web development and networking.">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/preloader.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-gray-900">
+        <div class="loader animate-spin rounded-full border-t-4 border-blue-500 border-solid h-16 w-16"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-40 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-gray-800 dark:text-white">Muzammil<span class="text-blue-600">.</span></a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Home</a>
+                    <a href="#about" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">About</a>
+                    <a href="#skills" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Skills</a>
+                    <a href="#projects" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Projects</a>
+                    <a href="#timeline" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Timeline</a>
+                    <a href="#contact" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 dark:text-gray-300 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Dark Mode Toggle -->
+                <button id="darkModeToggle" class="hidden md:block ml-4 p-2 rounded-full focus:outline-none">
+                    <i class="fas fa-moon text-gray-600 dark:text-yellow-300"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#home" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Home</a>
+                <a href="#about" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">About</a>
+                <a href="#skills" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Skills</a>
+                <a href="#projects" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Projects</a>
+                <a href="#timeline" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Timeline</a>
+                <a href="#contact" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
+                <button id="mobileDarkModeToggle" class="mt-2 p-2 rounded-full focus:outline-none">
+                    <i class="fas fa-moon text-gray-600 dark:text-yellow-300"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div id="particles-js" class="absolute inset-0"></div>
+        <div class="container mx-auto px-6 z-10">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white mb-4">
+                    <span id="typewriter" class="text-blue-600"></span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">Computer Science Undergraduate | Web Developer | Network Enthusiast</p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#contact" class="cta-button px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center">
+                        <span>Hire Me</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="assets/Muhammad_Muzammil_Resume.pdf" download class="cta-button-outline px-6 py-3 border-2 border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 rounded-full hover:bg-blue-50 dark:hover:bg-gray-800 transition-all duration-300 flex items-center">
+                        <span>Download CV</span>
+                        <i class="fas fa-download ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-white mb-12">About <span class="text-blue-600">Me</span></h2>
+            
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative group">
+                        <img src="images/profile.jpg" alt="Muhammad Muzammil" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-blue-500 group-hover:border-blue-600 transition-all duration-500 transform group-hover:scale-105 shadow-xl">
+                        <div class="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-white/30 transition-all duration-500"></div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-4">Who am I?</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                        I'm Muhammad Muzammil, a passionate Computer Science undergraduate with strong skills in web development and networking. I specialize in creating modern, responsive websites and implementing innovative solutions using cutting-edge technologies.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                        Currently pursuing my Bachelor's degree at Karachi Institute of Economics and Technology (KIET), I'm constantly expanding my knowledge and applying it to real-world projects. My goal is to contribute my technical expertise in a collaborative environment while continuing to grow as a developer.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-user-graduate text-blue-600 mr-2"></i>
+                            <span class="text-gray-700 dark:text-gray-300">BSCS Undergraduate</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-blue-600 mr-2"></i>
+                            <span class="text-gray-700 dark:text-gray-300">0317-6442334</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-blue-600 mr-2"></i>
+                            <span class="text-gray-700 dark:text-gray-300">muzammil.thedeveloper@gmail.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-linkedin text-blue-600 mr-2"></i>
+                            <a href="https://www.linkedin.com/in/muhammad-muzammil-7562bb316" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">LinkedIn Profile</a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-all duration-300">Contact Me</a>
+                        <a href="#projects" class="px-4 py-2 border border-blue-600 text-blue-600 dark:text-blue-400 rounded hover:bg-blue-50 dark:hover:bg-gray-700 transition-all duration-300">View Projects</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Skills Progress -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-semibold text-center text-gray-800 dark:text-white mb-8">My <span class="text-blue-600">Skills</span></h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-700 dark:text-gray-300 font-medium">HTML/CSS</span>
+                            <span class="text-blue-600">90%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-700 dark:text-gray-300 font-medium">JavaScript</span>
+                            <span class="text-blue-600">85%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-700 dark:text-gray-300 font-medium">SQL</span>
+                            <span class="text-blue-600">80%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-700 dark:text-gray-300 font-medium">OOP (C#)</span>
+                            <span class="text-blue-600">75%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-white mb-12">My <span class="text-blue-600">Technical</span> Skills</h2>
+            
+            <div class="flex justify-center mb-8">
+                <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <button type="button" data-filter="all" class="skill-filter px-4 py-2 text-sm font-medium rounded-l-lg bg-blue-600 text-white">
+                        All
+                    </button>
+                    <button type="button" data-filter="frontend" class="skill-filter px-4 py-2 text-sm font-medium bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300">
+                        Frontend
+                    </button>
+                    <button type="button" data-filter="backend" class="skill-filter px-4 py-2 text-sm font-medium bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300">
+                        Backend
+                    </button>
+                    <button type="button" data-filter="database" class="skill-filter px-4 py-2 text-sm font-medium rounded-r-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300">
+                        Database
+                    </button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <!-- HTML -->
+                <div class="skill-card frontend" data-category="frontend">
+                    <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center">
+                        <i class="fab fa-html5 text-4xl text-orange-500 mb-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">HTML5</h3>
+                    </div>
+                </div>
+                
+                <!-- CSS -->
+                <div class="skill-card frontend" data-category="frontend">
+                    <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center">
+                        <i class="fab fa-css3-alt text-4xl text-blue-500 mb-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">CSS3</h3>
+                    </div>
+                </div>
+                
+                <!-- JavaScript -->
+                <div class="skill-card frontend" data-category="frontend">
+                    <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center">
+                        <i class="fab fa-js text-4xl text-yellow-500 mb-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">JavaScript</h3>
+                    </div>
+                </div>
+                
+                <!-- Bootstrap -->
+                <div class="skill-card frontend" data-category="frontend">
+                    <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center">
+                        <i class="fab fa-bootstrap text-4xl text-purple-500 mb-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Bootstrap</h3>
+                    </div>
+                </div>
+                
+                <!-- Tailwind -->
+                <div class="skill-card frontend" data-category="frontend">
+                    <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center">
+                        <img src="images/skills/tailwind.svg" alt="Tailwind CSS" class="h-10 mb-3">
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Tailwind CSS</h3>
+                    </div>
+                </div>
+                
+                <!-- C# -->
+                <div class="skill-card backend" data-category="backend">
+                    <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center">
+                        <img src="images/skills/csharp.svg" alt="C#" class="h-10 mb-3">
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">C#</h3>
+                    </div>
+                </div>
+                
+                <!-- SQL -->
+                <div class="skill-card database" data-category="database">
+                    <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center">
+                        <i class="fas fa-database text-4xl text-blue-600 mb-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">SQL</h3>
+                    </div>
+                </div>
+                
+                <!-- OOP -->
+                <div class="skill-card backend" data-category="backend">
+                    <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center">
+                        <i class="fas fa-cubes text-4xl text-green-500 mb-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">OOP</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-white mb-12">My <span class="text-blue-600">Projects</span></h2>
+            
+            <div class="flex justify-center mb-8">
+                <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <button type="button" data-filter="all-projects" class="project-filter px-4 py-2 text-sm font-medium rounded-l-lg bg-blue-600 text-white">
+                        All
+                    </button>
+                    <button type="button" data-filter="web" class="project-filter px-4 py-2 text-sm font-medium bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300">
+                        Web
+                    </button>
+                    <button type="button" data-filter="software" class="project-filter px-4 py-2 text-sm font-medium bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300">
+                        Software
+                    </button>
+                    <button type="button" data-filter="network" class="project-filter px-4 py-2 text-sm font-medium rounded-r-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300">
+                        Network
+                    </button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Quiz Application -->
+                <div class="project-card web" data-category="web">
+                    <div class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full flex flex-col">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="images/projects/quiz-app.jpg" alt="Quiz Application" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Quiz Application</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">A web-based quiz app using JavaScript and Open Trivia Database API integration.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">HTML</span>
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">CSS</span>
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">JavaScript</span>
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">API</span>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6">
+                            <button class="view-project-btn w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-300" data-project="quiz-app">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Weather App -->
+                <div class="project-card web" data-category="web">
+                    <div class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full flex flex-col">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="images/projects/weather-app.jpg" alt="Weather App" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Weather App</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">A weather forecasting application using OpenWeather API with location detection.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">HTML</span>
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">CSS</span>
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">JavaScript</span>
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">API</span>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6">
+                            <button class="view-project-btn w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-300" data-project="weather-app">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Restaurant Management System -->
+                <div class="project-card software" data-category="software">
+                    <div class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full flex flex-col">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="images/projects/restaurant.jpg" alt="Restaurant Management System" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Restaurant Management System</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">Implemented using Software Engineering concepts like models and structured planning.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">C#</span>
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">OOP</span>
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">Software Engineering</span>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6">
+                            <button class="view-project-btn w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-300" data-project="restaurant">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- AI-Powered Maze Solver -->
+                <div class="project-card software" data-category="software">
+                    <div class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full flex flex-col">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="images/projects/maze-solver.jpg" alt="AI-Powered Maze Solver" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">AI-Powered Maze Solver</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">Solved mazes using BFS, DFS, UCS, and A* algorithms with visualization.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">Python</span>
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">AI</span>
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">Algorithms</span>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6">
+                            <button class="view-project-btn w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-300" data-project="maze-solver">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Salary Management System -->
+                <div class="project-card software" data-category="software">
+                    <div class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full flex flex-col">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="images/projects/salary.jpg" alt="Salary Management System" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Salary Management System</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">Developed using Object-Oriented Programming (OOP) concepts in C#.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">C#</span>
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">OOP</span>
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">WinForms</span>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6">
+                            <button class="view-project-btn w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-300" data-project="salary">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hotel Management System Network -->
+                <div class="project-card network" data-category="network">
+                    <div class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full flex flex-col">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="images/projects/hotel-network.jpg" alt="Hotel Management System Network" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Hotel Management Network</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">Simulated a complete hotel network using FTP, Email, DNS, DHCP, and Subnetting in Cisco Packet Tracer.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">Networking</span>
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">Cisco</span>
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">Packet Tracer</span>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6">
+                            <button class="view-project-btn w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-300" data-project="hotel-network">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-white mb-12">My <span class="text-blue-600">Journey</span></h2>
+            
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-blue-200 dark:bg-gray-700 transform -translate-x-1/2"></div>
+                
+                <!-- Timeline items -->
+                <div class="space-y-8 md:space-y-16">
+                    <!-- Education -->
+                    <div class="timeline-item">
+                        <div class="md:flex items-center w-full">
+                            <div class="md:w-1/2 md:pr-12 md:text-right">
+                                <div class="timeline-content md:mr-8">
+                                    <h3 class="text-xl font-bold text-gray-800 dark:text-white">Bachelor's in Computer Science (BSCS)</h3>
+                                    <p class="text-blue-600 mb-2">Karachi Institute of Economics and Technology (KIET)</p>
+                                    <p class="text-gray-600 dark:text-gray-300">Majors: Web Development, Networking</p>
+                                    <p class="text-gray-500 dark:text-gray-400 text-sm">2020 - Present</p>
+                                </div>
+                            </div>
+                            <div class="hidden md:block md:w-1/2">
+                                <div class="timeline-dot bg-blue-600"></div>
+                            </div>
+                            <div class="md:hidden">
+                                <div class="timeline-dot bg-blue-600 mx-auto"></div>
+                                <div class="timeline-content mt-4">
+                                    <h3 class="text-xl font-bold text-gray-800 dark:text-white">Bachelor's in Computer Science (BSCS)</h3>
+                                    <p class="text-blue-600 mb-2">Karachi Institute of Economics and Technology (KIET)</p>
+                                    <p class="text-gray-600 dark:text-gray-300">Majors: Web Development, Networking</p>
+                                    <p class="text-gray-500 dark:text-gray-400 text-sm">2020 - Present</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Experience -->
+                    <div class="timeline-item">
+                        <div class="md:flex items-center w-full">
+                            <div class="hidden md:block md:w-1/2 md:pl-12">
+                                <div class="timeline-content md:ml-8">
+                                    <h3 class="text-xl font-bold text-gray-800 dark:text-white">Fresher</h3>
+                                    <p class="text-blue-600 mb-2">Seeking Opportunities</p>
+                                    <p class="text-gray-600 dark:text-gray-300">Actively looking for internship and job opportunities to apply my skills and gain professional experience.</p>
+                                    <p class="text-gray-500 dark:text-gray-400 text-sm">Present</p>
+                                </div>
+                            </div>
+                            <div class="hidden md:block md:w-1/2">
+                                <div class="timeline-dot bg-blue-600"></div>
+                            </div>
+                            <div class="md:hidden">
+                                <div class="timeline-dot bg-blue-600 mx-auto"></div>
+                                <div class="timeline-content mt-4">
+                                    <h3 class="text-xl font-bold text-gray-800 dark:text-white">Fresher</h3>
+                                    <p class="text-blue-600 mb-2">Seeking Opportunities</p>
+                                    <p class="text-gray-600 dark:text-gray-300">Actively looking for internship and job opportunities to apply my skills and gain professional experience.</p>
+                                    <p class="text-gray-500 dark:text-gray-400 text-sm">Present</p>
+                                </div>
+                            </div>
+                            <div class="hidden md:block md:w-1/2 md:pr-12 md:text-right">
+                                <div class="timeline-content md:mr-8">
+                                    <h3 class="text-xl font-bold text-gray-800 dark:text-white">Fresher</h3>
+                                    <p class="text-blue-600 mb-2">Seeking Opportunities</p>
+                                    <p class="text-gray-600 dark:text-gray-300">Actively looking for internship and job opportunities to apply my skills and gain professional experience.</p>
+                                    <p class="text-gray-500 dark:text-gray-400 text-sm">Present</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-white mb-12">Get In <span class="text-blue-600">Touch</span></h2>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-6">Contact Information</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-100 dark:bg-blue-900 p-3 rounded-full">
+                                <i class="fas fa-envelope text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-800 dark:text-white">Email</h4>
+                                <a href="mailto:muzammil.thedeveloper@gmail.com" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">muzammil.thedeveloper@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-100 dark:bg-blue-900 p-3 rounded-full">
+                                <i class="fas fa-phone text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-800 dark:text-white">Phone</h4>
+                                <a href="tel:03176442334" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">0317-6442334</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-100 dark:bg-blue-900 p-3 rounded-full">
+                                <i class="fab fa-linkedin-in text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-800 dark:text-white">LinkedIn</h4>
+                                <a href="https://www.linkedin.com/in/muhammad-muzammil-7562bb316" target="_blank" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">linkedin.com/in/muhammad-muzammil</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12">
+                        <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-6">Follow Me</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="social-icon w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white transition-all duration-300">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="#" class="social-icon w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white transition-all duration-300">
+                                <i class="fab fa-twitter text-xl"></i>
+                            </a>
+                            <a href="#" class="social-icon w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white transition-all duration-300">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                            <a href="#" class="social-icon w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white transition-all duration-300">
+                                <i class="fab fa-facebook-f text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <form id="contactForm" class="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-lg">
+                        <div class="mb-6">
+                            <div class="relative">
+                                <input type="text" id="name" name="name" class="contact-input peer" placeholder=" " required>
+                                <label for="name" class="contact-label">Your Name</label>
+                            </div>
+                            <p id="name-error" class="text-red-500 text-xs mt-1 hidden">Please enter your name</p>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <div class="relative">
+                                <input type="email" id="email" name="email" class="contact-input peer" placeholder=" " required>
+                                <label for="email" class="contact-label">Your Email</label>
+                            </div>
+                            <p id="email-error" class="text-red-500 text-xs mt-1 hidden">Please enter a valid email</p>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <div class="relative">
+                                <input type="text" id="subject" name="subject" class="contact-input peer" placeholder=" " required>
+                                <label for="subject" class="contact-label">Subject</label>
+                            </div>
+                            <p id="subject-error" class="text-red-500 text-xs mt-1 hidden">Please enter a subject</p>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <div class="relative">
+                                <textarea id="message" name="message" rows="5" class="contact-input peer" placeholder=" " required></textarea>
+                                <label for="message" class="contact-label">Your Message</label>
+                            </div>
+                            <p id="message-error" class="text-red-500 text-xs mt-1 hidden">Please enter your message</p>
+                        </div>
+                        
+                        <button type="submit" id="submitBtn" class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-300 flex items-center justify-center">
+                            <span id="submitText">Send Message</span>
+                            <div id="submitSpinner" class="hidden ml-2">
+                                <div class="spinner"></div>
+                            </div>
+                        </button>
+                        
+                        <div id="formSuccess" class="hidden mt-4 p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-lg">
+                            <i class="fas fa-check-circle mr-2"></i> Your message has been sent successfully!
+                        </div>
+                        
+                        <div id="formError" class="hidden mt-4 p-4 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-lg">
+                            <i class="fas fa-exclamation-circle mr-2"></i> There was an error sending your message. Please try again.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 dark:bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-bold text-white">Muzammil<span class="text-blue-400">.</span></a>
+                    <p class="text-gray-400 mt-2">© 2023 Muhammad Muzammil. All rights reserved.</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#home" class="text-gray-400 hover:text-white transition-colors duration-300">Home</a>
+                    <a href="#about" class="text-gray-400 hover:text-white transition-colors duration-300">About</a>
+                    <a href="#skills" class="text-gray-400 hover:text-white transition-colors duration-300">Skills</a>
+                    <a href="#projects" class="text-gray-400 hover:text-white transition-colors duration-300">Projects</a>
+                    <a href="#contact" class="text-gray-400 hover:text-white transition-colors duration-300">Contact</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">Designed & Developed by Muhammad Muzammil</p>
+                
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll to Top Button -->
+        <button id="scrollToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 opacity-0 invisible">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </footer>
+
+    <!-- Project Modals -->
+    <!-- Quiz App Modal -->
+    <div id="quiz-app-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 hidden">
+        <div class="bg-white dark:bg-gray-800 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+            <button class="modal-close absolute top-4 right-4 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 text-2xl">
+                &times;
+            </button>
+            
+            <div class="p-8">
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <div class="lg:w-1/2">
+                        <img src="images/projects/quiz-app.jpg" alt="Quiz Application" class="rounded-lg shadow-lg w-full">
+                        
+                        <div class="mt-6">
+                            <h4 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Technologies Used</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm rounded-full">HTML</span>
+                                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm rounded-full">CSS</span>
+                                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm rounded-full">JavaScript</span>
+                                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm rounded-full">API</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-1/2">
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Quiz Application</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6">
+                            A web-based quiz application that fetches questions from the Open Trivia Database API. Users can select categories, difficulty levels, and answer multiple-choice questions. The app keeps track of scores and provides feedback at the end.
+                        </p>
+                        
+                        <h4 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Features</h4>
+                        <ul class="text-gray-600 dark:text-gray-300 mb-6 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Dynamic question fetching from Open Trivia DB API</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Customizable quiz settings (category, difficulty, number of questions)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Score tracking and progress indicator</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Responsive design works on all devices</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-300 flex items-center">
+                                <i class="fas fa-external-link-alt mr-2"></i>
+                                <span>Live Demo</span>
+                            </a>
+                            <a href="#" class="px-4 py-2 border border-blue-600 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700 transition-colors duration-300 flex items-center">
+                                <i class="fab fa-github mr-2"></i>
+                                <span>View Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Other project modals would follow the same structure -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/particles.js"></script>
+    <script src="js/typewriter.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/form-validation.js"></script>
+</body>
+</html>
