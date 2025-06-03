@@ -3,194 +3,1267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Muzammil | Full Stack Developer</title>
-    <meta name="description" content="Portfolio of Muhammad Muzammil, a Computer Science undergraduate specializing in web development and networking.">
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <title>Muhammad Muzammil | Responsive Portfolio</title>
     
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/preloader.css">
-    <link rel="stylesheet" href="css/dark-mode.css">
-    
-    <!-- Font Awesome -->
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #4361ee;
+            --primary-dark: #3a56d4;
+            --secondary: #7209b7;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+            --success: #10b981;
+            --danger: #ef4444;
+            --transition: all 0.3s ease;
+            --mobile-breakpoint: 768px;
+            --tablet-breakpoint: 992px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body.dark-mode {
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .section-title span {
+            color: var(--primary);
+        }
+
+        .section-title .divider {
+            height: 4px;
+            width: 80px;
+            background: var(--primary);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Preloader */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--light);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+
+        #preloader.dark-mode {
+            background: var(--dark);
+        }
+
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 5px solid rgba(67, 97, 238, 0.2);
+            border-top: 5px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            transition: var(--transition);
+        }
+
+        nav.dark-mode {
+            background: #1e293b;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: clamp(1.2rem, 4vw, 1.5rem);
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+            font-size: clamp(0.9rem, 3vw, 1rem);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .dark-mode .nav-links a {
+            color: #e2e8f0;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: clamp(1rem, 4vw, 1.2rem);
+            color: var(--dark);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+            border-radius: 50%;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(67, 97, 238, 0.1);
+        }
+
+        .dark-mode .theme-toggle {
+            color: #e2e8f0;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+            z-index: 101;
+            padding: 8px;
+            border-radius: 4px;
+        }
+
+        .mobile-menu-btn:hover {
+            background: rgba(67, 97, 238, 0.1);
+        }
+
+        .dark-mode .mobile-menu-btn {
+            color: #e2e8f0;
+        }
+
+        /* Hero Section */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+            padding: 0 15px;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2rem, 7vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content h1 span {
+            color: var(--primary);
+        }
+
+        .hero-content p {
+            font-size: clamp(1rem, 3.5vw, 1.5rem);
+            color: var(--gray);
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .dark-mode .hero-content p {
+            color: #94a3b8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-down a {
+            color: var(--primary);
+            font-size: 2rem;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+
+        /* About Section */
+        #about {
+            background: #f1f5f9;
+        }
+
+        .dark-mode #about {
+            background: #1e293b;
+        }
+
+        .about-content {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-img {
+            flex: 1;
+            text-align: center;
+        }
+
+        .about-img img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: clamp(0.95rem, 2vw, 1rem);
+        }
+
+        .about-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+
+        .info-item i {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .skills-container {
+            margin-top: 30px;
+        }
+
+        .skill-item {
+            margin-bottom: 20px;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+
+        .skill-bar {
+            height: 10px;
+            background: #e2e8f0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .dark-mode .skill-bar {
+            background: #334155;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: var(--primary);
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .skill-progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: progress-shine 2s infinite;
+        }
+
+        @keyframes progress-shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Skills Section */
+        .skills-filter {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            background: #e2e8f0;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            font-size: clamp(0.85rem, 2vw, 1rem);
+        }
+
+        .filter-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px 15px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .dark-mode .skill-card {
+            background: #1e293b;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(67, 97, 238, 0.2);
+        }
+
+        .skill-icon {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 15px;
+        }
+
+        .skill-icon.html { color: #e34c26; }
+        .skill-icon.css { color: #264de4; }
+        .skill-icon.js { color: #f0db4f; }
+        .skill-icon.bootstrap { color: #563d7c; }
+        .skill-icon.tailwind { color: #38bdf8; }
+        .skill-icon.csharp { color: #239120; }
+        .skill-icon.sql { color: #00758f; }
+        .skill-icon.oop { color: #ff6b6b; }
+
+        .skill-card h3 {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            font-weight: 600;
+        }
+
+        /* Projects Section */
+        #projects {
+            background: #f1f5f9;
+        }
+
+        .dark-mode #projects {
+            background: #1e293b;
+        }
+
+        .projects-filter {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .dark-mode .project-card {
+            background: #1e293b;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(67, 97, 238, 0.2);
+        }
+
+        .project-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-img img {
+            transform: scale(1.1);
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project-content h3 {
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-size: clamp(0.85rem, 2vw, 0.95rem);
+        }
+
+        .dark-mode .project-content p {
+            color: #94a3b8;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .project-tag {
+            background: #e2e8f0;
+            color: var(--dark);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: clamp(0.75rem, 2vw, 0.8rem);
+            font-weight: 500;
+        }
+
+        .dark-mode .project-tag {
+            background: #334155;
+            color: #e2e8f0;
+        }
+
+        .project-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+
+        .project-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Timeline Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--primary);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: calc(50% - 40px);
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .dark-mode .timeline-content {
+            background: #1e293b;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -20px;
+            border-width: 10px 0 10px 20px;
+            border-color: transparent transparent transparent white;
+        }
+
+        .dark-mode .timeline-item:nth-child(odd) .timeline-content::before {
+            border-color: transparent transparent transparent #1e293b;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -20px;
+            border-width: 10px 20px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+
+        .dark-mode .timeline-item:nth-child(even) .timeline-content::before {
+            border-color: transparent #1e293b transparent transparent;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 4px solid white;
+            z-index: 1;
+        }
+
+        .dark-mode .timeline-dot {
+            border-color: #0f172a;
+        }
+
+        .timeline-content h3 {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            margin-bottom: 5px;
+        }
+
+        .timeline-content .timeline-subtitle {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+        }
+
+        .timeline-content p {
+            color: var(--gray);
+            font-size: clamp(0.85rem, 2vw, 0.95rem);
+        }
+
+        .dark-mode .timeline-content p {
+            color: #94a3b8;
+        }
+
+        .timeline-content .timeline-date {
+            color: var(--gray);
+            font-size: clamp(0.8rem, 2vw, 0.85rem);
+            font-style: italic;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: #f1f5f9;
+        }
+
+        .dark-mode #contact {
+            background: #1e293b;
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 40px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-info h3 {
+            font-size: clamp(1.3rem, 4vw, 1.8rem);
+            margin-bottom: 25px;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            font-size: clamp(1rem, 3vw, 1.1rem);
+            margin-bottom: 5px;
+        }
+
+        .contact-details p {
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .dark-mode .social-link {
+            background: #334155;
+            color: #e2e8f0;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .contact-form {
+            flex: 1;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .dark-mode .contact-form {
+            background: #1e293b;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: clamp(0.95rem, 2vw, 1rem);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(0.95rem, 2vw, 1rem);
+            transition: var(--transition);
+        }
+
+        .dark-mode .form-control {
+            background: #0f172a;
+            border-color: #334155;
+            color: #e2e8f0;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(0.95rem, 2vw, 1rem);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-col h3 {
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .footer-col p {
+            color: #94a3b8;
+            margin-bottom: 20px;
+            font-size: clamp(0.9rem, 2vw, 0.95rem);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-links a i {
+            width: 20px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+            z-index: 99;
+        }
+
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                flex-direction: row !important;
+                margin-left: 40px;
+            }
+            
+            .timeline-content {
+                width: 100%;
+            }
+            
+            .timeline-content::before {
+                left: -20px !important;
+                border-width: 10px 20px 10px 0 !important;
+                border-color: transparent white transparent transparent !important;
+            }
+            
+            .dark-mode .timeline-content::before {
+                border-color: transparent #1e293b transparent transparent !important;
+            }
+            
+            .timeline-dot {
+                left: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 280px;
+                background: white;
+                flex-direction: column;
+                padding: 100px 30px 30px;
+                transition: var(--transition);
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                z-index: 100;
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .dark-mode .nav-links {
+                background: #1e293b;
+            }
+            
+            .nav-links a {
+                padding: 10px 0;
+                font-size: 1.1rem;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                margin-bottom: 40px;
+            }
+            
+            .timeline-content {
+                padding: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .about-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .projects-grid {
+                gap: 20px;
+            }
+            
+            .contact-method {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .contact-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+            
+            .footer-container {
+                gap: 30px;
+            }
+        }
+    </style>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+<body>
     <!-- Preloader -->
-    <div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-gray-900">
-        <div class="loader animate-spin rounded-full border-t-4 border-blue-500 border-solid h-16 w-16"></div>
+    <div id="preloader">
+        <div class="loader"></div>
     </div>
 
-    <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 w-full z-40 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md shadow-sm transition-all duration-300">
-        <div class="container mx-auto px-6 py-3">
-            <div class="flex justify-between items-center">
-                <a href="#" class="text-2xl font-bold text-gray-800 dark:text-white">Muzammil<span class="text-blue-600">.</span></a>
-                
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Home</a>
-                    <a href="#about" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">About</a>
-                    <a href="#skills" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Skills</a>
-                    <a href="#projects" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Projects</a>
-                    <a href="#timeline" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Timeline</a>
-                    <a href="#contact" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
-                </div>
-                
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-600 dark:text-gray-300 focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-                
-                <!-- Dark Mode Toggle -->
-                <button id="darkModeToggle" class="hidden md:block ml-4 p-2 rounded-full focus:outline-none">
-                    <i class="fas fa-moon text-gray-600 dark:text-yellow-300"></i>
-                </button>
+    <!-- Navbar -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">Muzammil<span>.</span></div>
+            <div class="nav-links">
+                <a href="#hero">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#timeline">Timeline</a>
+                <a href="#contact">Contact</a>
             </div>
-            
-            <!-- Mobile Navigation -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
-                <a href="#home" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Home</a>
-                <a href="#about" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">About</a>
-                <a href="#skills" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Skills</a>
-                <a href="#projects" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Projects</a>
-                <a href="#timeline" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Timeline</a>
-                <a href="#contact" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
-                <button id="mobileDarkModeToggle" class="mt-2 p-2 rounded-full focus:outline-none">
-                    <i class="fas fa-moon text-gray-600 dark:text-yellow-300"></i>
-                </button>
-            </div>
+            <button class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div id="particles-js" class="absolute inset-0"></div>
-        <div class="container mx-auto px-6 z-10">
-            <div class="text-center">
-                <h1 class="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white mb-4">
-                    <span id="typewriter" class="text-blue-600"></span>
-                </h1>
-                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">Computer Science Undergraduate | Web Developer | Network Enthusiast</p>
-                <div class="flex justify-center space-x-4">
-                    <a href="#contact" class="cta-button px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center">
-                        <span>Hire Me</span>
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                    <a href="assets/Muhammad_Muzammil_Resume.pdf" download class="cta-button-outline px-6 py-3 border-2 border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 rounded-full hover:bg-blue-50 dark:hover:bg-gray-800 transition-all duration-300 flex items-center">
-                        <span>Download CV</span>
-                        <i class="fas fa-download ml-2"></i>
-                    </a>
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hi, I'm <span>Muhammad Muzammil</span></h1>
+                <p>Computer Science Undergraduate | Web Developer | Network Enthusiast</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">Hire Me <i class="fas fa-arrow-right"></i></a>
+                    <a href="#" class="btn btn-outline">Download CV <i class="fas fa-download"></i></a>
                 </div>
             </div>
         </div>
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
-                <i class="fas fa-chevron-down text-2xl"></i>
-            </a>
+        <div class="scroll-down">
+            <a href="#about"><i class="fas fa-chevron-down"></i></a>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-100 dark:bg-gray-800">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-white mb-12">About <span class="text-blue-600">Me</span></h2>
-            
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2 flex justify-center">
-                    <div class="relative group">
-                        <img src="images/profile.jpg" alt="Muhammad Muzammil" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-blue-500 group-hover:border-blue-600 transition-all duration-500 transform group-hover:scale-105 shadow-xl">
-                        <div class="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-white/30 transition-all duration-500"></div>
-                    </div>
-                </div>
-                
-                <div class="md:w-1/2">
-                    <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-4">Who am I?</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                        I'm Muhammad Muzammil, a passionate Computer Science undergraduate with strong skills in web development and networking. I specialize in creating modern, responsive websites and implementing innovative solutions using cutting-edge technologies.
-                    </p>
-                    <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                        Currently pursuing my Bachelor's degree at Karachi Institute of Economics and Technology (KIET), I'm constantly expanding my knowledge and applying it to real-world projects. My goal is to contribute my technical expertise in a collaborative environment while continuing to grow as a developer.
-                    </p>
-                    
-                    <div class="grid grid-cols-2 gap-4 mb-8">
-                        <div class="flex items-center">
-                            <i class="fas fa-user-graduate text-blue-600 mr-2"></i>
-                            <span class="text-gray-700 dark:text-gray-300">BSCS Undergraduate</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-phone text-blue-600 mr-2"></i>
-                            <span class="text-gray-700 dark:text-gray-300">0317-6442334</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-envelope text-blue-600 mr-2"></i>
-                            <span class="text-gray-700 dark:text-gray-300">muzammil.thedeveloper@gmail.com</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fab fa-linkedin text-blue-600 mr-2"></i>
-                            <a href="https://www.linkedin.com/in/muhammad-muzammil-7562bb316" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">LinkedIn Profile</a>
-                        </div>
-                    </div>
-                    
-                    <div class="flex space-x-4">
-                        <a href="#contact" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-all duration-300">Contact Me</a>
-                        <a href="#projects" class="px-4 py-2 border border-blue-600 text-blue-600 dark:text-blue-400 rounded hover:bg-blue-50 dark:hover:bg-gray-700 transition-all duration-300">View Projects</a>
-                    </div>
-                </div>
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About <span>Me</span></h2>
+                <div class="divider"></div>
             </div>
-            
-            <!-- Skills Progress -->
-            <div class="mt-16">
-                <h3 class="text-2xl font-semibold text-center text-gray-800 dark:text-white mb-8">My <span class="text-blue-600">Skills</span></h3>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="skill-item">
-                        <div class="flex justify-between mb-2">
-                            <span class="text-gray-700 dark:text-gray-300 font-medium">HTML/CSS</span>
-                            <span class="text-blue-600">90%</span>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Muhammad Muzammil">
+                </div>
+                <div class="about-text">
+                    <h3>Full Stack Developer & Problem Solver</h3>
+                    <p>I'm Muhammad Muzammil, a passionate Computer Science student with a knack for turning complex problems into elegant digital solutions. What excites me most about technology is its power to create meaningful experiences and solve real-world challenges.</p>
+                    <p>I specialize in modern web development with expertise in HTML/CSS, JavaScript, and C#, complemented by strong skills in SQL databases and OOP principles.</p>
+                    
+                    <div class="about-info">
+                        <div class="info-item">
+                            <i class="fas fa-user-graduate"></i>
+                            <span>BSCS Undergraduate</span>
                         </div>
-                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 90%"></div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span>0317-6442334</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>muzammil.thedeveloper@gmail.com</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fab fa-linkedin"></i>
+                            <a href="https://www.linkedin.com/in/muhammad-muzammil-7562bb316" target="_blank">LinkedIn Profile</a>
                         </div>
                     </div>
                     
-                    <div class="skill-item">
-                        <div class="flex justify-between mb-2">
-                            <span class="text-gray-700 dark:text-gray-300 font-medium">JavaScript</span>
-                            <span class="text-blue-600">85%</span>
+                    <div class="skills-container">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>HTML/CSS</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
                         </div>
-                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>JavaScript</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="flex justify-between mb-2">
-                            <span class="text-gray-700 dark:text-gray-300 font-medium">SQL</span>
-                            <span class="text-blue-600">80%</span>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>SQL</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
                         </div>
-                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 80%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="flex justify-between mb-2">
-                            <span class="text-gray-700 dark:text-gray-300 font-medium">OOP (C#)</span>
-                            <span class="text-blue-600">75%</span>
-                        </div>
-                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 75%"></div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>OOP (C#)</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -199,261 +1272,175 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-white dark:bg-gray-900">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-white mb-12">My <span class="text-blue-600">Technical</span> Skills</h2>
-            
-            <div class="flex justify-center mb-8">
-                <div class="inline-flex rounded-md shadow-sm" role="group">
-                    <button type="button" data-filter="all" class="skill-filter px-4 py-2 text-sm font-medium rounded-l-lg bg-blue-600 text-white">
-                        All
-                    </button>
-                    <button type="button" data-filter="frontend" class="skill-filter px-4 py-2 text-sm font-medium bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300">
-                        Frontend
-                    </button>
-                    <button type="button" data-filter="backend" class="skill-filter px-4 py-2 text-sm font-medium bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300">
-                        Backend
-                    </button>
-                    <button type="button" data-filter="database" class="skill-filter px-4 py-2 text-sm font-medium rounded-r-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300">
-                        Database
-                    </button>
-                </div>
+    <section id="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>My <span>Technical</span> Skills</h2>
+                <div class="divider"></div>
             </div>
-            
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-                <!-- HTML -->
-                <div class="skill-card frontend" data-category="frontend">
-                    <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center">
-                        <i class="fab fa-html5 text-4xl text-orange-500 mb-3"></i>
-                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">HTML5</h3>
+            <div class="skills-filter">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Frontend</button>
+                <button class="filter-btn">Backend</button>
+                <button class="filter-btn">Database</button>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon html">
+                        <i class="fab fa-html5"></i>
                     </div>
+                    <h3>HTML5</h3>
                 </div>
-                
-                <!-- CSS -->
-                <div class="skill-card frontend" data-category="frontend">
-                    <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center">
-                        <i class="fab fa-css3-alt text-4xl text-blue-500 mb-3"></i>
-                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">CSS3</h3>
+                <div class="skill-card">
+                    <div class="skill-icon css">
+                        <i class="fab fa-css3-alt"></i>
                     </div>
+                    <h3>CSS3</h3>
                 </div>
-                
-                <!-- JavaScript -->
-                <div class="skill-card frontend" data-category="frontend">
-                    <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center">
-                        <i class="fab fa-js text-4xl text-yellow-500 mb-3"></i>
-                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">JavaScript</h3>
+                <div class="skill-card">
+                    <div class="skill-icon js">
+                        <i class="fab fa-js"></i>
                     </div>
+                    <h3>JavaScript</h3>
                 </div>
-                
-                <!-- Bootstrap -->
-                <div class="skill-card frontend" data-category="frontend">
-                    <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center">
-                        <i class="fab fa-bootstrap text-4xl text-purple-500 mb-3"></i>
-                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Bootstrap</h3>
+                <div class="skill-card">
+                    <div class="skill-icon bootstrap">
+                        <i class="fab fa-bootstrap"></i>
                     </div>
+                    <h3>Bootstrap</h3>
                 </div>
-                
-                <!-- Tailwind -->
-                <div class="skill-card frontend" data-category="frontend">
-                    <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center">
-                        <img src="images/skills/tailwind.svg" alt="Tailwind CSS" class="h-10 mb-3">
-                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Tailwind CSS</h3>
+                <div class="skill-card">
+                    <div class="skill-icon tailwind">
+                        <i class="fab fa-css3"></i>
                     </div>
+                    <h3>Tailwind CSS</h3>
                 </div>
-                
-                <!-- C# -->
-                <div class="skill-card backend" data-category="backend">
-                    <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center">
-                        <img src="images/skills/csharp.svg" alt="C#" class="h-10 mb-3">
-                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">C#</h3>
+                <div class="skill-card">
+                    <div class="skill-icon csharp">
+                        <i class="fab fa-microsoft"></i>
                     </div>
+                    <h3>C#</h3>
                 </div>
-                
-                <!-- SQL -->
-                <div class="skill-card database" data-category="database">
-                    <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center">
-                        <i class="fas fa-database text-4xl text-blue-600 mb-3"></i>
-                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">SQL</h3>
+                <div class="skill-card">
+                    <div class="skill-icon sql">
+                        <i class="fas fa-database"></i>
                     </div>
+                    <h3>SQL</h3>
                 </div>
-                
-                <!-- OOP -->
-                <div class="skill-card backend" data-category="backend">
-                    <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center">
-                        <i class="fas fa-cubes text-4xl text-green-500 mb-3"></i>
-                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">OOP</h3>
+                <div class="skill-card">
+                    <div class="skill-icon oop">
+                        <i class="fas fa-cubes"></i>
                     </div>
+                    <h3>OOP</h3>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-100 dark:bg-gray-800">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-white mb-12">My <span class="text-blue-600">Projects</span></h2>
-            
-            <div class="flex justify-center mb-8">
-                <div class="inline-flex rounded-md shadow-sm" role="group">
-                    <button type="button" data-filter="all-projects" class="project-filter px-4 py-2 text-sm font-medium rounded-l-lg bg-blue-600 text-white">
-                        All
-                    </button>
-                    <button type="button" data-filter="web" class="project-filter px-4 py-2 text-sm font-medium bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300">
-                        Web
-                    </button>
-                    <button type="button" data-filter="software" class="project-filter px-4 py-2 text-sm font-medium bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300">
-                        Software
-                    </button>
-                    <button type="button" data-filter="network" class="project-filter px-4 py-2 text-sm font-medium rounded-r-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300">
-                        Network
-                    </button>
-                </div>
+    <section id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>My <span>Projects</span></h2>
+                <div class="divider"></div>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Quiz Application -->
-                <div class="project-card web" data-category="web">
-                    <div class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full flex flex-col">
-                        <div class="relative overflow-hidden h-48">
-                            <img src="images/projects/quiz-app.jpg" alt="Quiz Application" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div class="projects-filter">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Web</button>
+                <button class="filter-btn">Software</button>
+                <button class="filter-btn">Network</button>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Quiz Application">
+                    </div>
+                    <div class="project-content">
+                        <h3>Quiz Application</h3>
+                        <p>A web-based quiz app using JavaScript and Open Trivia Database API integration.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">API</span>
                         </div>
-                        <div class="p-6 flex-grow">
-                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Quiz Application</h3>
-                            <p class="text-gray-600 dark:text-gray-300 mb-4">A web-based quiz app using JavaScript and Open Trivia Database API integration.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">HTML</span>
-                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">CSS</span>
-                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">JavaScript</span>
-                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">API</span>
-                            </div>
-                        </div>
-                        <div class="px-6 pb-6">
-                            <button class="view-project-btn w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-300" data-project="quiz-app">
-                                View Details
-                            </button>
-                        </div>
+                        <a href="#" class="project-btn">View Details</a>
                     </div>
                 </div>
-                
-                <!-- Weather App -->
-                <div class="project-card web" data-category="web">
-                    <div class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full flex flex-col">
-                        <div class="relative overflow-hidden h-48">
-                            <img src="images/projects/weather-app.jpg" alt="Weather App" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1601134467661-3d775b999c8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1675&q=80" alt="Weather App">
+                    </div>
+                    <div class="project-content">
+                        <h3>Weather App</h3>
+                        <p>A weather forecasting application using OpenWeather API with location detection.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">API</span>
                         </div>
-                        <div class="p-6 flex-grow">
-                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Weather App</h3>
-                            <p class="text-gray-600 dark:text-gray-300 mb-4">A weather forecasting application using OpenWeather API with location detection.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">HTML</span>
-                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">CSS</span>
-                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">JavaScript</span>
-                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">API</span>
-                            </div>
-                        </div>
-                        <div class="px-6 pb-6">
-                            <button class="view-project-btn w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-300" data-project="weather-app">
-                                View Details
-                            </button>
-                        </div>
+                        <a href="#" class="project-btn">View Details</a>
                     </div>
                 </div>
-                
-                <!-- Restaurant Management System -->
-                <div class="project-card software" data-category="software">
-                    <div class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full flex flex-col">
-                        <div class="relative overflow-hidden h-48">
-                            <img src="images/projects/restaurant.jpg" alt="Restaurant Management System" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Restaurant Management System">
+                    </div>
+                    <div class="project-content">
+                        <h3>Restaurant Management System</h3>
+                        <p>Implemented using Software Engineering concepts like models and structured planning.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">C#</span>
+                            <span class="project-tag">OOP</span>
+                            <span class="project-tag">Software Engineering</span>
                         </div>
-                        <div class="p-6 flex-grow">
-                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Restaurant Management System</h3>
-                            <p class="text-gray-600 dark:text-gray-300 mb-4">Implemented using Software Engineering concepts like models and structured planning.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">C#</span>
-                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">OOP</span>
-                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">Software Engineering</span>
-                            </div>
-                        </div>
-                        <div class="px-6 pb-6">
-                            <button class="view-project-btn w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-300" data-project="restaurant">
-                                View Details
-                            </button>
-                        </div>
+                        <a href="#" class="project-btn">View Details</a>
                     </div>
                 </div>
-                
-                <!-- AI-Powered Maze Solver -->
-                <div class="project-card software" data-category="software">
-                    <div class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full flex flex-col">
-                        <div class="relative overflow-hidden h-48">
-                            <img src="images/projects/maze-solver.jpg" alt="AI-Powered Maze Solver" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="AI-Powered Maze Solver">
+                    </div>
+                    <div class="project-content">
+                        <h3>AI-Powered Maze Solver</h3>
+                        <p>Solved mazes using BFS, DFS, UCS, and A* algorithms with visualization.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">AI</span>
+                            <span class="project-tag">Algorithms</span>
                         </div>
-                        <div class="p-6 flex-grow">
-                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">AI-Powered Maze Solver</h3>
-                            <p class="text-gray-600 dark:text-gray-300 mb-4">Solved mazes using BFS, DFS, UCS, and A* algorithms with visualization.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">Python</span>
-                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">AI</span>
-                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">Algorithms</span>
-                            </div>
-                        </div>
-                        <div class="px-6 pb-6">
-                            <button class="view-project-btn w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-300" data-project="maze-solver">
-                                View Details
-                            </button>
-                        </div>
+                        <a href="#" class="project-btn">View Details</a>
                     </div>
                 </div>
-                
-                <!-- Salary Management System -->
-                <div class="project-card software" data-category="software">
-                    <div class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full flex flex-col">
-                        <div class="relative overflow-hidden h-48">
-                            <img src="images/projects/salary.jpg" alt="Salary Management System" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Salary Management System">
+                    </div>
+                    <div class="project-content">
+                        <h3>Salary Management System</h3>
+                        <p>Developed using Object-Oriented Programming (OOP) concepts in C#.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">C#</span>
+                            <span class="project-tag">OOP</span>
+                            <span class="project-tag">WinForms</span>
                         </div>
-                        <div class="p-6 flex-grow">
-                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Salary Management System</h3>
-                            <p class="text-gray-600 dark:text-gray-300 mb-4">Developed using Object-Oriented Programming (OOP) concepts in C#.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">C#</span>
-                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">OOP</span>
-                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">WinForms</span>
-                            </div>
-                        </div>
-                        <div class="px-6 pb-6">
-                            <button class="view-project-btn w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-300" data-project="salary">
-                                View Details
-                            </button>
-                        </div>
+                        <a href="#" class="project-btn">View Details</a>
                     </div>
                 </div>
-                
-                <!-- Hotel Management System Network -->
-                <div class="project-card network" data-category="network">
-                    <div class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full flex flex-col">
-                        <div class="relative overflow-hidden h-48">
-                            <img src="images/projects/hotel-network.jpg" alt="Hotel Management System Network" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1700&q=80" alt="Hotel Management System Network">
+                    </div>
+                    <div class="project-content">
+                        <h3>Hotel Management Network</h3>
+                        <p>Simulated a complete hotel network using FTP, Email, DNS, DHCP, and Subnetting in Cisco Packet Tracer.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Networking</span>
+                            <span class="project-tag">Cisco</span>
+                            <span class="project-tag">Packet Tracer</span>
                         </div>
-                        <div class="p-6 flex-grow">
-                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Hotel Management Network</h3>
-                            <p class="text-gray-600 dark:text-gray-300 mb-4">Simulated a complete hotel network using FTP, Email, DNS, DHCP, and Subnetting in Cisco Packet Tracer.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">Networking</span>
-                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">Cisco</span>
-                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">Packet Tracer</span>
-                            </div>
-                        </div>
-                        <div class="px-6 pb-6">
-                            <button class="view-project-btn w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-300" data-project="hotel-network">
-                                View Details
-                            </button>
-                        </div>
+                        <a href="#" class="project-btn">View Details</a>
                     </div>
                 </div>
             </div>
@@ -461,188 +1448,98 @@
     </section>
 
     <!-- Timeline Section -->
-    <section id="timeline" class="py-20 bg-white dark:bg-gray-900">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-white mb-12">My <span class="text-blue-600">Journey</span></h2>
-            
-            <div class="relative">
-                <!-- Timeline line -->
-                <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-blue-200 dark:bg-gray-700 transform -translate-x-1/2"></div>
-                
-                <!-- Timeline items -->
-                <div class="space-y-8 md:space-y-16">
-                    <!-- Education -->
-                    <div class="timeline-item">
-                        <div class="md:flex items-center w-full">
-                            <div class="md:w-1/2 md:pr-12 md:text-right">
-                                <div class="timeline-content md:mr-8">
-                                    <h3 class="text-xl font-bold text-gray-800 dark:text-white">Bachelor's in Computer Science (BSCS)</h3>
-                                    <p class="text-blue-600 mb-2">Karachi Institute of Economics and Technology (KIET)</p>
-                                    <p class="text-gray-600 dark:text-gray-300">Majors: Web Development, Networking</p>
-                                    <p class="text-gray-500 dark:text-gray-400 text-sm">2020 - Present</p>
-                                </div>
-                            </div>
-                            <div class="hidden md:block md:w-1/2">
-                                <div class="timeline-dot bg-blue-600"></div>
-                            </div>
-                            <div class="md:hidden">
-                                <div class="timeline-dot bg-blue-600 mx-auto"></div>
-                                <div class="timeline-content mt-4">
-                                    <h3 class="text-xl font-bold text-gray-800 dark:text-white">Bachelor's in Computer Science (BSCS)</h3>
-                                    <p class="text-blue-600 mb-2">Karachi Institute of Economics and Technology (KIET)</p>
-                                    <p class="text-gray-600 dark:text-gray-300">Majors: Web Development, Networking</p>
-                                    <p class="text-gray-500 dark:text-gray-400 text-sm">2020 - Present</p>
-                                </div>
-                            </div>
-                        </div>
+    <section id="timeline">
+        <div class="container">
+            <div class="section-title">
+                <h2>My <span>Journey</span></h2>
+                <div class="divider"></div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Bachelor's in Computer Science (BSCS)</h3>
+                        <div class="timeline-subtitle">Karachi Institute of Economics and Technology (KIET)</div>
+                        <p>Majors: Web Development, Networking</p>
+                        <div class="timeline-date">2020 - Present</div>
                     </div>
-                    
-                    <!-- Experience -->
-                    <div class="timeline-item">
-                        <div class="md:flex items-center w-full">
-                            <div class="hidden md:block md:w-1/2 md:pl-12">
-                                <div class="timeline-content md:ml-8">
-                                    <h3 class="text-xl font-bold text-gray-800 dark:text-white">Fresher</h3>
-                                    <p class="text-blue-600 mb-2">Seeking Opportunities</p>
-                                    <p class="text-gray-600 dark:text-gray-300">Actively looking for internship and job opportunities to apply my skills and gain professional experience.</p>
-                                    <p class="text-gray-500 dark:text-gray-400 text-sm">Present</p>
-                                </div>
-                            </div>
-                            <div class="hidden md:block md:w-1/2">
-                                <div class="timeline-dot bg-blue-600"></div>
-                            </div>
-                            <div class="md:hidden">
-                                <div class="timeline-dot bg-blue-600 mx-auto"></div>
-                                <div class="timeline-content mt-4">
-                                    <h3 class="text-xl font-bold text-gray-800 dark:text-white">Fresher</h3>
-                                    <p class="text-blue-600 mb-2">Seeking Opportunities</p>
-                                    <p class="text-gray-600 dark:text-gray-300">Actively looking for internship and job opportunities to apply my skills and gain professional experience.</p>
-                                    <p class="text-gray-500 dark:text-gray-400 text-sm">Present</p>
-                                </div>
-                            </div>
-                            <div class="hidden md:block md:w-1/2 md:pr-12 md:text-right">
-                                <div class="timeline-content md:mr-8">
-                                    <h3 class="text-xl font-bold text-gray-800 dark:text-white">Fresher</h3>
-                                    <p class="text-blue-600 mb-2">Seeking Opportunities</p>
-                                    <p class="text-gray-600 dark:text-gray-300">Actively looking for internship and job opportunities to apply my skills and gain professional experience.</p>
-                                    <p class="text-gray-500 dark:text-gray-400 text-sm">Present</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Fresher</h3>
+                        <div class="timeline-subtitle">Seeking Opportunities</div>
+                        <p>Actively looking for internship and job opportunities to apply my skills and gain professional experience.</p>
+                        <div class="timeline-date">Present</div>
                     </div>
+                    <div class="timeline-dot"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-100 dark:bg-gray-800">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-white mb-12">Get In <span class="text-blue-600">Touch</span></h2>
-            
-            <div class="flex flex-col lg:flex-row gap-12">
-                <div class="lg:w-1/2">
-                    <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-6">Contact Information</h3>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 bg-blue-100 dark:bg-blue-900 p-3 rounded-full">
-                                <i class="fas fa-envelope text-blue-600 dark:text-blue-400"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-medium text-gray-800 dark:text-white">Email</h4>
-                                <a href="mailto:muzammil.thedeveloper@gmail.com" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">muzammil.thedeveloper@gmail.com</a>
-                            </div>
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In <span>Touch</span></h2>
+                <div class="divider"></div>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
                         </div>
-                        
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 bg-blue-100 dark:bg-blue-900 p-3 rounded-full">
-                                <i class="fas fa-phone text-blue-600 dark:text-blue-400"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-medium text-gray-800 dark:text-white">Phone</h4>
-                                <a href="tel:03176442334" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">0317-6442334</a>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 bg-blue-100 dark:bg-blue-900 p-3 rounded-full">
-                                <i class="fab fa-linkedin-in text-blue-600 dark:text-blue-400"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-medium text-gray-800 dark:text-white">LinkedIn</h4>
-                                <a href="https://www.linkedin.com/in/muhammad-muzammil-7562bb316" target="_blank" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">linkedin.com/in/muhammad-muzammil</a>
-                            </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>muzammil.thedeveloper@gmail.com</p>
                         </div>
                     </div>
-                    
-                    <div class="mt-12">
-                        <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-6">Follow Me</h3>
-                        <div class="flex space-x-4">
-                            <a href="#" class="social-icon w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white transition-all duration-300">
-                                <i class="fab fa-github text-xl"></i>
-                            </a>
-                            <a href="#" class="social-icon w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white transition-all duration-300">
-                                <i class="fab fa-twitter text-xl"></i>
-                            </a>
-                            <a href="#" class="social-icon w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white transition-all duration-300">
-                                <i class="fab fa-instagram text-xl"></i>
-                            </a>
-                            <a href="#" class="social-icon w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white transition-all duration-300">
-                                <i class="fab fa-facebook-f text-xl"></i>
-                            </a>
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
                         </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>0317-6442334</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>LinkedIn</h4>
+                            <p>linkedin.com/in/muhammad-muzammil</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
-                
-                <div class="lg:w-1/2">
-                    <form id="contactForm" class="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-lg">
-                        <div class="mb-6">
-                            <div class="relative">
-                                <input type="text" id="name" name="name" class="contact-input peer" placeholder=" " required>
-                                <label for="name" class="contact-label">Your Name</label>
-                            </div>
-                            <p id="name-error" class="text-red-500 text-xs mt-1 hidden">Please enter your name</p>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" required>
                         </div>
-                        
-                        <div class="mb-6">
-                            <div class="relative">
-                                <input type="email" id="email" name="email" class="contact-input peer" placeholder=" " required>
-                                <label for="email" class="contact-label">Your Email</label>
-                            </div>
-                            <p id="email-error" class="text-red-500 text-xs mt-1 hidden">Please enter a valid email</p>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" class="form-control" required>
                         </div>
-                        
-                        <div class="mb-6">
-                            <div class="relative">
-                                <input type="text" id="subject" name="subject" class="contact-input peer" placeholder=" " required>
-                                <label for="subject" class="contact-label">Subject</label>
-                            </div>
-                            <p id="subject-error" class="text-red-500 text-xs mt-1 hidden">Please enter a subject</p>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" required>
                         </div>
-                        
-                        <div class="mb-6">
-                            <div class="relative">
-                                <textarea id="message" name="message" rows="5" class="contact-input peer" placeholder=" " required></textarea>
-                                <label for="message" class="contact-label">Your Message</label>
-                            </div>
-                            <p id="message-error" class="text-red-500 text-xs mt-1 hidden">Please enter your message</p>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
                         </div>
-                        
-                        <button type="submit" id="submitBtn" class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-300 flex items-center justify-center">
-                            <span id="submitText">Send Message</span>
-                            <div id="submitSpinner" class="hidden ml-2">
-                                <div class="spinner"></div>
-                            </div>
-                        </button>
-                        
-                        <div id="formSuccess" class="hidden mt-4 p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-lg">
-                            <i class="fas fa-check-circle mr-2"></i> Your message has been sent successfully!
-                        </div>
-                        
-                        <div id="formError" class="hidden mt-4 p-4 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-lg">
-                            <i class="fas fa-exclamation-circle mr-2"></i> There was an error sending your message. Please try again.
-                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -650,124 +1547,167 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 dark:bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <a href="#" class="text-2xl font-bold text-white">Muzammil<span class="text-blue-400">.</span></a>
-                    <p class="text-gray-400 mt-2">© 2023 Muhammad Muzammil. All rights reserved.</p>
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Muzammil<span>.</span></h3>
+                    <p>A passionate Computer Science student with a knack for turning complex problems into elegant digital solutions.</p>
                 </div>
-                
-                <div class="flex space-x-6">
-                    <a href="#home" class="text-gray-400 hover:text-white transition-colors duration-300">Home</a>
-                    <a href="#about" class="text-gray-400 hover:text-white transition-colors duration-300">About</a>
-                    <a href="#skills" class="text-gray-400 hover:text-white transition-colors duration-300">Skills</a>
-                    <a href="#projects" class="text-gray-400 hover:text-white transition-colors duration-300">Projects</a>
-                    <a href="#contact" class="text-gray-400 hover:text-white transition-colors duration-300">Contact</a>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#hero"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About</a></li>
+                        <li><a href="#skills"><i class="fas fa-chevron-right"></i> Skills</a></li>
+                        <li><a href="#projects"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-envelope"></i> muzammil.thedeveloper@gmail.com</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i> 0317-6442334</a></li>
+                        <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn Profile</a></li>
+                    </ul>
                 </div>
             </div>
-            
-            <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 mb-4 md:mb-0">Designed & Developed by Muhammad Muzammil</p>
-                
-                <div class="flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
-                        <i class="fab fa-github text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
-                        <i class="fab fa-linkedin-in text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
-                        <i class="fab fa-twitter text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
-                        <i class="fab fa-instagram text-xl"></i>
-                    </a>
-                </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Muhammad Muzammil. All Rights Reserved.</p>
             </div>
         </div>
-        
-        <!-- Scroll to Top Button -->
-        <button id="scrollToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 opacity-0 invisible">
-            <i class="fas fa-arrow-up"></i>
-        </button>
     </footer>
 
-    <!-- Project Modals -->
-    <!-- Quiz App Modal -->
-    <div id="quiz-app-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 hidden">
-        <div class="bg-white dark:bg-gray-800 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
-            <button class="modal-close absolute top-4 right-4 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 text-2xl">
-                &times;
-            </button>
-            
-            <div class="p-8">
-                <div class="flex flex-col lg:flex-row gap-8">
-                    <div class="lg:w-1/2">
-                        <img src="images/projects/quiz-app.jpg" alt="Quiz Application" class="rounded-lg shadow-lg w-full">
-                        
-                        <div class="mt-6">
-                            <h4 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Technologies Used</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm rounded-full">HTML</span>
-                                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm rounded-full">CSS</span>
-                                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm rounded-full">JavaScript</span>
-                                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm rounded-full">API</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="lg:w-1/2">
-                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Quiz Application</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-6">
-                            A web-based quiz application that fetches questions from the Open Trivia Database API. Users can select categories, difficulty levels, and answer multiple-choice questions. The app keeps track of scores and provides feedback at the end.
-                        </p>
-                        
-                        <h4 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Features</h4>
-                        <ul class="text-gray-600 dark:text-gray-300 mb-6 space-y-2">
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
-                                <span>Dynamic question fetching from Open Trivia DB API</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
-                                <span>Customizable quiz settings (category, difficulty, number of questions)</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
-                                <span>Score tracking and progress indicator</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
-                                <span>Responsive design works on all devices</span>
-                            </li>
-                        </ul>
-                        
-                        <div class="flex flex-wrap gap-4">
-                            <a href="#" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-300 flex items-center">
-                                <i class="fas fa-external-link-alt mr-2"></i>
-                                <span>Live Demo</span>
-                            </a>
-                            <a href="#" class="px-4 py-2 border border-blue-600 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700 transition-colors duration-300 flex items-center">
-                                <i class="fab fa-github mr-2"></i>
-                                <span>View Code</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
     </div>
-    
-    <!-- Other project modals would follow the same structure -->
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Custom JS -->
-    <script src="js/particles.js"></script>
-    <script src="js/typewriter.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/form-validation.js"></script>
+    <script>
+        // Preloader
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                preloader.style.visibility = 'hidden';
+            }, 1000);
+        });
+
+        // Dark Mode Toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        const body = document.body;
+        
+        // Check for saved theme preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Scroll to Top Button
+        const scrollTopBtn = document.querySelector('.scroll-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Form Submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // In a real application, you would send the form data to a server
+            // For this example, we'll just show a success message
+            alert('Thank you for your message! I will get back to you soon.');
+            contactForm.reset();
+        });
+
+        // Skill Filter
+        const filterBtns = document.querySelectorAll('.skills-filter .filter-btn');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // In a real application, you would filter the skills here
+            });
+        });
+
+        // Project Filter
+        const projectFilterBtns = document.querySelectorAll('.projects-filter .filter-btn');
+        
+        projectFilterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                projectFilterBtns.forEach(b => b.classList.remove('active'));
+                
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // In a real application, you would filter the projects here
+            });
+        });
+    </script>
 </body>
 </html>
