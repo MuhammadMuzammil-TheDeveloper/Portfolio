@@ -1709,5 +1709,397 @@
             });
         });
     </script>
+
+<!-- Add this right before the closing </body> tag -->
+<div class="chatbox-container">
+  <button class="chatbox-toggle-btn">
+    <i class="fas fa-comment-dots"></i>
+  </button>
+  <div class="chatbox-window">
+    <div class="chatbox-header">
+      <h3>Let's Chat!</h3>
+      <button class="chatbox-close-btn">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="chatbox-messages">
+      <div class="chatbox-welcome-message">
+        <p>Hello! I'm here to help. How can I assist you today?</p>
+        <div class="chatbox-timestamp">Just now</div>
+      </div>
+    </div>
+    <div class="chatbox-input-area">
+      <textarea placeholder="Type your message here..." rows="1"></textarea>
+      <button class="chatbox-send-btn">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+    <div class="chatbox-typing-indicator">
+      <div class="typing-dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <span>Assistant is typing...</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Chatbox Styles - Added without modifying existing styles */
+  .chatbox-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .chatbox-toggle-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(67, 97, 238, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .chatbox-toggle-btn:hover {
+    background: var(--primary-dark);
+    transform: scale(1.1);
+  }
+  
+  .chatbox-window {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 350px;
+    max-width: 90vw;
+    height: 500px;
+    max-height: 70vh;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: translateY(20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .dark-mode .chatbox-window {
+    background: #1e293b;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  .chatbox-container.active .chatbox-window {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .chatbox-header {
+    background: var(--primary);
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .chatbox-header h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .chatbox-close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+  }
+  
+  .chatbox-close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .chatbox-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #f8fafc;
+  }
+  
+  .dark-mode .chatbox-messages {
+    background: #0f172a;
+  }
+  
+  .chatbox-welcome-message {
+    background: white;
+    padding: 12px 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    max-width: 80%;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  .dark-mode .chatbox-welcome-message {
+    background: #334155;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .chatbox-welcome-message p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--dark);
+  }
+  
+  .dark-mode .chatbox-welcome-message p {
+    color: #e2e8f0;
+  }
+  
+  .chatbox-timestamp {
+    font-size: 0.7rem;
+    color: var(--gray);
+    text-align: right;
+    margin-top: 5px;
+  }
+  
+  .chatbox-input-area {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #e2e8f0;
+    background: white;
+  }
+  
+  .dark-mode .chatbox-input-area {
+    background: #1e293b;
+    border-top: 1px solid #334155;
+  }
+  
+  .chatbox-input-area textarea {
+    flex: 1;
+    border: 1px solid #e2e8f0;
+    border-radius: 30px;
+    padding: 10px 15px;
+    font-family: 'Poppins', sans-serif;
+    resize: none;
+    max-height: 100px;
+    outline: none;
+    transition: var(--transition);
+  }
+  
+  .dark-mode .chatbox-input-area textarea {
+    background: #0f172a;
+    border-color: #334155;
+    color: #e2e8f0;
+  }
+  
+  .chatbox-input-area textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+  }
+  
+  .chatbox-send-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    margin-left: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+  }
+  
+  .chatbox-send-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+  }
+  
+  .chatbox-typing-indicator {
+    display: none;
+    align-items: center;
+    padding: 0 20px 15px;
+    font-size: 0.8rem;
+    color: var(--gray);
+  }
+  
+  .typing-dots {
+    display: flex;
+    margin-right: 8px;
+  }
+  
+  .typing-dots .dot {
+    width: 6px;
+    height: 6px;
+    background: var(--gray);
+    border-radius: 50%;
+    margin-right: 4px;
+    animation: typingAnimation 1.4s infinite ease-in-out;
+  }
+  
+  .typing-dots .dot:nth-child(1) {
+    animation-delay: 0s;
+  }
+  
+  .typing-dots .dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .typing-dots .dot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes typingAnimation {
+    0%, 60%, 100% { transform: translateY(0); }
+    30% { transform: translateY(-5px); }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 480px) {
+    .chatbox-container {
+      bottom: 20px;
+      right: 20px;
+    }
+    
+    .chatbox-toggle-btn {
+      width: 50px;
+      height: 50px;
+      font-size: 1.3rem;
+    }
+    
+    .chatbox-window {
+      width: calc(100vw - 40px);
+      max-width: none;
+    }
+  }
+</style>
+
+<script>
+  // Chatbox functionality - Added without modifying existing scripts
+  document.addEventListener('DOMContentLoaded', function() {
+    const chatboxContainer = document.querySelector('.chatbox-container');
+    const toggleBtn = document.querySelector('.chatbox-toggle-btn');
+    const closeBtn = document.querySelector('.chatbox-close-btn');
+    const chatboxWindow = document.querySelector('.chatbox-window');
+    const messageInput = document.querySelector('.chatbox-input-area textarea');
+    const sendBtn = document.querySelector('.chatbox-send-btn');
+    const messagesContainer = document.querySelector('.chatbox-messages');
+    const typingIndicator = document.querySelector('.chatbox-typing-indicator');
+    
+    // Toggle chatbox
+    toggleBtn.addEventListener('click', function() {
+      chatboxContainer.classList.toggle('active');
+    });
+    
+    // Close chatbox
+    closeBtn.addEventListener('click', function() {
+      chatboxContainer.classList.remove('active');
+    });
+    
+    // Auto-resize textarea
+    messageInput.addEventListener('input', function() {
+      this.style.height = 'auto';
+      this.style.height = (this.scrollHeight) + 'px';
+    });
+    
+    // Send message
+    function sendMessage() {
+      const messageText = messageInput.value.trim();
+      if (messageText) {
+        // Add user message
+        addMessage(messageText, 'user');
+        messageInput.value = '';
+        messageInput.style.height = 'auto';
+        
+        // Show typing indicator
+        typingIndicator.style.display = 'flex';
+        
+        // Simulate response after delay
+        setTimeout(() => {
+          typingIndicator.style.display = 'none';
+          addResponse();
+        }, 1500 + Math.random() * 2000);
+      }
+    }
+    
+    // Send on button click
+    sendBtn.addEventListener('click', sendMessage);
+    
+    // Send on Enter key (but allow Shift+Enter for new lines)
+    messageInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage();
+      }
+    });
+    
+    // Add a new message to the chat
+    function addMessage(text, sender) {
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `chatbox-message chatbox-message-${sender}`;
+      
+      messageDiv.innerHTML = `
+        <p>${text}</p>
+        <div class="chatbox-timestamp">${getCurrentTime()}</div>
+      `;
+      
+      messagesContainer.appendChild(messageDiv);
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+    
+    // Add a response from the assistant
+    function addResponse() {
+      const responses = [
+        "I'd be happy to help with that. Could you provide more details?",
+        "That's an interesting question. Let me think about the best way to assist you.",
+        "Thanks for your message! I'll do my best to address your inquiry.",
+        "I understand what you're asking. Here's what I can tell you about that topic.",
+        "Great question! Here's some information that might be helpful."
+      ];
+      
+      const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+      addMessage(randomResponse, 'assistant');
+    }
+    
+    // Get current time in HH:MM format
+    function getCurrentTime() {
+      const now = new Date();
+      return now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    }
+    
+    // Close chatbox when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!chatboxContainer.contains(e.target) && e.target !== toggleBtn) {
+        chatboxContainer.classList.remove('active');
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
