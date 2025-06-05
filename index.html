@@ -385,6 +385,7 @@
 
 .about-img {
   flex: 1;
+  min-width: 300px;
   text-align: center;
 }
 
@@ -397,6 +398,7 @@
 
 .about-text {
   flex: 1;
+  min-width: 300px;
 }
 
 .about-text h3 {
@@ -680,120 +682,166 @@
       }
 
       /* Timeline Section */
-      .timeline {
-        position: relative;
-        max-width: 800px;
-        margin: 0 auto;
-      }
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
 
-      .timeline::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 4px;
-        background: var(--primary);
-        left: 50%;
-        transform: translateX(-50%);
-      }
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
 
-      .timeline-item {
-        display: flex;
-        margin-bottom: 50px;
-        position: relative;
-      }
+        .section-title h2 span {
+            color: #3498db;
+        }
 
-      .timeline-item:nth-child(even) {
-        flex-direction: row-reverse;
-      }
+        .divider {
+            width: 80px;
+            height: 4px;
+            background: #3498db;
+            margin: 0 auto;
+            border-radius: 2px;
+        }
 
-      .timeline-content {
-        width: calc(50% - 40px);
-        padding: 20px;
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        position: relative;
-      }
+        /* Timeline Styles */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
 
-      .dark-mode .timeline-content {
-        background: #1e293b;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #3498db;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 2px;
+        }
 
-      .timeline-content::before {
-        content: "";
-        position: absolute;
-        top: 20px;
-        width: 0;
-        height: 0;
-        border-style: solid;
-      }
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            margin-bottom: 30px;
+        }
 
-      .timeline-item:nth-child(odd) .timeline-content::before {
-        right: -20px;
-        border-width: 10px 0 10px 20px;
-        border-color: transparent transparent transparent white;
-      }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid #3498db;
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
 
-      .dark-mode .timeline-item:nth-child(odd) .timeline-content::before {
-        border-color: transparent transparent transparent #1e293b;
-      }
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
 
-      .timeline-item:nth-child(even) .timeline-content::before {
-        left: -20px;
-        border-width: 10px 20px 10px 0;
-        border-color: transparent white transparent transparent;
-      }
+        .timeline-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
 
-      .dark-mode .timeline-item:nth-child(even) .timeline-content::before {
-        border-color: transparent #1e293b transparent transparent;
-      }
+        .timeline-subtitle {
+            font-size: 1rem;
+            color: #3498db;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
 
-      .timeline-dot {
-        position: absolute;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background: var(--primary);
-        border: 4px solid white;
-        z-index: 1;
-      }
+        .timeline-content p {
+            margin-bottom: 10px;
+            color: #7f8c8d;
+        }
 
-      .dark-mode .timeline-dot {
-        border-color: #0f172a;
-      }
+        .timeline-date {
+            font-size: 0.9rem;
+            color: #95a5a6;
+            font-weight: 600;
+        }
 
-      .timeline-content h3 {
-        font-size: clamp(1rem, 3vw, 1.2rem);
-        margin-bottom: 5px;
-      }
+        /* Left and Right Alignment */
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
 
-      .timeline-content .timeline-subtitle {
-        color: var(--primary);
-        font-weight: 600;
-        margin-bottom: 10px;
-        font-size: clamp(0.9rem, 2.5vw, 1rem);
-      }
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
 
-      .timeline-content p {
-        color: var(--gray);
-        font-size: clamp(0.85rem, 2vw, 0.95rem);
-      }
+        .timeline-item:nth-child(odd)::after {
+            right: -10px;
+        }
 
-      .dark-mode .timeline-content p {
-        color: #94a3b8;
-      }
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
 
-      .timeline-content .timeline-date {
-        color: var(--gray);
-        font-size: clamp(0.8rem, 2vw, 0.85rem);
-        font-style: italic;
-      }
+        /* Mobile Responsiveness */
+        @media screen and (max-width: 768px) {
+            .section-title h2 {
+                font-size: 2rem;
+            }
 
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-item::after {
+                left: 21px;
+            }
+
+            .timeline-item:nth-child(odd)::after,
+            .timeline-item:nth-child(even)::after {
+                left: 21px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .timeline-content h3 {
+                font-size: 1.3rem;
+            }
+
+            .timeline-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .timeline-content {
+                padding: 15px;
+            }
+        }
       /* Contact Section */
       #contact {
         background: #f1f5f9;
@@ -1201,6 +1249,32 @@
         .footer-container {
           gap: 30px;
         }
+        
+        /* Improved Timeline for Mobile */
+        .timeline::before {
+          left: 15px;
+        }
+        
+        .timeline-item {
+          margin-left: 30px;
+        }
+        
+        .timeline-dot {
+          left: 15px;
+          width: 16px;
+          height: 16px;
+          border-width: 3px;
+        }
+        
+        .timeline-content {
+          padding: 15px;
+        }
+        
+        .timeline-content::before {
+          left: -15px !important;
+          border-width: 8px 15px 8px 0 !important;
+          top: 15px;
+        }
       }
     </style>
   </head>
@@ -1537,112 +1611,190 @@
     </section>
 
     <!-- Timeline Section -->
-    <section id="timeline">
-      <div class="container">
-        <div class="section-title">
-          <h2>My <span>Journey</span></h2>
-          <div class="divider"></div>
-        </div>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-content">
-              <h3>Bachelor's in Computer Science (BSCS)</h3>
-              <div class="timeline-subtitle">
-                Karachi Institute of Economics and Technology (KIET)
-              </div>
-              <p>Majors: Web Development, Networking</p>
-              <div class="timeline-date">2020 - Present</div>
+      <section id="timeline">
+        <div class="container">
+            <div class="section-title">
+                <h2>My <span>Journey</span></h2>
+                <div class="divider"></div>
             </div>
-            <div class="timeline-dot"></div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-content">
-              <h3>Fresher</h3>
-              <div class="timeline-subtitle">Seeking Opportunities</div>
-              <p>
-                Actively looking for internship and job opportunities to apply
-                my skills and gain professional experience.
-              </p>
-              <div class="timeline-date">Present</div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Bachelor's in Computer Science (BSCS)</h3>
+                        <div class="timeline-subtitle">
+                            Karachi Institute of Economics and Technology (KIET)
+                        </div>
+                        <p>Majors: Web Development, Networking</p>
+                        <div class="timeline-date">2020 - Present</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Fresher</h3>
+                        <div class="timeline-subtitle">Seeking Opportunities</div>
+                        <p>
+                            Actively looking for internship and job opportunities to apply
+                            my skills and gain professional experience.
+                        </p>
+                        <div class="timeline-date">Present</div>
+                    </div>
+                </div>
             </div>
-            <div class="timeline-dot"></div>
-          </div>
         </div>
-      </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
-      <div class="container">
-        <div class="section-title">
-          <h2>Get In <span>Touch</span></h2>
-          <div class="divider"></div>
+  <!-- Contact Section -->
+<section id="contact">
+  <div class="container">
+    <div class="section-title">
+      <h2>Get In <span>Touch</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>Contact Information</h3>
+        <div class="contact-method">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="contact-details">
+            <h4>Email</h4>
+            <p>muzammil.thedeveloper@gmail.com</p>
+          </div>
         </div>
-        <div class="contact-container">
-          <div class="contact-info">
-            <h3>Contact Information</h3>
-            <div class="contact-method">
-              <div class="contact-icon">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div class="contact-details">
-                <h4>Email</h4>
-                <p>muzammil.thedeveloper@gmail.com</p>
-              </div>
-            </div>
-            <div class="contact-method">
-              <div class="contact-icon">
-                <i class="fas fa-phone"></i>
-              </div>
-              <div class="contact-details">
-                <h4>Phone</h4>
-                <p>0317-6442334</p>
-              </div>
-            </div>
-            <div class="contact-method">
-              <div class="contact-icon">
-                <i class="fab fa-linkedin"></i>
-              </div>
-              <div class="contact-details">
-                <h4>LinkedIn</h4>
-                <p>linkedin.com/in/muhammad-muzammil</p>
-              </div>
-            </div>
-            <div class="social-links">
-              <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="social-link"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <a href="#" class="social-link"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-            </div>
+        <div class="contact-method">
+          <div class="contact-icon">
+            <i class="fas fa-phone"></i>
           </div>
-          <div class="contact-form">
-            <form id="contactForm">
-              <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" class="form-control" required />
-              </div>
-              <div class="form-group">
-                <label for="email">Your Email</label>
-                <input type="email" id="email" class="form-control" required />
-              </div>
-              <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" class="form-control" required />
-              </div>
-              <div class="form-group">
-                <label for="message">Your Message</label>
-                <textarea id="message" class="form-control" required></textarea>
-              </div>
-              <button type="submit" class="submit-btn">Send Message</button>
-            </form>
+          <div class="contact-details">
+            <h4>Phone</h4>
+            <p>0317-6442334</p>
           </div>
+        </div>
+        <div class="contact-method">
+          <div class="contact-icon">
+            <i class="fab fa-linkedin"></i>
+          </div>
+          <div class="contact-details">
+            <h4>LinkedIn</h4>
+            <p>linkedin.com/in/muhammad-muzammil</p>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
         </div>
       </div>
-    </section>
+      <div class="contact-form">
+        <form action="https://formsubmit.co/muzammil.thedeveloper@gmail.com" method="POST">
+          <!-- Honeypot field to prevent spam -->
+          <input type="text" name="_honey" style="display:none">
+          <!-- Disable CAPTCHA (optional) -->
+          <input type="hidden" name="_captcha" value="false">
+          <!-- Redirect after submission (optional) -->
+          <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
+
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" class="form-control" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Contact Section -->
+<section id="contact">
+  <div class="container">
+    <div class="section-title">
+      <h2>Get In <span>Touch</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>Contact Information</h3>
+        <div class="contact-method">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="contact-details">
+            <h4>Email</h4>
+            <p>muzammil.thedeveloper@gmail.com</p>
+          </div>
+        </div>
+        <div class="contact-method">
+          <div class="contact-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div class="contact-details">
+            <h4>Phone</h4>
+            <p>0317-6442334</p>
+          </div>
+        </div>
+        <div class="contact-method">
+          <div class="contact-icon">
+            <i class="fab fa-linkedin"></i>
+          </div>
+          <div class="contact-details">
+            <h4>LinkedIn</h4>
+            <p>linkedin.com/in/muhammad-muzammil</p>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <div class="contact-form">
+        <form action=https://formsubmit.co/.com method="POST">
+          <!-- Honeypot field to prevent spam -->
+          <input type="text" name="_honey" style="display:none">
+          <!-- Disable CAPTCHA (optional) -->
+          <input type="hidden" name="_captcha" value="false">
+          <!-- Redirect after submission (optional) -->
+          <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
+
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" class="form-control" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- Footer -->
     <footer>
@@ -1860,6 +2012,14 @@
         });
       });
     </script>
+
+
+
+
+
+
+
+
 
     <!-- Add this right before the closing </body> tag -->
     <div class="chatbox-container">
