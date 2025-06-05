@@ -14,7 +14,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
 
     <style>
@@ -385,7 +385,6 @@
 
 .about-img {
   flex: 1;
-  min-width: 300px;
   text-align: center;
 }
 
@@ -398,7 +397,6 @@
 
 .about-text {
   flex: 1;
-  min-width: 300px;
 }
 
 .about-text h3 {
@@ -682,166 +680,120 @@
       }
 
       /* Timeline Section */
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            position: relative;
-        }
+      .timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+      }
 
-        .section-title h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 15px;
-        }
+      .timeline::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: var(--primary);
+        left: 50%;
+        transform: translateX(-50%);
+      }
 
-        .section-title h2 span {
-            color: #3498db;
-        }
+      .timeline-item {
+        display: flex;
+        margin-bottom: 50px;
+        position: relative;
+      }
 
-        .divider {
-            width: 80px;
-            height: 4px;
-            background: #3498db;
-            margin: 0 auto;
-            border-radius: 2px;
-        }
+      .timeline-item:nth-child(even) {
+        flex-direction: row-reverse;
+      }
 
-        /* Timeline Styles */
-        .timeline {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px 0;
-        }
+      .timeline-content {
+        width: calc(50% - 40px);
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        position: relative;
+      }
 
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 4px;
-            background-color: #3498db;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -2px;
-            border-radius: 2px;
-        }
+      .dark-mode .timeline-content {
+        background: #1e293b;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
 
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            width: 50%;
-            margin-bottom: 30px;
-        }
+      .timeline-content::before {
+        content: "";
+        position: absolute;
+        top: 20px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+      }
 
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: white;
-            border: 4px solid #3498db;
-            border-radius: 50%;
-            top: 15px;
-            z-index: 1;
-        }
+      .timeline-item:nth-child(odd) .timeline-content::before {
+        right: -20px;
+        border-width: 10px 0 10px 20px;
+        border-color: transparent transparent transparent white;
+      }
 
-        .timeline-content {
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
+      .dark-mode .timeline-item:nth-child(odd) .timeline-content::before {
+        border-color: transparent transparent transparent #1e293b;
+      }
 
-        .timeline-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: #2c3e50;
-        }
+      .timeline-item:nth-child(even) .timeline-content::before {
+        left: -20px;
+        border-width: 10px 20px 10px 0;
+        border-color: transparent white transparent transparent;
+      }
 
-        .timeline-subtitle {
-            font-size: 1rem;
-            color: #3498db;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
+      .dark-mode .timeline-item:nth-child(even) .timeline-content::before {
+        border-color: transparent #1e293b transparent transparent;
+      }
 
-        .timeline-content p {
-            margin-bottom: 10px;
-            color: #7f8c8d;
-        }
+      .timeline-dot {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: var(--primary);
+        border: 4px solid white;
+        z-index: 1;
+      }
 
-        .timeline-date {
-            font-size: 0.9rem;
-            color: #95a5a6;
-            font-weight: 600;
-        }
+      .dark-mode .timeline-dot {
+        border-color: #0f172a;
+      }
 
-        /* Left and Right Alignment */
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
+      .timeline-content h3 {
+        font-size: clamp(1rem, 3vw, 1.2rem);
+        margin-bottom: 5px;
+      }
 
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
+      .timeline-content .timeline-subtitle {
+        color: var(--primary);
+        font-weight: 600;
+        margin-bottom: 10px;
+        font-size: clamp(0.9rem, 2.5vw, 1rem);
+      }
 
-        .timeline-item:nth-child(odd)::after {
-            right: -10px;
-        }
+      .timeline-content p {
+        color: var(--gray);
+        font-size: clamp(0.85rem, 2vw, 0.95rem);
+      }
 
-        .timeline-item:nth-child(even)::after {
-            left: -10px;
-        }
+      .dark-mode .timeline-content p {
+        color: #94a3b8;
+      }
 
-        /* Mobile Responsiveness */
-        @media screen and (max-width: 768px) {
-            .section-title h2 {
-                font-size: 2rem;
-            }
+      .timeline-content .timeline-date {
+        color: var(--gray);
+        font-size: clamp(0.8rem, 2vw, 0.85rem);
+        font-style: italic;
+      }
 
-            .timeline::after {
-                left: 31px;
-            }
-
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-
-            .timeline-item::after {
-                left: 21px;
-            }
-
-            .timeline-item:nth-child(odd)::after,
-            .timeline-item:nth-child(even)::after {
-                left: 21px;
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-
-            .timeline-content h3 {
-                font-size: 1.3rem;
-            }
-
-            .timeline-subtitle {
-                font-size: 0.9rem;
-            }
-
-            .timeline-content {
-                padding: 15px;
-            }
-        }
       /* Contact Section */
       #contact {
         background: #f1f5f9;
@@ -1249,32 +1201,6 @@
         .footer-container {
           gap: 30px;
         }
-        
-        /* Improved Timeline for Mobile */
-        .timeline::before {
-          left: 15px;
-        }
-        
-        .timeline-item {
-          margin-left: 30px;
-        }
-        
-        .timeline-dot {
-          left: 15px;
-          width: 16px;
-          height: 16px;
-          border-width: 3px;
-        }
-        
-        .timeline-content {
-          padding: 15px;
-        }
-        
-        .timeline-content::before {
-          left: -15px !important;
-          border-width: 8px 15px 8px 0 !important;
-          top: 15px;
-        }
       }
     </style>
   </head>
@@ -1497,7 +1423,7 @@
                 <span class="project-tag">JavaScript</span>
                 <span class="project-tag">API</span>
               </div>
-              <a href="#" class="project-btn">View Details</a>
+              <a href="https://muhmmad-muzammil.github.io/Quiz-Application/" class="project-btn">View Details</a>
             </div>
           </div>
           <div class="project-card" data-category="Web">
@@ -1519,7 +1445,7 @@
                 <span class="project-tag">JavaScript</span>
                 <span class="project-tag">API</span>
               </div>
-              <a href="#" class="project-btn">View Details</a>
+              <a href="https://muhmmad-muzammil.github.io/Weather-App/" class="project-btn">View Details</a>
             </div>
           </div>
           <div class="project-card" data-category="software">
@@ -1561,7 +1487,7 @@
                 <span class="project-tag">AI</span>
                 <span class="project-tag">Algorithms</span>
               </div>
-              <a href="#" class="project-btn">View Details</a>
+              <a href="https://github.com/Muhmmad-Muzammil/Maze_Solver" class="project-btn">View Details</a>
             </div>
           </div>
           <div class="project-card" data-category="software">
@@ -1603,7 +1529,7 @@
                 <span class="project-tag">Cisco</span>
                 <span class="project-tag">Packet Tracer</span>
               </div>
-              <a href="#" class="project-btn">View Details</a>
+              <a href="https://www.linkedin.com/posts/muhammad-muzammil-7562bb316_project-ppt-report-activity-7333920646256594946-8ZX5?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFAigXIBiQG4KzhjHx1KE2Wg9a-reXXY5kg" class="project-btn">View Details</a>
             </div>
           </div>
         </div>
@@ -1611,40 +1537,42 @@
     </section>
 
     <!-- Timeline Section -->
-      <section id="timeline">
-        <div class="container">
-            <div class="section-title">
-                <h2>My <span>Journey</span></h2>
-                <div class="divider"></div>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Bachelor's in Computer Science (BSCS)</h3>
-                        <div class="timeline-subtitle">
-                            Karachi Institute of Economics and Technology (KIET)
-                        </div>
-                        <p>Majors: Web Development, Networking</p>
-                        <div class="timeline-date">2020 - Present</div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Fresher</h3>
-                        <div class="timeline-subtitle">Seeking Opportunities</div>
-                        <p>
-                            Actively looking for internship and job opportunities to apply
-                            my skills and gain professional experience.
-                        </p>
-                        <div class="timeline-date">Present</div>
-                    </div>
-                </div>
-            </div>
+    <section id="timeline">
+      <div class="container">
+        <div class="section-title">
+          <h2>My <span>Journey</span></h2>
+          <div class="divider"></div>
         </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3>Bachelor's in Computer Science (BSCS)</h3>
+              <div class="timeline-subtitle">
+                Karachi Institute of Economics and Technology (KIET)
+              </div>
+              <p>Majors: Web Development, Networking</p>
+              <div class="timeline-date">2020 - Present</div>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3>Fresher</h3>
+              <div class="timeline-subtitle">Seeking Opportunities</div>
+              <p>
+                Actively looking for internship and job opportunities to apply
+                my skills and gain professional experience.
+              </p>
+              <div class="timeline-date">Present</div>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
-  <!-- Contact Section -->
+   <!-- Contact Section -->
 <section id="contact">
   <div class="container">
     <div class="section-title">
@@ -1682,89 +1610,14 @@
           </div>
         </div>
         <div class="social-links">
-          <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://github.com/Muhmmad-Muzammil/" class="social-link"><i class="fab fa-github"></i></a>
+          <a href="https://x.com/MTheDeveloper" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/muzammil.thedeveloper/" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61550242382522" class="social-link"><i class="fab fa-facebook-f"></i></a>
         </div>
       </div>
       <div class="contact-form">
         <form action="https://formsubmit.co/muzammil.thedeveloper@gmail.com" method="POST">
-          <!-- Honeypot field to prevent spam -->
-          <input type="text" name="_honey" style="display:none">
-          <!-- Disable CAPTCHA (optional) -->
-          <input type="hidden" name="_captcha" value="false">
-          <!-- Redirect after submission (optional) -->
-          <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
-
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" class="form-control" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Your Email</label>
-            <input type="email" id="email" name="email" class="form-control" required />
-          </div>
-          <div class="form-group">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" class="form-control" required />
-          </div>
-          <div class="form-group">
-            <label for="message">Your Message</label>
-            <textarea id="message" name="message" class="form-control" required></textarea>
-          </div>
-          <button type="submit" class="submit-btn">Send Message</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Contact Section -->
-<section id="contact">
-  <div class="container">
-    <div class="section-title">
-      <h2>Get In <span>Touch</span></h2>
-      <div class="divider"></div>
-    </div>
-    <div class="contact-container">
-      <div class="contact-info">
-        <h3>Contact Information</h3>
-        <div class="contact-method">
-          <div class="contact-icon">
-            <i class="fas fa-envelope"></i>
-          </div>
-          <div class="contact-details">
-            <h4>Email</h4>
-            <p>muzammil.thedeveloper@gmail.com</p>
-          </div>
-        </div>
-        <div class="contact-method">
-          <div class="contact-icon">
-            <i class="fas fa-phone"></i>
-          </div>
-          <div class="contact-details">
-            <h4>Phone</h4>
-            <p>0317-6442334</p>
-          </div>
-        </div>
-        <div class="contact-method">
-          <div class="contact-icon">
-            <i class="fab fa-linkedin"></i>
-          </div>
-          <div class="contact-details">
-            <h4>LinkedIn</h4>
-            <p>linkedin.com/in/muhammad-muzammil</p>
-          </div>
-        </div>
-        <div class="social-links">
-          <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-        </div>
-      </div>
-      <div class="contact-form">
-        <form action=https://formsubmit.co/.com method="POST">
           <!-- Honeypot field to prevent spam -->
           <input type="text" name="_honey" style="display:none">
           <!-- Disable CAPTCHA (optional) -->
@@ -1837,16 +1690,16 @@
             <h3>Contact Info</h3>
             <ul class="footer-links">
               <li>
-                <a href="#"
+                <a href="muzammil.thedeveloper@gmail.com"
                   ><i class="fas fa-envelope"></i>
                   muzammil.thedeveloper@gmail.com</a
                 >
               </li>
               <li>
-                <a href="#"><i class="fas fa-phone"></i> 0317-6442334</a>
+                <a href="+923176442334"><i class="fas fa-phone"></i> 0317-6442334</a>
               </li>
               <li>
-                <a href="#"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
+                <a href="https://www.linkedin.com/in/muhammad-muzammil-7562bb316/"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
               </li>
             </ul>
           </div>
@@ -2012,14 +1865,6 @@
         });
       });
     </script>
-
-
-
-
-
-
-
-
 
     <!-- Add this right before the closing </body> tag -->
     <div class="chatbox-container">
@@ -2606,7 +2451,7 @@
     });
   });
 }
-  
+
 // Apply filtering for both sections
 setupFilter("#skills", ".skill-card", ".skills-filter .filter-btn");
 setupFilter("#projects", ".project-card", ".projects-filter .filter-btn");
@@ -2663,9 +2508,52 @@ setupFilter("#projects", ".project-card", ".projects-filter .filter-btn");
   });
 </script>
 
+<script>
+  // SKILLS FILTERING
+  document.querySelectorAll('#skills .filter-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const filter = button.getAttribute('data-filter');
+      const cards = document.querySelectorAll('#skills .skill-card');
+
+      document.querySelectorAll('#skills .filter-btn').forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      cards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (filter === 'all' || category === filter) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // PROJECTS FILTERING
+  document.querySelectorAll('#projects .filter-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const filter = button.getAttribute('data-filter').toLowerCase();
+      const cards = document.querySelectorAll('#projects .project-card');
+
+      document.querySelectorAll('#projects .filter-btn').forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      cards.forEach(card => {
+        const category = card.getAttribute('data-category').toLowerCase();
+        if (filter === 'all' || category === filter) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  </body>
+
+</body>
+
   
 </html>
