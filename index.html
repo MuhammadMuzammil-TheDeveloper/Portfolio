@@ -1256,8 +1256,6 @@
       </div>
     </section>
 
-    <!-- About Section -->
-    <!-- About Section -->
 <!-- About Section -->
 <section id="about">
   <div class="container">
@@ -1324,8 +1322,6 @@
   </div>
 </section>
 
-
-
     <!-- Skills Section -->
     <section id="skills">
       <div class="container">
@@ -1333,56 +1329,58 @@
           <h2>My <span>Technical</span> Skills</h2>
           <div class="divider"></div>
         </div>
+        
         <div class="skills-filter">
-          <button class="filter-btn active">All</button>
-          <button class="filter-btn">Frontend</button>
-          <button class="filter-btn">Backend</button>
-          <button class="filter-btn">Database</button>
-        </div>
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="frontend">Frontend</button>
+  <button class="filter-btn" data-filter="backend">Backend</button>
+  <button class="filter-btn" data-filter="database">Database</button>
+</div>
+
         <div class="skills-grid">
-          <div class="skill-card">
-            <div class="skill-icon html">
+          <div class="skill-card"  data-category="frontend" >
+            <div class="skill-icon html" >
               <i class="fab fa-html5"></i>
             </div>
             <h3>HTML5</h3>
           </div>
-          <div class="skill-card">
+          <div class="skill-card" data-category="frontend">
             <div class="skill-icon css">
               <i class="fab fa-css3-alt"></i>
             </div>
             <h3>CSS3</h3>
           </div>
-          <div class="skill-card">
+          <div class="skill-card" data-category="frontend">
             <div class="skill-icon js">
               <i class="fab fa-js"></i>
             </div>
             <h3>JavaScript</h3>
           </div>
-          <div class="skill-card">
+          <div class="skill-card" data-category="frontend">
             <div class="skill-icon bootstrap">
               <i class="fab fa-bootstrap"></i>
             </div>
             <h3>Bootstrap</h3>
           </div>
-          <div class="skill-card">
+          <div class="skill-card" data-category="frontend">
             <div class="skill-icon tailwind">
               <i class="fab fa-css3"></i>
             </div>
             <h3>Tailwind CSS</h3>
           </div>
-          <div class="skill-card">
+          <div class="skill-card" data-category="backend">
             <div class="skill-icon csharp">
               <i class="fab fa-microsoft"></i>
             </div>
             <h3>C#</h3>
           </div>
-          <div class="skill-card">
+          <div class="skill-card" data-category="database">
             <div class="skill-icon sql">
               <i class="fas fa-database"></i>
             </div>
             <h3>SQL</h3>
           </div>
-          <div class="skill-card">
+          <div class="skill-card" data-category="backend">
             <div class="skill-icon oop">
               <i class="fas fa-cubes"></i>
             </div>
@@ -1400,13 +1398,13 @@
           <div class="divider"></div>
         </div>
         <div class="projects-filter">
-          <button class="filter-btn active">All</button>
-          <button class="filter-btn">Web</button>
-          <button class="filter-btn">Software</button>
-          <button class="filter-btn">Network</button>
-        </div>
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="web">Web</button>
+  <button class="filter-btn" data-filter="software">Software</button>
+  <button class="filter-btn" data-filter="network">Network</button>
+</div>
         <div class="projects-grid">
-          <div class="project-card">
+          <div class="project-card" data-category="Web">
             <div class="project-img">
               <img
                 src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
@@ -1428,7 +1426,7 @@
               <a href="#" class="project-btn">View Details</a>
             </div>
           </div>
-          <div class="project-card">
+          <div class="project-card" data-category="Web">
             <div class="project-img">
               <img
                 src="https://images.unsplash.com/photo-1601134467661-3d775b999c8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1675&q=80"
@@ -1450,7 +1448,7 @@
               <a href="#" class="project-btn">View Details</a>
             </div>
           </div>
-          <div class="project-card">
+          <div class="project-card" data-category="software">
             <div class="project-img">
               <img
                 src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
@@ -1471,7 +1469,7 @@
               <a href="#" class="project-btn">View Details</a>
             </div>
           </div>
-          <div class="project-card">
+          <div class="project-card" data-category="software">
             <div class="project-img">
               <img
                 src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
@@ -1492,7 +1490,7 @@
               <a href="#" class="project-btn">View Details</a>
             </div>
           </div>
-          <div class="project-card">
+          <div class="project-card" data-category="software">
             <div class="project-img">
               <img
                 src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
@@ -1513,7 +1511,7 @@
               <a href="#" class="project-btn">View Details</a>
             </div>
           </div>
-          <div class="project-card">
+          <div class="project-card" data-category="network">
             <div class="project-img">
               <img
                 src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1700&q=80"
@@ -1809,36 +1807,56 @@
       });
 
       // Skill Filter
-      const filterBtns = document.querySelectorAll(
+  const skillsFilterBtns = document.querySelectorAll(
         ".skills-filter .filter-btn"
       );
+      const skillCards = document.querySelectorAll(".skill-card");
 
-      filterBtns.forEach((btn) => {
-        btn.addEventListener("click", () => {
+      skillsFilterBtns.forEach((btn) => {
+        btn.addEventListener("click", function () {
           // Remove active class from all buttons
-          filterBtns.forEach((b) => b.classList.remove("active"));
+          skillsFilterBtns.forEach((b) => b.classList.remove("active"));
+          // Add active to clicked button
+          this.classList.add("active");
 
-          // Add active class to clicked button
-          btn.classList.add("active");
+          const filter = this.getAttribute("data-filter");
 
-          // In a real application, you would filter the skills here
+          // Filter skill cards
+          skillCards.forEach((card) => {
+            const category = card.getAttribute("data-category");
+            if (filter === "all" || category === filter) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
         });
       });
 
       // Project Filter
-      const projectFilterBtns = document.querySelectorAll(
+         const projectsFilterBtns = document.querySelectorAll(
         ".projects-filter .filter-btn"
       );
+      const projectCards = document.querySelectorAll(".project-card");
 
-      projectFilterBtns.forEach((btn) => {
-        btn.addEventListener("click", () => {
+       projectsFilterBtns.forEach((btn) => {
+        btn.addEventListener("click", function () {
           // Remove active class from all buttons
-          projectFilterBtns.forEach((b) => b.classList.remove("active"));
+          projectsFilterBtns.forEach((b) => b.classList.remove("active"));
+          // Add active to clicked button
+          this.classList.add("active");
 
-          // Add active class to clicked button
-          btn.classList.add("active");
+          const filter = this.getAttribute("data-filter").toLowerCase();
 
-          // In a real application, you would filter the projects here
+          // Filter project cards
+          projectCards.forEach((card) => {
+            const category = card.getAttribute("data-category").toLowerCase();
+            if (filter === "all" || category === filter) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
         });
       });
     </script>
@@ -2338,7 +2356,103 @@
         }
       });
     </script>
-   
+   <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // ---------------- Chatbox Code ----------------
+    const chatboxContainer = document.querySelector(".chatbox-container");
+    const toggleBtn = document.querySelector(".chatbox-toggle-btn");
+    const closeBtn = document.querySelector(".chatbox-close-btn");
+    const messageInput = document.querySelector(".chatbox-input-area textarea");
+    const sendBtn = document.querySelector(".chatbox-send-btn");
+    const messagesContainer = document.querySelector(".chatbox-messages");
+    const typingIndicator = document.querySelector(".chatbox-typing-indicator");
+
+    toggleBtn.addEventListener("click", () => {
+      chatboxContainer.classList.toggle("active");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      chatboxContainer.classList.remove("active");
+    });
+
+    messageInput.addEventListener("input", function () {
+      this.style.height = "auto";
+      this.style.height = this.scrollHeight + "px";
+    });
+
+    sendBtn.addEventListener("click", sendMessage);
+    messageInput.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage();
+      }
+    });
+
+    function sendMessage() {
+      const messageText = messageInput.value.trim();
+      if (messageText) {
+        addMessage(messageText, "user");
+        messageInput.value = "";
+        messageInput.style.height = "auto";
+
+        typingIndicator.style.display = "flex";
+
+        setTimeout(() => {
+          typingIndicator.style.display = "none";
+          const response = generateReply(messageText.toLowerCase());
+          addMessage(response, "bot");
+        }, 2000);
+      }
+    }
+
+    function generateReply(userInput) {
+      if (userInput.includes("skill")) {
+        return "My skills include HTML, CSS, JavaScript, SQL, C#, and OOP. I’m also experienced in networking and software engineering.";
+      } else if (userInput.includes("experience") || userInput.includes("work")) {
+        return "I'm currently a fresher but have built multiple real-world projects to demonstrate my experience.";
+      } else if (userInput.includes("project")) {
+        return "Some of my projects include a Quiz App, Weather App, Restaurant Management System, AI Maze Solver, and a Hotel Network Simulation.";
+      } else if (userInput.includes("education")) {
+        return "I'm pursuing a BS in Computer Science at KIET with majors in Web Development and Networking.";
+      } else if (userInput.includes("contact") || userInput.includes("email")) {
+        return "You can reach me at muzammil.thedeveloper@gmail.com or on LinkedIn: https://www.linkedin.com/in/muhammad-muzammil-7562bb316";
+      } else if (userInput.includes("resume")) {
+        return "Here’s my resume: [Muhammad_Muzammil_Resume.pdf]";
+      } else {
+        return "Thanks for your message! How else can I assist you?";
+      }
+    }
+  // ---------------- Filter Buttons Code ----------------
+  function setupFilter(sectionSelector, cardSelector, btnSelector) {
+  const section = document.querySelector(sectionSelector);
+  const filterButtons = section.querySelectorAll(btnSelector);
+  const cards = section.querySelectorAll(cardSelector);
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const filterValue = btn.getAttribute("data-filter");
+
+      filterButtons.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      cards.forEach((card) => {
+        const cardCategory = card.getAttribute("data-category");
+        if (filterValue === "all" || cardCategory === filterValue) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
+}
+  
+// Apply filtering for both sections
+setupFilter("#skills", ".skill-card", ".skills-filter .filter-btn");
+setupFilter("#projects", ".project-card", ".projects-filter .filter-btn");
+
+</script>
+
    
    <script>
   document.addEventListener("DOMContentLoaded", function () {
