@@ -91,168 +91,48 @@
       }
 
       /* Preloader */
-      #preloader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: var(--light);
-        z-index: 9999;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: opacity 0.5s, visibility 0.5s;
-      }
-
-      #preloader.dark-mode {
-        background: var(--dark);
-      }
-
-      .loader {
-        width: 60px;
-        height: 60px;
-        border: 5px solid rgba(67, 97, 238, 0.2);
-        border-top: 5px solid var(--primary);
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-      }
-
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-
-      /* Navbar */
-      nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: white;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        z-index: 100;
-        transition: var(--transition);
-      }
-
-      nav.dark-mode {
-        background: linear-gradient(
-          90deg,
-          #1e293b,
-          #27374a
-        ); /* smooth, elegant dark blend */
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(6px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      }
-
-      .nav-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 0;
-      }
-
-      .logo {
-        font-size: clamp(1.2rem, 4vw, 1.5rem);
-        font-weight: 700;
-        color: var(--primary);
-      }
-
-      .logo span {
-        color: var(--secondary);
-      }
-
-      .nav-links {
-        display: flex;
-        gap: 30px;
-      }
-
-      .nav-links a {
-        text-decoration: none;
-        color: var(--dark);
-        font-weight: 500;
-        position: relative;
-        transition: var(--transition);
-        font-size: clamp(0.9rem, 3vw, 1rem);
-      }
-
-      .nav-links a::after {
-        content: "";
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: var(--primary);
-        transition: var(--transition);
-      }
-
-      .nav-links a:hover::after {
-        width: 100%;
-      }
-
-      .nav-links a:hover {
-        color: var(--primary);
-      }
-
-      .dark-mode .nav-links a {
-  color: #cbd5e1; /* Softer but clearer light gray-blue */
-  font-weight: 500;
-  transition: var(--transition);
+      /* Preloader */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--light);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s, visibility 0.5s;
 }
 
-.dark-mode .nav-links a:hover {
-  color: var(--primary);
+#preloader.loaded {
+  opacity: 0;
+  visibility: hidden;
 }
 
+#preloader.dark-mode {
+  background: var(--dark);
+}
 
-      .theme-toggle {
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-size: clamp(1rem, 4vw, 1.2rem);
-        color: var(--dark);
-        transition: var(--transition);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 8px;
-        border-radius: 50%;
-      }
+.loader {
+  width: 60px;
+  height: 60px;
+  border: 5px solid rgba(67, 97, 238, 0.2);
+  border-top: 5px solid var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
 
-      .theme-toggle:hover {
-        background: rgba(67, 97, 238, 0.1);
-      }
-
-      .dark-mode .theme-toggle {
-        color: #e2e8f0;
-      }
-
-      .mobile-menu-btn {
-        display: none;
-        background: none;
-        border: none;
-        font-size: 1.5rem;
-        color: var(--dark);
-        cursor: pointer;
-        z-index: 101;
-        padding: 8px;
-        border-radius: 4px;
-      }
-
-      .mobile-menu-btn:hover {
-        background: rgba(67, 97, 238, 0.1);
-      }
-
-      .dark-mode .mobile-menu-btn {
-        color: #e2e8f0;
-      }
-
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+      
       /* Hero Section */
       #hero {
         min-height: 100vh;
@@ -1400,31 +1280,272 @@
 
   <body>
     <!-- Preloader -->
-    <!-- <div id="preloader">
+    <div id="preloader">
       <div class="loader"></div>
-    </div> -->
+    </div> 
 
     <!-- Navbar -->
-    <nav>
-      <div class="container nav-container">
-        <div class="logo">Muzammil<span>.</span></div>
-        <div class="nav-links">
-          <a href="#hero">Home</a>
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#timeline">Timeline</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <button class="theme-toggle">
-          <i class="fas fa-moon"></i>
-        </button>
-        <button class="mobile-menu-btn">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
-    </nav>
+<nav id="navbar">
+  <div class="container nav-container">
+    <div class="logo">Muzammil<span>.</span></div>
+    <div class="nav-links" id="navLinks">
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="theme-toggle" id="themeToggle">
+      <i class="fas fa-moon"></i>
+    </button>
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</nav>
 
+<style>
+  /* Navbar Styles */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: var(--transition);
+  }
+
+  nav.dark-mode {
+    background: linear-gradient(90deg, #1e293b, #27374a);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 30px;
+  }
+
+  .logo {
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    font-weight: 700;
+    color: var(--primary);
+    z-index: 1001;
+  }
+
+  .logo span {
+    color: var(--secondary);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 30px;
+    transition: var(--transition);
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    position: relative;
+    transition: var(--transition);
+    font-size: clamp(0.9rem, 3vw, 1rem);
+  }
+
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: var(--transition);
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+  .nav-links a:hover {
+    color: var(--primary);
+  }
+
+  .dark-mode .nav-links a {
+    color: #cbd5e1;
+  }
+
+  .dark-mode .nav-links a:hover {
+    color: var(--primary);
+  }
+
+  .theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    color: var(--dark);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 50%;
+    z-index: 1001;
+  }
+
+  .theme-toggle:hover {
+    background: rgba(67, 97, 238, 0.1);
+  }
+
+  .dark-mode .theme-toggle {
+    color: #e2e8f0;
+  }
+
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--dark);
+    cursor: pointer;
+    z-index: 1001;
+    padding: 8px;
+    border-radius: 4px;
+    transition: var(--transition);
+  }
+
+  .mobile-menu-btn:hover {
+    background: rgba(67, 97, 238, 0.1);
+  }
+
+  .dark-mode .mobile-menu-btn {
+    color: #e2e8f0;
+  }
+
+  /* Mobile Menu Styles */
+  @media (max-width: 768px) {
+    .nav-container {
+      padding: 15px 20px;
+    }
+
+    .mobile-menu-btn {
+      display: block;
+    }
+
+    .nav-links {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 70%;
+      max-width: 300px;
+      height: 100vh;
+      background: white;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      transition: all 0.5s ease;
+      z-index: 1000;
+      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .dark-mode .nav-links {
+      background: #1e293b;
+      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-links.active {
+      right: 0;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const navLinks = document.getElementById("navLinks");
+    const navbar = document.getElementById("navbar");
+
+    mobileMenuBtn.addEventListener("click", function() {
+      navLinks.classList.toggle("active");
+      mobileMenuBtn.classList.toggle("active");
+      
+      // Toggle between hamburger and close icon
+      const icon = mobileMenuBtn.querySelector("i");
+      if (navLinks.classList.contains("active")) {
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-times");
+      } else {
+        icon.classList.remove("fa-times");
+        icon.classList.add("fa-bars");
+      }
+    });
+
+    // Close menu when clicking on a link (mobile only)
+    const navItems = navLinks.querySelectorAll("a");
+    navItems.forEach(item => {
+      item.addEventListener("click", function() {
+        if (window.innerWidth <= 768) {
+          navLinks.classList.remove("active");
+          mobileMenuBtn.classList.remove("active");
+          const icon = mobileMenuBtn.querySelector("i");
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+        }
+      });
+    });
+
+    // Close menu when clicking outside (mobile only)
+    document.addEventListener("click", function(event) {
+      if (window.innerWidth <= 768 && 
+          !navbar.contains(event.target) && 
+          !event.target.classList.contains("mobile-menu-btn")) {
+        navLinks.classList.remove("active");
+        mobileMenuBtn.classList.remove("active");
+        const icon = mobileMenuBtn.querySelector("i");
+        icon.classList.remove("fa-times");
+        icon.classList.add("fa-bars");
+      }
+    });
+
+    // Dark/Light Mode Toggle
+    const themeToggle = document.getElementById("themeToggle");
+    themeToggle.addEventListener("click", function() {
+      document.body.classList.toggle("dark-mode");
+      localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
+    });
+
+    // Check for saved theme preference
+    if (localStorage.getItem("darkMode") === "true") {
+      document.body.classList.add("dark-mode");
+    }
+  });
+
+  // Close mobile menu when resizing to desktop
+  window.addEventListener("resize", function() {
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const navLinks = document.getElementById("navLinks");
+    
+    if (window.innerWidth > 768) {
+      navLinks.classList.remove("active");
+      mobileMenuBtn.classList.remove("active");
+      const icon = mobileMenuBtn.querySelector("i");
+      icon.classList.remove("fa-times");
+      icon.classList.add("fa-bars");
+    }
+  });
+</script>
     <!-- Hero Section -->
     <section id="hero">
       <div class="container">
@@ -1987,6 +2108,7 @@
     });
   });
 </script>
+
     <!-- Footer -->
     <footer>
       <div class="container">
@@ -2051,7 +2173,6 @@
     <!-- Scroll to Top Button -->
     
 
-    <!-- Add this right before the closing </body> tag -->
     <div class="chatbox-container">
       <button class="chatbox-toggle-btn">
         <i class="fas fa-comment-dots"></i>
@@ -2737,7 +2858,17 @@ setupFilter("#projects", ".project-card", ".projects-filter .filter-btn");
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-
+<script>
+  window.addEventListener('load', function() {
+    const preloader = document.getElementById('preloader');
+    // Add 'loaded' class to trigger the transition
+    preloader.classList.add('loaded');
+    // Remove preloader from DOM after transition completes
+    setTimeout(() => {
+      preloader.style.display = 'none';
+    }, 500); // This should match your transition duration
+  });
+</script>
 </body>
 
   
