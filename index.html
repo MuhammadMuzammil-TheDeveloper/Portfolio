@@ -6,14 +6,7 @@
     <title>Muhammad Muzammil | Responsive Portfolio</title>
 
     <!-- Fonts & Icons -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+  
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -87,10 +80,12 @@
       }
 
       .container {
-        width: 90%;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
 
       /* Preloader */
       /* Preloader */
@@ -249,6 +244,22 @@
       }
 
 
+      @media (max-width: 480px) {
+  section {
+    padding: 40px 0;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
       /* About Section */
 /* About Section */
 #about {
@@ -316,10 +327,15 @@
 /* Skills Grid */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 25px;
-  margin-top: 40px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
 }
+@media (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+}
+
 
 .skill-box {
   background: white;
@@ -1278,6 +1294,49 @@
           gap: 30px;
         }
       }
+
+      @media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+  }
+
+  .project-content {
+    padding: 15px;
+    text-align: center;
+  }
+
+  .project-tags {
+    justify-content: center;
+  }
+}
+
+.btn {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+}
+
+@media (max-width: 480px) {
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .skill-card h3,
+  .project-content h3 {
+    font-size: 1rem;
+  }
+}
+
     </style>
   </head>
 
@@ -1471,6 +1530,15 @@
       right: 0;
     }
   }
+@media (max-width: 480px) {
+  .skills-grid,
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+  }
+}
+
+
 </style>
 
 <script>
@@ -1562,7 +1630,7 @@
               >Hire Me <i class="fas fa-arrow-right"></i
             ></a>
             <a href="Muhammad_Muzammil_Resume.pdf" class="btn btn-outline" download>
-  Download CV <i class="fas fa-download"></i>
+  Download Resume <i class="fas fa-download"></i>
 </a>
 
           </div>
@@ -1583,7 +1651,7 @@
     <div class="about-content">
       <div class="about-img">
         <img
-          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=774&q=80"
+          src="profile.jpeg"
           alt="Muhammad Muzammil"
         />
       </div>
@@ -1635,6 +1703,7 @@
         
 
       </div>
+    </div>
     </div>
   </div>
 </section>
@@ -1912,7 +1981,7 @@
           
           <!-- Buttons -->
           <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
-            <a href="#" class="flex-1 py-2.5 sm:py-3.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white rounded-lg font-semibold text-sm sm:text-base transition-all flex items-center justify-center shadow-md hover:shadow-lg">
+            <a href="https://muhmmad-muzammil.github.io/CareerPath-AI/" class="flex-1 py-2.5 sm:py-3.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white rounded-lg font-semibold text-sm sm:text-base transition-all flex items-center justify-center shadow-md hover:shadow-lg">
               <i class="fas fa-eye mr-2 sm:mr-2.5 text-xs sm:text-sm"></i> Live Demo
             </a>
             <button onclick="openProjectDetails()" class="flex-1 py-2.5 sm:py-3.5 border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 rounded-lg font-semibold text-sm sm:text-base transition-all flex items-center justify-center">
@@ -2171,6 +2240,7 @@
   [data-no-dark-mode] .bg-indigo-50 {
     background-color: #eef2ff !important;
   }
+
 </style>
 
 
@@ -2891,253 +2961,185 @@
         opacity: 0.7;
       }
     </style>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // ==================== Chatbox Functionality ====================
+  const chatboxContainer = document.querySelector(".chatbox-container");
+  const toggleBtn = document.querySelector(".chatbox-toggle-btn");
+  const closeBtn = document.querySelector(".chatbox-close-btn");
+  const messageInput = document.querySelector(".chatbox-input-area textarea");
+  const sendBtn = document.querySelector(".chatbox-send-btn");
+  const messagesContainer = document.querySelector(".chatbox-messages");
+  const typingIndicator = document.querySelector(".chatbox-typing-indicator");
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const chatboxContainer = document.querySelector(".chatbox-container");
-        const toggleBtn = document.querySelector(".chatbox-toggle-btn");
-        const closeBtn = document.querySelector(".chatbox-close-btn");
-        const messageInput = document.querySelector(
-          ".chatbox-input-area textarea"
-        );
-        const sendBtn = document.querySelector(".chatbox-send-btn");
-        const messagesContainer = document.querySelector(".chatbox-messages");
-        const typingIndicator = document.querySelector(
-          ".chatbox-typing-indicator"
-        );
+  // Toggle chatbox visibility
+  function toggleChatbox() {
+    chatboxContainer.classList.toggle("active");
+  }
 
-        toggleBtn.addEventListener("click", () => {
-          chatboxContainer.classList.toggle("active");
-        });
+  // Close chatbox
+  function closeChatbox() {
+    chatboxContainer.classList.remove("active");
+  }
 
-        closeBtn.addEventListener("click", () => {
-          chatboxContainer.classList.remove("active");
-        });
+  // Add event listeners for chatbox
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", toggleChatbox);
+  }
+  if (closeBtn) {
+    closeBtn.addEventListener("click", closeChatbox);
+  }
 
-        messageInput.addEventListener("input", function () {
-          this.style.height = "auto";
-          this.style.height = this.scrollHeight + "px";
-        });
+  // Message input auto-resize
+  messageInput.addEventListener("input", function () {
+    this.style.height = "auto";
+    this.style.height = this.scrollHeight + "px";
+  });
 
-        sendBtn.addEventListener("click", sendMessage);
-        messageInput.addEventListener("keydown", function (e) {
-          if (e.key === "Enter" && !e.shiftKey) {
-            e.preventDefault();
-            sendMessage();
-          }
-        });
+  // Send message functionality
+  function sendMessage() {
+    const messageText = messageInput.value.trim();
+    if (messageText) {
+      addMessage(messageText, "user");
+      messageInput.value = "";
+      messageInput.style.height = "auto";
 
-        function sendMessage() {
-          const messageText = messageInput.value.trim();
-          if (messageText) {
-            addMessage(messageText, "user");
-            messageInput.value = "";
-            messageInput.style.height = "auto";
+      typingIndicator.style.display = "flex";
 
-            typingIndicator.style.display = "flex";
-
-            setTimeout(() => {
-              typingIndicator.style.display = "none";
-              const response = generateReply(messageText.toLowerCase());
-              addMessage(response, "bot");
-            }, 2000);
-          }
-        }
-
-        function generateReply(userInput) {
-          if (userInput.includes("skill")) {
-            return "My skills include HTML, CSS, JavaScript, SQL, C#, and OOP. I’m also experienced in networking and software engineering.";
-          } else if (
-            userInput.includes("experience") ||
-            userInput.includes("work")
-          ) {
-            return "I'm currently a fresher but have built multiple real-world projects to demonstrate my experience.";
-          } else if (userInput.includes("project")) {
-            return "Some of my projects include a Quiz App, Weather App, Restaurant Management System, AI Maze Solver, and a Hotel Network Simulation.";
-          } else if (userInput.includes("education")) {
-            return "I'm pursuing a BS in Computer Science at KIET with majors in Web Development and Networking.";
-          } else if (
-            userInput.includes("contact") ||
-            userInput.includes("email")
-          ) {
-            return "You can reach me at muzammil.thedeveloper@gmail.com or on LinkedIn: https://www.linkedin.com/in/muhammad-muzammil-7562bb316";
-          } else if (userInput.includes("resume")) {
-            return "Here’s my resume: [Muhammad_Muzammil_Resume.pdf]";
-          } else {
-            return "Thanks for your message! How else can I assist you?";
-          }
-        }
-
-        function addMessage(text, sender) {
-          const wrapper = document.createElement("div");
-          wrapper.className = `chatbox-message-wrapper ${sender}`;
-
-          const message = document.createElement("p");
-          message.textContent = text;
-
-          const timestamp = document.createElement("div");
-          timestamp.className = "chatbox-timestamp";
-          const now = new Date();
-          timestamp.textContent = now.toLocaleTimeString([], {
-            hour: "2-digit",
-            minute: "2-digit",
-          });
-
-          wrapper.appendChild(message);
-          wrapper.appendChild(timestamp);
-
-          messagesContainer.appendChild(wrapper);
-          messagesContainer.scrollTop = messagesContainer.scrollHeight;
-        }
-      });
-    </script>
-   <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // ---------------- Chatbox Code ----------------
-    const chatboxContainer = document.querySelector(".chatbox-container");
-    const toggleBtn = document.querySelector(".chatbox-toggle-btn");
-    const closeBtn = document.querySelector(".chatbox-close-btn");
-    const messageInput = document.querySelector(".chatbox-input-area textarea");
-    const sendBtn = document.querySelector(".chatbox-send-btn");
-    const messagesContainer = document.querySelector(".chatbox-messages");
-    const typingIndicator = document.querySelector(".chatbox-typing-indicator");
-
-    toggleBtn.addEventListener("click", () => {
-      chatboxContainer.classList.toggle("active");
-    });
-
-    closeBtn.addEventListener("click", () => {
-      chatboxContainer.classList.remove("active");
-    });
-
-    messageInput.addEventListener("input", function () {
-      this.style.height = "auto";
-      this.style.height = this.scrollHeight + "px";
-    });
-
-    sendBtn.addEventListener("click", sendMessage);
-    messageInput.addEventListener("keydown", function (e) {
-      if (e.key === "Enter" && !e.shiftKey) {
-        e.preventDefault();
-        sendMessage();
-      }
-    });
-
-    function sendMessage() {
-      const messageText = messageInput.value.trim();
-      if (messageText) {
-        addMessage(messageText, "user");
-        messageInput.value = "";
-        messageInput.style.height = "auto";
-
-        typingIndicator.style.display = "flex";
-
-        setTimeout(() => {
-          typingIndicator.style.display = "none";
-          const response = generateReply(messageText.toLowerCase());
-          addMessage(response, "bot");
-        }, 2000);
-      }
+      setTimeout(() => {
+        typingIndicator.style.display = "none";
+        const response = generateReply(messageText.toLowerCase());
+        addMessage(response, "bot");
+      }, 2000);
     }
+  }
 
-    function generateReply(userInput) {
-      if (userInput.includes("skill")) {
-        return "My skills include HTML, CSS, JavaScript, SQL, C#, and OOP. I’m also experienced in networking and software engineering.";
-      } else if (userInput.includes("experience") || userInput.includes("work")) {
-        return "I'm currently a fresher but have built multiple real-world projects to demonstrate my experience.";
-      } else if (userInput.includes("project")) {
-        return "Some of my projects include a Quiz App, Weather App, Restaurant Management System, AI Maze Solver, and a Hotel Network Simulation.";
-      } else if (userInput.includes("education")) {
-        return "I'm pursuing a BS in Computer Science at KIET with majors in Web Development and Networking.";
-      } else if (userInput.includes("contact") || userInput.includes("email")) {
-        return "You can reach me at muzammil.thedeveloper@gmail.com or on LinkedIn: https://www.linkedin.com/in/muhammad-muzammil-7562bb316";
-      } else if (userInput.includes("resume")) {
-        return "Here’s my resume: [Muhammad_Muzammil_Resume.pdf]";
-      } else {
-        return "Thanks for your message! How else can I assist you?";
-      }
+  sendBtn.addEventListener("click", sendMessage);
+  messageInput.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage();
     }
-  // ---------------- Filter Buttons Code ----------------
+  });
+
+  function generateReply(userInput) {
+    if (userInput.includes("skill")) {
+      return "My skills include HTML, CSS, JavaScript, SQL, C#, and OOP. I'm also experienced in networking and software engineering.";
+    } else if (userInput.includes("experience") || userInput.includes("work")) {
+      return "I'm currently a fresher but have built multiple real-world projects to demonstrate my experience.";
+    } else if (userInput.includes("project")) {
+      return "Some of my projects include a Quiz App, Weather App, Restaurant Management System, AI Maze Solver, and a Hotel Network Simulation.";
+    } else if (userInput.includes("education")) {
+      return "I'm pursuing a BS in Computer Science at KIET with majors in Web Development and Networking.";
+    } else if (userInput.includes("contact") || userInput.includes("email")) {
+      return "You can reach me at muzammil.thedeveloper@gmail.com or on LinkedIn: https://www.linkedin.com/in/muhammad-muzammil-7562bb316";
+    } else if (userInput.includes("resume")) {
+      return "Here's my resume: [Muhammad_Muzammil_Resume.pdf]";
+    } else {
+      return "Thanks for your message! How else can I assist you?";
+    }
+  }
+
+  function addMessage(text, sender) {
+    const wrapper = document.createElement("div");
+    wrapper.className = `chatbox-message-wrapper ${sender}`;
+
+    const message = document.createElement("p");
+    message.textContent = text;
+
+    const timestamp = document.createElement("div");
+    timestamp.className = "chatbox-timestamp";
+    const now = new Date();
+    timestamp.textContent = now.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+
+    wrapper.appendChild(message);
+    wrapper.appendChild(timestamp);
+
+    messagesContainer.appendChild(wrapper);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+  }
+
+  // ==================== Filter Buttons Functionality ====================
   function setupFilter(sectionSelector, cardSelector, btnSelector) {
-  const section = document.querySelector(sectionSelector);
-  const filterButtons = section.querySelectorAll(btnSelector);
-  const cards = section.querySelectorAll(cardSelector);
+    const section = document.querySelector(sectionSelector);
+    if (!section) return;
+    
+    const filterButtons = section.querySelectorAll(btnSelector);
+    const cards = section.querySelectorAll(cardSelector);
 
-  filterButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const filterValue = btn.getAttribute("data-filter");
+    filterButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const filterValue = btn.getAttribute("data-filter");
 
-      filterButtons.forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
+        filterButtons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
 
-      cards.forEach((card) => {
-        const cardCategory = card.getAttribute("data-category");
-        if (filterValue === "all" || cardCategory === filterValue) {
-          card.style.display = "block";
-        } else {
-          card.style.display = "none";
-        }
+        cards.forEach((card) => {
+          const cardCategory = card.getAttribute("data-category");
+          if (filterValue === "all" || cardCategory === filterValue) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
       });
     });
-  });
-}
+  }
 
-// Apply filtering for both sections
-setupFilter("#skills", ".skill-card", ".skills-filter .filter-btn");
-setupFilter("#projects", ".project-card", ".projects-filter .filter-btn");
+  // Apply filtering for both sections
+  setupFilter("#skills", ".skill-card", ".skills-filter .filter-btn");
+  setupFilter("#projects", ".project-card", ".projects-filter .filter-btn");
 
+  // ==================== Chart Functionality ====================
+  const ctx = document.getElementById("skillChart");
+  if (ctx) {
+    new Chart(ctx, {
+      type: "radar",
+      data: {
+        labels: ["HTML/CSS", "JavaScript", "SQL", "OOP (C#)"],
+        datasets: [
+          {
+            label: "Skill Level",
+            data: [90, 85, 80, 75],
+            backgroundColor: "rgba(67, 97, 238, 0.2)",
+            borderColor: "#4361ee",
+            borderWidth: 2,
+            pointBackgroundColor: "#4361ee",
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          r: {
+            angleLines: { display: false },
+            suggestedMin: 0,
+            suggestedMax: 100,
+            ticks: {
+              stepSize: 20,
+              color: "#94a3b8",
+            },
+            pointLabels: {
+              color: "#334155",
+            },
+            grid: {
+              color: "rgba(0,0,0,0.1)",
+            },
+          },
+        },
+        plugins: {
+          legend: { display: false },
+        },
+      },
+    });
+  }
+});
 </script>
-
    
-   <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const ctx = document.getElementById("skillChart");
-
-    if (ctx) {
-      new Chart(ctx, {
-        type: "radar",
-        data: {
-          labels: ["HTML/CSS", "JavaScript", "SQL", "OOP (C#)"],
-          datasets: [
-            {
-              label: "Skill Level",
-              data: [90, 85, 80, 75],
-              backgroundColor: "rgba(67, 97, 238, 0.2)",
-              borderColor: "#4361ee",
-              borderWidth: 2,
-              pointBackgroundColor: "#4361ee",
-            },
-          ],
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          scales: {
-            r: {
-              angleLines: { display: false },
-              suggestedMin: 0,
-              suggestedMax: 100,
-              ticks: {
-                stepSize: 20,
-                color: "#94a3b8",
-              },
-              pointLabels: {
-                color: "#334155",
-              },
-              grid: {
-                color: "rgba(0,0,0,0.1)",
-              },
-            },
-          },
-          plugins: {
-            legend: { display: false },
-          },
-        },
-      });
-    }
-  });
-</script>
-
 <script>
   // SKILLS FILTERING
   document.querySelectorAll('#skills .filter-btn').forEach(button => {
