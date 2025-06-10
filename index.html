@@ -1656,7 +1656,7 @@
         />
       </div>
       <div class="about-text">
-        <h3>Full Stack Developer 🚀</h3>
+        <h3>Web Developer </h3>
         <p>
           Crafting responsive, modern websites and solving real-world problems with clean code.
           Passionate about web dev, software engineering, and creative solutions.
@@ -2046,9 +2046,10 @@
 </section>
 
 <!-- Project Details Modal -->
-<div id="projectDetailsModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4" data-no-dark-mode>
-  <div class="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-    <div class="p-4 sm:p-6">
+<!-- Project Details Modal - Updated Version -->
+<div id="projectDetailsModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-start justify-center p-4 pt-20" data-no-dark-mode>
+  <div class="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[80vh] overflow-y-auto">
+   <div class="p-4 sm:p-6">
       <div class="flex justify-between items-start mb-4 sm:mb-6">
         <div>
           <h3 class="text-xl sm:text-2xl font-bold text-gray-800">CareerPath AI - Project Details</h3>
@@ -2188,22 +2189,18 @@
 
 <script>
   function openProjectDetails() {
-    document.getElementById('projectDetailsModal').classList.remove('hidden');
+    const modal = document.getElementById('projectDetailsModal');
+    modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
+    
+    // Scroll to top of modal when opened
+    modal.querySelector('div').scrollTo(0, 0);
   }
   
   function closeProjectDetails() {
     document.getElementById('projectDetailsModal').classList.add('hidden');
     document.body.style.overflow = 'auto';
   }
-
-  // Prevent dark mode from affecting this section
-  document.addEventListener('DOMContentLoaded', function() {
-    const noDarkModeElements = document.querySelectorAll('[data-no-dark-mode]');
-    noDarkModeElements.forEach(el => {
-      el.setAttribute('data-mode', 'light');
-    });
-  });
 </script>
 
 <style>
