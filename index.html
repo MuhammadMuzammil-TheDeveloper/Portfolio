@@ -1922,7 +1922,6 @@
       </div>
     </section>
 
-    <!-- CareerPath AI Project Section -->
 <!-- CareerPath AI - Premium Showcase Section -->
 <section class="py-12 sm:py-16 px-4 sm:px-6 bg-gradient-to-b from-indigo-50 to-purple-50" data-no-dark-mode>
   <div class="max-w-6xl mx-auto">
@@ -2046,10 +2045,10 @@
 </section>
 
 <!-- Project Details Modal -->
-<!-- Project Details Modal - Updated Version -->
+<!-- Project Details Modal - Original Content with Custom Scrollbar Only -->
 <div id="projectDetailsModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-start justify-center p-4 pt-20" data-no-dark-mode>
-  <div class="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[80vh] overflow-y-auto">
-   <div class="p-4 sm:p-6">
+  <div class="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[80vh] overflow-y-auto custom-scrollbar">
+    <div class="p-4 sm:p-6">
       <div class="flex justify-between items-start mb-4 sm:mb-6">
         <div>
           <h3 class="text-xl sm:text-2xl font-bold text-gray-800">CareerPath AI - Project Details</h3>
@@ -2187,6 +2186,34 @@
   </div>
 </div>
 
+<style>
+  /* Custom Scrollbar Styles - Only Change */
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #6366f1 #f1f5ff;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f5ff;
+    border-radius: 10px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #6366f1;
+    border-radius: 10px;
+    border: 2px solid #f1f5ff;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #4f46e5;
+  }
+</style>
+
 <script>
   function openProjectDetails() {
     const modal = document.getElementById('projectDetailsModal');
@@ -2202,7 +2229,6 @@
     document.body.style.overflow = 'auto';
   }
 </script>
-
 <style>
   @keyframes pulse-slow {
     0%, 100% { opacity: 0.8; }
