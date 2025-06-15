@@ -1,16 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Primary Meta Tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="google-site-verification" content="your_verification_code_here" />
-    <title>Muhammad Muzammil | Responsive Portfolio</title>
+    <title>Muhammad Muzammil | Web Developer & Computer Science Student Portfolio</title>
+    <meta name="description" content="Professional portfolio of Muhammad Muzammil - Computer Science student & web developer specializing in HTML, CSS, JavaScript, C#, and networking. View my projects and skills.">
+    <meta name="keywords" content="web developer portfolio, Muhammad Muzammil, HTML developer, CSS expert, JavaScript programmer, C# developer, Karachi web developer, computer science student">
+    <meta name="author" content="Muhammad Muzammil">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://muhmmad-muzammil.github.io/Portfolio/">
+    <meta property="og:title" content="Muhammad Muzammil | Web Developer Portfolio">
+    <meta property="og:description" content="Professional portfolio of Muhammad Muzammil - Computer Science student & web developer specializing in modern web technologies.">
+    <meta property="og:image" content="https://muhmmad-muzammil.github.io/Portfolio/profile.jpeg">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://muhmmad-muzammil.github.io/Portfolio/">
+    <meta name="twitter:title" content="Muhammad Muzammil | Web Developer Portfolio">
+    <meta name="twitter:description" content="Professional portfolio of Muhammad Muzammil - Computer Science student & web developer.">
+    <meta name="twitter:image" content="https://muhmmad-muzammil.github.io/Portfolio/profile.jpeg">
+    <meta name="twitter:creator" content="@MTheDeveloper">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://muhmmad-muzammil.github.io/Portfolio/" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Preload Resources -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+    <link rel="preload" href="profile.jpeg" as="image">
 
     <!-- Fonts & Icons -->
-  
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Structured Data -->
+   <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://muhmmad-muzammil.github.io/Portfolio/#person",
+  "name": "Muhammad Muzammil",
+  "alternateName": "Muzammil.thedeveloper",
+  "jobTitle": "Web Developer & Tech Content Creator",
+  "image": "https://muhmmad-muzammil.github.io/Portfolio/profile.jpeg",
+  "url": "https://muhmmad-muzammil.github.io/Portfolio/",
+  "sameAs": [
+    "https://www.linkedin.com/in/muhammad-muzammil-7562bb316/",
+    "https://github.com/Muhmmad-Muzammil",
+    "https://www.instagram.com/muzammil.thedeveloper/"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Karachi",
+    "addressRegion": "Sindh",
+    "addressCountry": "Pakistan"
+  },
+  "alumniOf": {
+    "@type": "EducationalOrganization",
+    "name": "Karachi Institute of Economics and Technology (KIET)"
+  },
+  "knowsAbout": [
+    "HTML", "CSS", "JavaScript", "C#", "SQL", "Web Development", "Computer Networking"
+  ],
+  "hasOccupation": {
+    "@type": "Occupation",
+    "name": "Web Developer",
+    "skills": "HTML, CSS, JavaScript, C#, SQL, Web Development, Networking"
+  }
+}
+</script>
 
 
     <style>
@@ -81,55 +150,53 @@
       }
 
       .container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
 
       /* Preloader */
-      /* Preloader */
-#preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--light);
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.5s, visibility 0.5s;
-}
+      #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--light);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.5s, visibility 0.5s;
+      }
 
-#preloader.loaded {
-  opacity: 0;
-  visibility: hidden;
-}
+      #preloader.loaded {
+        opacity: 0;
+        visibility: hidden;
+      }
 
-#preloader.dark-mode {
-  background: var(--dark);
-}
+      #preloader.dark-mode {
+        background: var(--dark);
+      }
 
-.loader {
-  width: 60px;
-  height: 60px;
-  border: 5px solid rgba(67, 97, 238, 0.2);
-  border-top: 5px solid var(--primary);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
+      .loader {
+        width: 60px;
+        height: 60px;
+        border: 5px solid rgba(67, 97, 238, 0.2);
+        border-top: 5px solid var(--primary);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
       
       /* Hero Section */
       #hero {
@@ -244,139 +311,136 @@
         }
       }
 
-
       @media (max-width: 480px) {
-  section {
-    padding: 40px 0;
-  }
+        section {
+          padding: 40px 0;
+        }
 
-  .cta-buttons {
-    flex-direction: column;
-    gap: 12px;
-  }
+        .cta-buttons {
+          flex-direction: column;
+          gap: 12px;
+        }
 
-  .btn {
-    width: 100%;
-    justify-content: center;
-  }
-}
+        .btn {
+          width: 100%;
+          justify-content: center;
+        }
+      }
 
       /* About Section */
-/* About Section */
-#about {
-  background: #f1f5f9;
-}
-.dark-mode #about {
-  background: #1e293b;
-}
+      #about {
+        background: #f1f5f9;
+      }
+      .dark-mode #about {
+        background: #1e293b;
+      }
 
-.about-content {
-  display: flex;
-  gap: 40px;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
+      .about-content {
+        display: flex;
+        gap: 40px;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
 
-.about-img {
-  flex: 1;
-  text-align: center;
-}
+      .about-img {
+        flex: 1;
+        text-align: center;
+      }
 
-.about-img img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
+      .about-img img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        loading: lazy;
+      }
 
-.about-text {
-  flex: 1;
-}
+      .about-text {
+        flex: 1;
+      }
 
-.about-text h3 {
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  margin-bottom: 20px;
-}
+      .about-text h3 {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        margin-bottom: 20px;
+      }
 
-.about-text p {
-  margin-bottom: 20px;
-  font-size: clamp(1rem, 2.2vw, 1.1rem);
-  color: var(--gray);
-}
-.dark-mode .about-text p {
-  color: #cbd5e1;
-}
+      .about-text p {
+        margin-bottom: 20px;
+        font-size: clamp(1rem, 2.2vw, 1.1rem);
+        color: var(--gray);
+      }
+      .dark-mode .about-text p {
+        color: #cbd5e1;
+      }
 
-.about-info {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  margin: 25px 0;
-}
+      .about-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin: 25px 0;
+      }
 
-.info-item {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  font-size: clamp(0.9rem, 2vw, 1rem);
-}
-.info-item i {
-  color: var(--primary);
-  font-size: 1.2rem;
-}
+      .info-item {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        font-size: clamp(0.9rem, 2vw, 1rem);
+      }
+      .info-item i {
+        color: var(--primary);
+        font-size: 1.2rem;
+      }
 
-/* Skills Grid */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 20px;
-}
-@media (max-width: 480px) {
-  .skills-grid {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  }
-}
+      /* Skills Grid */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 20px;
+      }
+      @media (max-width: 480px) {
+        .skills-grid {
+          grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        }
+      }
 
+      .skill-box {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
 
-.skill-box {
-  background: white;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+      .skill-box:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 30px rgba(67, 97, 238, 0.15);
+      }
 
-.skill-box:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 30px rgba(67, 97, 238, 0.15);
-}
+      .skill-box i {
+        font-size: 2rem;
+        color: var(--primary);
+        margin-bottom: 15px;
+      }
 
-.skill-box i {
-  font-size: 2rem;
-  color: var(--primary);
-  margin-bottom: 15px;
-}
+      .skill-box h4 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
 
-.skill-box h4 {
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-  font-weight: 600;
-}
+      .skill-box p {
+        font-size: 0.95rem;
+        color: var(--gray);
+      }
 
-.skill-box p {
-  font-size: 0.95rem;
-  color: var(--gray);
-}
-
-.dark-mode .skill-box {
-  background: #334155;
-  color: #e2e8f0;
-}
-.dark-mode .skill-box p {
-  color: #cbd5e1;
-}
-
+      .dark-mode .skill-box {
+        background: #334155;
+        color: #e2e8f0;
+      }
+      .dark-mode .skill-box p {
+        color: #cbd5e1;
+      }
 
       /* Skills Section */
       .skills-filter {
@@ -514,6 +578,7 @@
         height: 100%;
         object-fit: cover;
         transition: var(--transition);
+        loading: lazy;
       }
 
       .project-card:hover .project-img img {
@@ -695,350 +760,347 @@
       }
 
       /* Contact Section */
+      #contact {
+        background: #f1f5f9;
+        padding: 80px 0;
+      }
 
+      .dark-mode #contact {
+        background: #1e293b;
+      }
 
-  /* Base styles remain the same */
-  #contact {
-    background: #f1f5f9;
-    padding: 80px 0;
-  }
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
 
-  .dark-mode #contact {
-    background: #1e293b;
-  }
+      .section-title h2 {
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+        margin-bottom: 15px;
+      }
 
-  .section-title {
-    text-align: center;
-    margin-bottom: 50px;
-  }
+      .section-title h2 span {
+        color: var(--primary);
+      }
 
-  .section-title h2 {
-    font-size: clamp(1.8rem, 5vw, 2.5rem);
-    margin-bottom: 15px;
-  }
+      .divider {
+        width: 80px;
+        height: 4px;
+        background: var(--primary);
+        margin: 0 auto 20px;
+        border-radius: 2px;
+      }
 
-  .section-title h2 span {
-    color: var(--primary);
-  }
+      .section-description {
+        max-width: 700px;
+        margin: 0 auto;
+        font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+        color: #64748b;
+        line-height: 1.6;
+      }
 
-  .divider {
-    width: 80px;
-    height: 4px;
-    background: var(--primary);
-    margin: 0 auto 20px;
-    border-radius: 2px;
-  }
+      .dark-mode .section-description {
+        color: #94a3b8;
+      }
 
-  .section-description {
-    max-width: 700px;
-    margin: 0 auto;
-    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-    color: #64748b;
-    line-height: 1.6;
-  }
+      .contact-container {
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap;
+      }
 
-  .dark-mode .section-description {
-    color: #94a3b8;
-  }
+      .contact-info {
+        flex: 1;
+        min-width: 300px;
+      }
 
-  .contact-container {
-    display: flex;
-    gap: 40px;
-    flex-wrap: wrap;
-  }
+      .contact-info h3 {
+        font-size: clamp(1.3rem, 4vw, 1.8rem);
+        margin-bottom: 25px;
+        color: var(--dark);
+      }
 
-  .contact-info {
-    flex: 1;
-    min-width: 300px;
-  }
+      .dark-mode .contact-info h3 {
+        color: #f8fafc;
+      }
 
-  .contact-info h3 {
-    font-size: clamp(1.3rem, 4vw, 1.8rem);
-    margin-bottom: 25px;
-    color: var(--dark);
-  }
+      .contact-method {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 25px;
+      }
 
-  .dark-mode .contact-info h3 {
-    color: #f8fafc;
-  }
+      .contact-icon {
+        width: 50px;
+        height: 50px;
+        background: var(--primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.2rem;
+        flex-shrink: 0;
+      }
 
-  .contact-method {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    margin-bottom: 25px;
-  }
+      .contact-details h4 {
+        font-size: clamp(1rem, 3vw, 1.1rem);
+        margin-bottom: 5px;
+        color: var(--dark);
+      }
 
-  .contact-icon {
-    width: 50px;
-    height: 50px;
-    background: var(--primary);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.2rem;
-    flex-shrink: 0;
-  }
+      .dark-mode .contact-details h4 {
+        color: #f8fafc;
+      }
 
-  .contact-details h4 {
-    font-size: clamp(1rem, 3vw, 1.1rem);
-    margin-bottom: 5px;
-    color: var(--dark);
-  }
+      .contact-details p,
+      .contact-details a {
+        font-size: clamp(0.9rem, 2.5vw, 1rem);
+        color: #64748b;
+        line-height: 1.6;
+        text-decoration: none;
+        transition: var(--transition);
+      }
 
-  .dark-mode .contact-details h4 {
-    color: #f8fafc;
-  }
+      .dark-mode .contact-details p,
+      .dark-mode .contact-details a {
+        color: #94a3b8;
+      }
 
-  .contact-details p,
-  .contact-details a {
-    font-size: clamp(0.9rem, 2.5vw, 1rem);
-    color: #64748b;
-    line-height: 1.6;
-    text-decoration: none;
-    transition: var(--transition);
-  }
+      .contact-details a:hover {
+        color: var(--primary);
+      }
 
-  .dark-mode .contact-details p,
-  .dark-mode .contact-details a {
-    color: #94a3b8;
-  }
+      .meeting-link {
+        color: var(--primary);
+        font-weight: 500;
+        text-decoration: underline;
+      }
 
-  .contact-details a:hover {
-    color: var(--primary);
-  }
+      .social-title {
+        margin-top: 40px !important;
+      }
 
-  .meeting-link {
-    color: var(--primary);
-    font-weight: 500;
-    text-decoration: underline;
-  }
+      .social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+      }
 
-  .social-title {
-    margin-top: 40px !important;
-  }
+      .social-link {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: #e2e8f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--dark);
+        font-size: 1.2rem;
+        transition: var(--transition);
+      }
 
-  .social-links {
-    display: flex;
-    gap: 15px;
-    margin-top: 20px;
-    flex-wrap: wrap;
-  }
+      .dark-mode .social-link {
+        background: #334155;
+        color: #e2e8f0;
+      }
 
-  .social-link {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background: #e2e8f0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--dark);
-    font-size: 1.2rem;
-    transition: var(--transition);
-  }
+      .social-link:hover {
+        background: var(--primary);
+        color: white;
+        transform: translateY(-5px);
+      }
 
-  .dark-mode .social-link {
-    background: #334155;
-    color: #e2e8f0;
-  }
+      .contact-form {
+        flex: 1;
+        min-width: 300px;
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      }
 
-  .social-link:hover {
-    background: var(--primary);
-    color: white;
-    transform: translateY(-5px);
-  }
+      .dark-mode .contact-form {
+        background: #1e293b;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+      }
 
-  .contact-form {
-    flex: 1;
-    min-width: 300px;
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-  }
+      .form-group {
+        margin-bottom: 20px;
+      }
 
-  .dark-mode .contact-form {
-    background: #1e293b;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-  }
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        font-size: clamp(0.95rem, 2vw, 1rem);
+        color: var(--dark);
+      }
 
-  .form-group {
-    margin-bottom: 20px;
-  }
+      .dark-mode .form-group label {
+        color: #f8fafc;
+      }
 
-  .form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-    font-size: clamp(0.95rem, 2vw, 1rem);
-    color: var(--dark);
-  }
+      .form-control {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        font-family: "Poppins", sans-serif;
+        font-size: clamp(0.95rem, 2vw, 1rem);
+        transition: var(--transition);
+      }
 
-  .dark-mode .form-group label {
-    color: #f8fafc;
-  }
+      .dark-mode .form-control {
+        background: #0f172a;
+        border-color: #334155;
+        color: #e2e8f0;
+      }
 
-  .form-control {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    font-family: "Poppins", sans-serif;
-    font-size: clamp(0.95rem, 2vw, 1rem);
-    transition: var(--transition);
-  }
+      .form-control:focus {
+        border-color: var(--primary);
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+      }
 
-  .dark-mode .form-control {
-    background: #0f172a;
-    border-color: #334155;
-    color: #e2e8f0;
-  }
+      textarea.form-control {
+        min-height: 150px;
+        resize: vertical;
+      }
 
-  .form-control:focus {
-    border-color: var(--primary);
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
-  }
+      .submit-btn {
+        width: 100%;
+        padding: 12px;
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-family: "Poppins", sans-serif;
+        font-size: clamp(0.95rem, 2vw, 1rem);
+        font-weight: 500;
+        cursor: pointer;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
 
-  textarea.form-control {
-    min-height: 150px;
-    resize: vertical;
-  }
+      .submit-btn:hover {
+        background: var(--primary-dark);
+      }
 
-  .submit-btn {
-    width: 100%;
-    padding: 12px;
-    background: var(--primary);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-family: "Poppins", sans-serif;
-    font-size: clamp(0.95rem, 2vw, 1rem);
-    font-weight: 500;
-    cursor: pointer;
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  }
+      .btn-icon {
+        display: flex;
+      }
 
-  .submit-btn:hover {
-    background: var(--primary-dark);
-  }
+      .consent-checkbox {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.9rem;
+        color: #64748b;
+      }
 
-  .btn-icon {
-    display: flex;
-  }
+      .dark-mode .consent-checkbox {
+        color: #94a3b8;
+      }
 
-  .consent-checkbox {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 0.9rem;
-    color: #64748b;
-  }
+      .consent-checkbox input {
+        min-width: 18px;
+        min-height: 18px;
+      }
 
-  .dark-mode .consent-checkbox {
-    color: #94a3b8;
-  }
+      .privacy-link {
+        color: var(--primary);
+        text-decoration: underline;
+      }
 
-  .consent-checkbox input {
-    min-width: 18px;
-    min-height: 18px;
-  }
+      #thankYouMessage {
+        display: none;
+        text-align: center;
+        padding: 20px;
+      }
 
-  .privacy-link {
-    color: var(--primary);
-    text-decoration: underline;
-  }
+      .success-icon {
+        font-size: 3rem;
+        color: #10b981;
+        margin-bottom: 20px;
+      }
 
-  #thankYouMessage {
-    display: none;
-    text-align: center;
-    padding: 20px;
-  }
+      #thankYouMessage h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: var(--dark);
+      }
 
-  .success-icon {
-    font-size: 3rem;
-    color: #10b981;
-    margin-bottom: 20px;
-  }
+      .dark-mode #thankYouMessage h3 {
+        color: #f8fafc;
+      }
 
-  #thankYouMessage h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: var(--dark);
-  }
+      .success-message {
+        font-size: 1rem;
+        color: #64748b;
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
 
-  .dark-mode #thankYouMessage h3 {
-    color: #f8fafc;
-  }
+      .dark-mode .success-message {
+        color: #94a3b8;
+      }
 
-  .success-message {
-    font-size: 1rem;
-    color: #64748b;
-    margin-bottom: 20px;
-    line-height: 1.6;
-  }
+      .back-btn {
+        padding: 10px 20px;
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-family: "Poppins", sans-serif;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: var(--transition);
+      }
 
-  .dark-mode .success-message {
-    color: #94a3b8;
-  }
+      .back-btn:hover {
+        background: var(--primary-dark);
+      }
 
-  .back-btn {
-    padding: 10px 20px;
-    background: var(--primary);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-family: "Poppins", sans-serif;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: var(--transition);
-  }
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .contact-container {
+          flex-direction: column;
+          gap: 30px;
+        }
+        
+        .contact-info, .contact-form {
+          width: 100%;
+        }
+        
+        .section-title {
+          margin-bottom: 30px;
+        }
+      }
 
-  .back-btn:hover {
-    background: var(--primary-dark);
-  }
-
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .contact-container {
-      flex-direction: column;
-      gap: 30px;
-    }
-    
-    .contact-info, .contact-form {
-      width: 100%;
-    }
-    
-    .section-title {
-      margin-bottom: 30px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    #contact {
-      padding: 60px 0;
-    }
-    
-    .contact-method {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    
-    .contact-icon {
-      margin-bottom: 10px;
-    }
-    
-    .social-links {
-      justify-content: center;
-    }
-  }
+      @media (max-width: 480px) {
+        #contact {
+          padding: 60px 0;
+        }
+        
+        .contact-method {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        
+        .contact-icon {
+          margin-bottom: 10px;
+        }
+        
+        .social-links {
+          justify-content: center;
+        }
+      }
       /* Footer */
       footer {
         background: var(--dark);
@@ -1297,47 +1359,46 @@
       }
 
       @media (max-width: 768px) {
-  .about-content {
-    flex-direction: column;
-    align-items: center;
-  }
+        .about-content {
+          flex-direction: column;
+          align-items: center;
+        }
 
-  .timeline::before {
-    left: 20px;
-  }
+        .timeline::before {
+          left: 20px;
+        }
 
-  .timeline-item {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 20px;
-  }
+        .timeline-item {
+          flex-direction: column;
+          align-items: flex-start;
+          margin-left: 20px;
+        }
 
-  .project-content {
-    padding: 15px;
-    text-align: center;
-  }
+        .project-content {
+          padding: 15px;
+          text-align: center;
+        }
 
-  .project-tags {
-    justify-content: center;
-  }
-}
+        .project-tags {
+          justify-content: center;
+        }
+      }
 
-.btn {
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
-}
+      .btn {
+        font-size: clamp(0.9rem, 2vw, 1.1rem);
+      }
 
-@media (max-width: 480px) {
-  .btn {
-    width: 100%;
-    justify-content: center;
-  }
+      @media (max-width: 480px) {
+        .btn {
+          width: 100%;
+          justify-content: center;
+        }
 
-  .skill-card h3,
-  .project-content h3 {
-    font-size: 1rem;
-  }
-}
-
+        .skill-card h3,
+        .project-content h3 {
+          font-size: 1rem;
+        }
+      }
     </style>
   </head>
 
@@ -1352,17 +1413,17 @@
   <div class="container nav-container">
     <div class="logo">Muzammil<span>.</span></div>
     <div class="nav-links" id="navLinks">
-      <a href="#hero">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#timeline">Timeline</a>
-      <a href="#contact">Contact</a>
+      <a href="#hero" aria-label="Home section">Home</a>
+      <a href="#about" aria-label="About section">About</a>
+      <a href="#skills" aria-label="Skills section">Skills</a>
+      <a href="#projects" aria-label="Projects section">Projects</a>
+      <a href="#timeline" aria-label="Timeline section">Timeline</a>
+      <a href="#contact" aria-label="Contact section">Contact</a>
     </div>
-    <button class="theme-toggle" id="themeToggle">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
       <i class="fas fa-moon"></i>
     </button>
-    <button class="mobile-menu-btn" id="mobileMenuBtn">
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Mobile menu toggle">
       <i class="fas fa-bars"></i>
     </button>
   </div>
@@ -1538,8 +1599,6 @@
     gap: 10px;
   }
 }
-
-
 </style>
 
 <script>
@@ -1627,18 +1686,17 @@
             Computer Science Undergraduate | Web Developer | Network Enthusiast
           </p>
           <div class="cta-buttons">
-            <a href="#contact" class="btn btn-primary"
-              >Hire Me <i class="fas fa-arrow-right"></i
-            ></a>
-            <a href="Muhammad_Muzammil_Resume.pdf" class="btn btn-outline" download>
-  Download Resume <i class="fas fa-download"></i>
-</a>
-
+            <a href="#contact" class="btn btn-primary" aria-label="Hire me button">
+              Hire Me <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="Muhammad_Muzammil_Resume.pdf" class="btn btn-outline" download aria-label="Download resume button">
+              Download Resume <i class="fas fa-download"></i>
+            </a>
           </div>
         </div>
       </div>
       <div class="scroll-down">
-        <a href="#about"><i class="fas fa-chevron-down"></i></a>
+        <a href="#about" aria-label="Scroll to about section"><i class="fas fa-chevron-down"></i></a>
       </div>
     </section>
 
@@ -1653,14 +1711,18 @@
       <div class="about-img">
         <img
           src="profile.jpeg"
-          alt="Muhammad Muzammil"
+          alt="Muhammad Muzammil - Web Developer Portfolio Photo"
+          loading="lazy"
         />
       </div>
       <div class="about-text">
-        <h3>Web Developer </h3>
+        <h3>Web Developer & Computer Science Student</h3>
         <p>
-          Crafting responsive, modern websites and solving real-world problems with clean code.
-          Passionate about web dev, software engineering, and creative solutions.
+          I'm Muhammad Muzammil, a Computer Science student at KIET University in Karachi, 
+          specializing in web development and networking. With expertise in HTML, CSS, 
+          JavaScript, and C#, I create responsive, modern websites that solve real-world 
+          problems. My projects demonstrate my ability to combine technical skills with 
+          creative problem-solving.
         </p>
 
         <div class="about-info">
@@ -1674,7 +1736,7 @@
           </div>
           <div class="info-item">
             <i class="fab fa-linkedin"></i>
-            <a href="https://www.linkedin.com/in/muhammad-muzammil-7562bb316" target="_blank">
+            <a href="https://www.linkedin.com/in/muhammad-muzammil-7562bb316" target="_blank" rel="noopener noreferrer">
               LinkedIn Profile
             </a>
           </div>
@@ -1701,10 +1763,8 @@
             <h4>Networking</h4>
             <p>Packet Tracer simulations, IP addressing, and LAN/WAN concepts.</p>
           </div>
-        
-
+        </div>
       </div>
-    </div>
     </div>
   </div>
 </section>
@@ -1718,11 +1778,11 @@
         </div>
         
         <div class="skills-filter">
-  <button class="filter-btn active" data-filter="all">All</button>
-  <button class="filter-btn" data-filter="frontend">Frontend</button>
-  <button class="filter-btn" data-filter="backend">Backend</button>
-  <button class="filter-btn" data-filter="database">Database</button>
-</div>
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="frontend">Frontend</button>
+          <button class="filter-btn" data-filter="backend">Backend</button>
+          <button class="filter-btn" data-filter="database">Database</button>
+        </div>
 
         <div class="skills-grid">
           <div class="skill-card"  data-category="frontend" >
@@ -1785,17 +1845,18 @@
           <div class="divider"></div>
         </div>
         <div class="projects-filter">
-  <button class="filter-btn active" data-filter="all">All</button>
-  <button class="filter-btn" data-filter="web">Web</button>
-  <button class="filter-btn" data-filter="software">Software</button>
-  <button class="filter-btn" data-filter="network">Network</button>
-</div>
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn" data-filter="software">Software</button>
+          <button class="filter-btn" data-filter="network">Network</button>
+        </div>
         <div class="projects-grid">
-          <div class="project-card" data-category="Web">
+          <div class="project-card" data-category="web">
             <div class="project-img">
               <img
                 src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
-                alt="Quiz Application"
+                alt="Quiz Application project screenshot"
+                loading="lazy"
               />
             </div>
             <div class="project-content">
@@ -1810,14 +1871,15 @@
                 <span class="project-tag">JavaScript</span>
                 <span class="project-tag">API</span>
               </div>
-              <a href="https://muhmmad-muzammil.github.io/Quiz-Application/" class="project-btn">View Details</a>
+              <a href="https://muhmmad-muzammil.github.io/Quiz-Application/" class="project-btn" aria-label="View Quiz Application project">View Details</a>
             </div>
           </div>
-          <div class="project-card" data-category="Web">
+          <div class="project-card" data-category="web">
             <div class="project-img">
               <img
                 src="https://images.unsplash.com/photo-1601134467661-3d775b999c8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1675&q=80"
-                alt="Weather App"
+                alt="Weather App project screenshot"
+                loading="lazy"
               />
             </div>
             <div class="project-content">
@@ -1832,14 +1894,15 @@
                 <span class="project-tag">JavaScript</span>
                 <span class="project-tag">API</span>
               </div>
-              <a href="https://muhmmad-muzammil.github.io/Weather-App/" class="project-btn">View Details</a>
+              <a href="https://muhmmad-muzammil.github.io/Weather-App/" class="project-btn" aria-label="View Weather App project">View Details</a>
             </div>
           </div>
           <div class="project-card" data-category="software">
             <div class="project-img">
               <img
                 src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
-                alt="Restaurant Management System"
+                alt="Restaurant Management System project screenshot"
+                loading="lazy"
               />
             </div>
             <div class="project-content">
@@ -1853,14 +1916,15 @@
                 <span class="project-tag">OOP</span>
                 <span class="project-tag">Software Engineering</span>
               </div>
-              <a href="#" class="project-btn">View Details</a>
+              <a href="#" class="project-btn" aria-label="View Restaurant Management System project">View Details</a>
             </div>
           </div>
           <div class="project-card" data-category="software">
             <div class="project-img">
               <img
                 src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
-                alt="AI-Powered Maze Solver"
+                alt="AI-Powered Maze Solver project screenshot"
+                loading="lazy"
               />
             </div>
             <div class="project-content">
@@ -1874,14 +1938,15 @@
                 <span class="project-tag">AI</span>
                 <span class="project-tag">Algorithms</span>
               </div>
-              <a href="https://github.com/Muhmmad-Muzammil/Maze_Solver" class="project-btn">View Details</a>
+              <a href="https://github.com/Muhmmad-Muzammil/Maze_Solver" class="project-btn" aria-label="View AI-Powered Maze Solver project">View Details</a>
             </div>
           </div>
           <div class="project-card" data-category="software">
             <div class="project-img">
               <img
                 src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
-                alt="Salary Management System"
+                alt="Salary Management System project screenshot"
+                loading="lazy"
               />
             </div>
             <div class="project-content">
@@ -1895,14 +1960,15 @@
                 <span class="project-tag">OOP</span>
                 <span class="project-tag">WinForms</span>
               </div>
-              <a href="#" class="project-btn">View Details</a>
+              <a href="#" class="project-btn" aria-label="View Salary Management System project">View Details</a>
             </div>
           </div>
           <div class="project-card" data-category="network">
             <div class="project-img">
               <img
                 src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1700&q=80"
-                alt="Hotel Management System Network"
+                alt="Hotel Management System Network project screenshot"
+                loading="lazy"
               />
             </div>
             <div class="project-content">
@@ -1916,7 +1982,7 @@
                 <span class="project-tag">Cisco</span>
                 <span class="project-tag">Packet Tracer</span>
               </div>
-              <a href="https://www.linkedin.com/posts/muhammad-muzammil-7562bb316_project-ppt-report-activity-7333920646256594946-8ZX5?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFAigXIBiQG4KzhjHx1KE2Wg9a-reXXY5kg" class="project-btn">View Details</a>
+              <a href="https://www.linkedin.com/posts/muhammad-muzammil-7562bb316_project-ppt-report-activity-7333920646256594946-8ZX5?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFAigXIBiQG4KzhjHx1KE2Wg9a-reXXY5kg" class="project-btn" aria-label="View Hotel Management Network project">View Details</a>
             </div>
           </div>
         </div>
@@ -1981,10 +2047,10 @@
           
           <!-- Buttons -->
           <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
-            <a href="https://muhmmad-muzammil.github.io/CareerPath-AI/" class="flex-1 py-2.5 sm:py-3.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white rounded-lg font-semibold text-sm sm:text-base transition-all flex items-center justify-center shadow-md hover:shadow-lg">
+            <a href="https://muhmmad-muzammil.github.io/CareerPath-AI/" class="flex-1 py-2.5 sm:py-3.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white rounded-lg font-semibold text-sm sm:text-base transition-all flex items-center justify-center shadow-md hover:shadow-lg" aria-label="View CareerPath AI live demo">
               <i class="fas fa-eye mr-2 sm:mr-2.5 text-xs sm:text-sm"></i> Live Demo
             </a>
-            <button onclick="openProjectDetails()" class="flex-1 py-2.5 sm:py-3.5 border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 rounded-lg font-semibold text-sm sm:text-base transition-all flex items-center justify-center">
+            <button onclick="openProjectDetails()" class="flex-1 py-2.5 sm:py-3.5 border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 rounded-lg font-semibold text-sm sm:text-base transition-all flex items-center justify-center" aria-label="View CareerPath AI project details">
               <i class="fas fa-info-circle mr-2 sm:mr-2.5 text-xs sm:text-sm"></i> Details
             </button>
           </div>
@@ -2046,7 +2112,6 @@
 </section>
 
 <!-- Project Details Modal -->
-<!-- Project Details Modal - Original Content with Custom Scrollbar Only -->
 <div id="projectDetailsModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-start justify-center p-4 pt-20" data-no-dark-mode>
   <div class="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[80vh] overflow-y-auto custom-scrollbar">
     <div class="p-4 sm:p-6">
@@ -2055,7 +2120,7 @@
           <h3 class="text-xl sm:text-2xl font-bold text-gray-800">CareerPath AI - Project Details</h3>
           <p class="text-indigo-600 text-sm sm:text-base font-medium">Complete Technical Specifications</p>
         </div>
-        <button onclick="closeProjectDetails()" class="text-gray-400 hover:text-gray-600">
+        <button onclick="closeProjectDetails()" class="text-gray-400 hover:text-gray-600" aria-label="Close project details">
           <i class="fas fa-times text-xl sm:text-2xl"></i>
         </button>
       </div>
@@ -2179,7 +2244,7 @@
       </div>
       
       <div class="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200">
-        <button onclick="closeProjectDetails()" class="w-full py-2.5 sm:py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold text-sm sm:text-base transition-all">
+        <button onclick="closeProjectDetails()" class="w-full py-2.5 sm:py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold text-sm sm:text-base transition-all" aria-label="Close project details">
           Close Details
         </button>
       </div>
@@ -2264,9 +2329,7 @@
   [data-no-dark-mode] .bg-indigo-50 {
     background-color: #eef2ff !important;
   }
-
 </style>
-
 
     <!-- Timeline Section -->
     <section id="timeline">
@@ -2282,18 +2345,18 @@
               <div class="timeline-subtitle">
                 Karachi Institute of Economics and Technology (KIET)
               </div>
-              <p>Majors: Web Development, Networking</p>
+              <p>Majors: Web Development, Networking. Currently pursuing my degree with a focus on modern web technologies and computer networking principles.</p>
               <div class="timeline-date">2020 - Present</div>
             </div>
             <div class="timeline-dot"></div>
           </div>
           <div class="timeline-item">
             <div class="timeline-content">
-              <h3>Fresher</h3>
-              <div class="timeline-subtitle">Seeking Opportunities</div>
+              <h3>Fresher Seeking Opportunities</h3>
+              <div class="timeline-subtitle">Web Development & Networking</div>
               <p>
                 Actively looking for internship and job opportunities to apply
-                my skills and gain professional experience.
+                my skills and gain professional experience in web development and networking.
               </p>
               <div class="timeline-date">Present</div>
             </div>
@@ -2309,7 +2372,7 @@
     <div class="section-title">
       <h2>Get In <span>Touch</span></h2>
       <div class="divider"></div>
-      <p class="section-description">Have a project in mind or want to discuss potential opportunities? Reach out and let's start a conversation.</p>
+      <p class="section-description">Have a project in mind or want to discuss potential opportunities? Reach out and let's start a conversation about web development, networking, or software engineering.</p>
     </div>
     <div class="contact-container">
       <div class="contact-info">
@@ -2332,7 +2395,7 @@
           <div class="contact-details">
             <h4>Email</h4>
             <p>
-              <a href="mailto:hello@example.com">muzammil.thedeveloper@gmail.com</a><br>
+              <a href="mailto:muzammil.thedeveloper@gmail.com">muzammil.thedeveloper@gmail.com</a><br>
             </p>
           </div>
         </div>
@@ -2344,8 +2407,8 @@
           <div class="contact-details">
             <h4>Phone</h4>
             <p>
-              <a href="tel:+11234567890">+92 (317) 285-5256</a><br>
-              <a href="tel:+19876543210">+92 (317) 644-2334</a>
+              <a href="tel:+923172855256">+92 (317) 285-5256</a><br>
+              <a href="tel:+923176442334">+92 (317) 644-2334</a>
             </p>
           </div>
         </div>
@@ -2376,16 +2439,17 @@
           </div>
         </div>
         
-        <h3 class="social-title">Connect With Us</h3>
+        <h3 class="social-title">Connect With Me</h3>
         <div class="social-links">
-          <a href="https://www.linkedin.com/in/muhammad-muzammil-7562bb316/" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://x.com/MTheDeveloper" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="https://github.com/Muhmmad-Muzammil" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
-         <a href="https://www.instagram.com/muzammil.thedeveloper/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-<a href="https://www.facebook.com/profile.php?id=61550242382522" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a></div>
+          <a href="https://www.linkedin.com/in/muhammad-muzammil-7562bb316/" class="social-link" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://x.com/MTheDeveloper" class="social-link" aria-label="Twitter profile"><i class="fab fa-twitter"></i></a>
+          <a href="https://github.com/Muhmmad-Muzammil" class="social-link" aria-label="GitHub profile"><i class="fab fa-github"></i></a>
+          <a href="https://www.instagram.com/muzammil.thedeveloper/" class="social-link" aria-label="Instagram profile" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61550242382522" class="social-link" aria-label="Facebook profile" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+        </div>
       </div>
       
-       <div class="contact-form">
+      <div class="contact-form">
         <form id="contactForm">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
@@ -2430,7 +2494,7 @@
             </div>
           </div>
           
-          <button type="submit" class="submit-btn" id="submitBtn">
+          <button type="submit" class="submit-btn" id="submitBtn" aria-label="Send message">
             <span class="btn-text">Send Message</span>
             <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
           </button>
@@ -2441,8 +2505,8 @@
             <i class="fas fa-check-circle"></i>
           </div>
           <h3>Thank you, <span id="userName"></span>!</h3>
-          <p class="success-message">Your message has been sent successfully. We'll get back to you within 24 hours.</p>
-          <button class="back-btn" id="backBtn">Send another message</button>
+          <p class="success-message">Your message has been sent successfully. I'll get back to you within 24 hours.</p>
+          <button class="back-btn" id="backBtn" aria-label="Send another message">Send another message</button>
         </div>
       </div>
     </div>
@@ -2542,25 +2606,19 @@
             <h3>Quick Links</h3>
             <ul class="footer-links">
               <li>
-                <a href="#hero"><i class="fas fa-chevron-right"></i> Home</a>
+                <a href="#hero" aria-label="Home section"><i class="fas fa-chevron-right"></i> Home</a>
               </li>
               <li>
-                <a href="#about"><i class="fas fa-chevron-right"></i> About</a>
+                <a href="#about" aria-label="About section"><i class="fas fa-chevron-right"></i> About</a>
               </li>
               <li>
-                <a href="#skills"
-                  ><i class="fas fa-chevron-right"></i> Skills</a
-                >
+                <a href="#skills" aria-label="Skills section"><i class="fas fa-chevron-right"></i> Skills</a>
               </li>
               <li>
-                <a href="#projects"
-                  ><i class="fas fa-chevron-right"></i> Projects</a
-                >
+                <a href="#projects" aria-label="Projects section"><i class="fas fa-chevron-right"></i> Projects</a>
               </li>
               <li>
-                <a href="#contact"
-                  ><i class="fas fa-chevron-right"></i> Contact</a
-                >
+                <a href="#contact" aria-label="Contact section"><i class="fas fa-chevron-right"></i> Contact</a>
               </li>
             </ul>
           </div>
@@ -2568,37 +2626,38 @@
             <h3>Contact Info</h3>
             <ul class="footer-links">
               <li>
-                <a href="muzammil.thedeveloper@gmail.com"
-                  ><i class="fas fa-envelope"></i>
-                  muzammil.thedeveloper@gmail.com</a
-                >
+                <a href="mailto:muzammil.thedeveloper@gmail.com" aria-label="Email address">
+                  <i class="fas fa-envelope"></i> muzammil.thedeveloper@gmail.com
+                </a>
               </li>
               <li>
-                <a href="+923176442334"><i class="fas fa-phone"></i> 0317-6442334</a>
+                <a href="tel:+923176442334" aria-label="Phone number"><i class="fas fa-phone"></i> 0317-6442334</a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/in/muhammad-muzammil-7562bb316/"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
+                <a href="https://www.linkedin.com/in/muhammad-muzammil-7562bb316/" aria-label="LinkedIn profile"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
               </li>
             </ul>
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2023 Muhammad Muzammil. All Rights Reserved.</p>
+          <p>&copy; <span id="currentYear"></span> Muhammad Muzammil. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
 
     <!-- Scroll to Top Button -->
-    
+    <div class="scroll-top" aria-label="Scroll to top">
+      <i class="fas fa-arrow-up"></i>
+    </div>
 
     <div class="chatbox-container">
-      <button class="chatbox-toggle-btn">
+      <button class="chatbox-toggle-btn" aria-label="Open chat">
         <i class="fas fa-comment-dots"></i>
       </button>
       <div class="chatbox-window">
         <div class="chatbox-header">
           <h3>Let's Chat!</h3>
-          <button class="chatbox-close-btn">
+          <button class="chatbox-close-btn" aria-label="Close chat">
             <i class="fas fa-times"></i>
           </button>
         </div>
@@ -2609,8 +2668,8 @@
           </div>
         </div>
         <div class="chatbox-input-area">
-          <textarea placeholder="Type your message here..." rows="1"></textarea>
-          <button class="chatbox-send-btn">
+          <textarea placeholder="Type your message here..." rows="1" aria-label="Chat message input"></textarea>
+          <button class="chatbox-send-btn" aria-label="Send message">
             <i class="fas fa-paper-plane"></i>
           </button>
         </div>
@@ -3117,50 +3176,25 @@ document.addEventListener("DOMContentLoaded", function () {
   setupFilter("#skills", ".skill-card", ".skills-filter .filter-btn");
   setupFilter("#projects", ".project-card", ".projects-filter .filter-btn");
 
-  // ==================== Chart Functionality ====================
-  const ctx = document.getElementById("skillChart");
-  if (ctx) {
-    new Chart(ctx, {
-      type: "radar",
-      data: {
-        labels: ["HTML/CSS", "JavaScript", "SQL", "OOP (C#)"],
-        datasets: [
-          {
-            label: "Skill Level",
-            data: [90, 85, 80, 75],
-            backgroundColor: "rgba(67, 97, 238, 0.2)",
-            borderColor: "#4361ee",
-            borderWidth: 2,
-            pointBackgroundColor: "#4361ee",
-          },
-        ],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-          r: {
-            angleLines: { display: false },
-            suggestedMin: 0,
-            suggestedMax: 100,
-            ticks: {
-              stepSize: 20,
-              color: "#94a3b8",
-            },
-            pointLabels: {
-              color: "#334155",
-            },
-            grid: {
-              color: "rgba(0,0,0,0.1)",
-            },
-          },
-        },
-        plugins: {
-          legend: { display: false },
-        },
-      },
+  // ==================== Scroll to Top Button ====================
+  const scrollTopBtn = document.querySelector(".scroll-top");
+  window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 300) {
+      scrollTopBtn.classList.add("active");
+    } else {
+      scrollTopBtn.classList.remove("active");
+    }
+  });
+
+  scrollTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
     });
-  }
+  });
+
+  // ==================== Current Year in Footer ====================
+  document.getElementById("currentYear").textContent = new Date().getFullYear();
 });
 </script>
    
@@ -3220,6 +3254,4 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 </script>
 </body>
-
-  
 </html>
