@@ -3253,6 +3253,17 @@ document.addEventListener("DOMContentLoaded", function () {
       preloader.style.display = 'none';
     }, 500); // This should match your transition duration
   });
+
+
+  // Current loading state
+submitBtn.disabled = true;
+btnText.textContent = "Sending...";
+btnIcon.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+
+// Reset on error
+submitBtn.disabled = false;
+btnText.textContent = "Send Message";
+btnIcon.innerHTML = '<i class="fas fa-paper-plane"></i>';
 </script>
 </body>
 </html>
