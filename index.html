@@ -2513,8 +2513,8 @@
     </div>
   </div>
 </section>
-    <!-- In your contact form section, replace the existing script with this: -->
-<script>
+
+    <script>
   document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("contactForm");
     const submitBtn = document.getElementById("submitBtn");
@@ -2541,31 +2541,29 @@
         // Add required FormSubmit.co parameters
         formObject._captcha = "false";
         formObject._template = "table";
-        formObject._next = "javascript:void(0)"; // Keep this as is for now
+        formObject._next = "javascript:void(0)";
         
         const name = formData.get("name");
         
         console.log("Submitting form data:", formObject);
         
-        // Send to FormSubmit
-        // Alternative using EmailJS (requires setup at https://www.emailjs.com/)
-function sendEmailWithEmailJS(formData) {
-  emailjs.send('your_service_id', 'your_template_id', formObject)
-    .then(function(response) {
-      console.log('SUCCESS!', response.status, response.text);
-      // Show success message
-    }, function(error) {
-      console.log('FAILED...', error);
-      // Show error message
-    });
-}
+        // Send to FormSubmit.co
+        const response = await fetch("https://formsubmit.co/ajax/muzammil.thedeveloper@gmail.com", {
+          method: "POST",
+          headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(formObject)
+        });
+        
         const data = await response.json();
         console.log("Form submission response:", data);
 
         if (response.ok && data.success === "true") {
           // Success - show thank you message
           form.style.display = "none";
-          userNameSpan.textContent = name.split(" ")[0]; // Show just first name
+          userNameSpan.textContent = name.split(" ")[0]; 
           thankYouMessage.style.display = "block";
         } else {
           throw new Error(data.message || 'Form submission failed');
@@ -2592,7 +2590,6 @@ function sendEmailWithEmailJS(formData) {
     });
   });
 </script>
-
     <!-- Footer -->
     <footer>
       <div class="container">
