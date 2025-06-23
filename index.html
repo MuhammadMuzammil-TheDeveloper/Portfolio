@@ -1,3257 +1,919 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Primary Meta Tags -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google-site-verification" content="Qv_vCZPk4ZoB3SRUv48jGTCpBck1rjJDMh1DCVARXXc" />
-    <title>Muhammad Muzammil | Web Developer & Computer Science Student Portfolio</title>
-    <meta name="description" content="Professional portfolio of Muhammad Muzammil - Computer Science student & web developer specializing in HTML, CSS, JavaScript, C#, and networking. View my projects and skills.">
-    <meta name="keywords" content="web developer portfolio, Muhammad Muzammil, HTML developer, CSS expert, JavaScript programmer, C# developer, Karachi web developer, computer science student">
-    <meta name="author" content="Muhammad Muzammil">
-    <meta name="robots" content="index, follow">
-
-    <!-- Open Graph / Facebook Meta Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://muhmmad-muzammil.github.io/Portfolio/">
-    <meta property="og:title" content="Muhammad Muzammil | Web Developer Portfolio">
-    <meta property="og:description" content="Professional portfolio of Muhammad Muzammil - Computer Science student & web developer specializing in modern web technologies.">
-    <meta property="og:image" content="https://muhmmad-muzammil.github.io/Portfolio/profile.jpeg">
-
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://muhmmad-muzammil.github.io/Portfolio/">
-    <meta name="twitter:title" content="Muhammad Muzammil | Web Developer Portfolio">
-    <meta name="twitter:description" content="Professional portfolio of Muhammad Muzammil - Computer Science student & web developer.">
-    <meta name="twitter:image" content="https://muhmmad-muzammil.github.io/Portfolio/profile.jpeg">
-    <meta name="twitter:creator" content="@MTheDeveloper">
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://muhmmad-muzammil.github.io/Portfolio/" />
-
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-
-    <!-- Preload Resources -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
-    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
-    <link rel="preload" href="profile.jpeg" as="image">
-
-    <!-- Fonts & Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Structured Data -->
-   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": "https://muhmmad-muzammil.github.io/Portfolio/#person",
-  "name": "Muhammad Muzammil",
-  "alternateName": "Muzammil.thedeveloper",
-  "jobTitle": "Web Developer & Tech Content Creator",
-  "image": "https://muhmmad-muzammil.github.io/Portfolio/profile.jpeg",
-  "url": "https://muhmmad-muzammil.github.io/Portfolio/",
-  "sameAs": [
-    "https://www.linkedin.com/in/muhammad-muzammil-7562bb316/",
-    "https://github.com/Muhmmad-Muzammil",
-    "https://www.instagram.com/muzammil.thedeveloper/"
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Karachi",
-    "addressRegion": "Sindh",
-    "addressCountry": "Pakistan"
-  },
-  "alumniOf": {
-    "@type": "EducationalOrganization",
-    "name": "Karachi Institute of Economics and Technology (KIET)"
-  },
-  "knowsAbout": [
-    "HTML", "CSS", "JavaScript", "C#", "SQL", "Web Development", "Computer Networking"
-  ],
-  "hasOccupation": {
-    "@type": "Occupation",
-    "name": "Web Developer",
-    "skills": "HTML, CSS, JavaScript, C#, SQL, Web Development, Networking"
-  }
-}
-</script>
-
-
-    <style>
-      :root {
-        --primary: #4361ee;
-        --primary-dark: #3a56d4;
-        --secondary: #7209b7;
-        --dark: #1e293b;
-        --light: #f8fafc;
-        --gray: #94a3b8;
-        --success: #10b981;
-        --danger: #ef4444;
-        --transition: all 0.3s ease;
-        --mobile-breakpoint: 768px;
-        --tablet-breakpoint: 992px;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        font-family: "Poppins", sans-serif;
-        background-color: var(--light);
-        color: var(--dark);
-        line-height: 1.6;
-        overflow-x: hidden;
-        position: relative;
-      }
-
-      body.dark-mode {
-        background-color: #0f172a;
-        color: #e2e8f0;
-      }
-
-      /* Section Styling */
-      section {
-        padding: 80px 0;
-      }
-
-      .section-title {
-        text-align: center;
-        margin-bottom: 60px;
-      }
-
-      .section-title h2 {
-        font-size: clamp(1.8rem, 5vw, 2.5rem);
-        font-weight: 700;
-        margin-bottom: 15px;
-      }
-
-      .section-title span {
-        color: var(--primary);
-      }
-
-      .section-title .divider {
-        height: 4px;
-        width: 80px;
-        background: var(--primary);
-        margin: 0 auto;
-        border-radius: 2px;
-      }
-
-      .container {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 15px;
-      }
-
-      /* Preloader */
-      #preloader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: var(--light);
-        z-index: 9999;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: opacity 0.5s, visibility 0.5s;
-      }
-
-      #preloader.loaded {
-        opacity: 0;
-        visibility: hidden;
-      }
-
-      #preloader.dark-mode {
-        background: var(--dark);
-      }
-
-      .loader {
-        width: 60px;
-        height: 60px;
-        border: 5px solid rgba(67, 97, 238, 0.2);
-        border-top: 5px solid var(--primary);
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-      }
-
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareerPath AI | Discover Your Ideal Career</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            },
+            secondary: {
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              300: '#cbd5e1',
+              400: '#94a3b8',
+              500: '#64748b',
+              600: '#475569',
+              700: '#334155',
+              800: '#1e293b',
+              900: '#0f172a',
+            },
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
+            }
+          }
         }
       }
-      
-      /* Hero Section */
-      #hero {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        position: relative;
-        overflow: hidden;
-        padding-top: 80px;
-      }
-
-      .hero-content {
-        text-align: center;
-        z-index: 2;
-        position: relative;
-        padding: 0 15px;
-      }
-
-      .hero-content h1 {
-        font-size: clamp(2rem, 7vw, 3.5rem);
-        font-weight: 700;
-        margin-bottom: 20px;
-        line-height: 1.2;
-      }
-
-      .hero-content h1 span {
-        color: var(--primary);
-      }
-
-      .hero-content p {
-        font-size: clamp(1rem, 3.5vw, 1.5rem);
-        color: var(--gray);
-        margin-bottom: 30px;
-        max-width: 700px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .dark-mode .hero-content p {
-        color: #94a3b8;
-      }
-
-      .cta-buttons {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        margin-top: 30px;
-        flex-wrap: wrap;
-      }
-
-      .btn {
-        padding: 12px 30px;
-        border-radius: 30px;
-        font-weight: 500;
-        text-decoration: none;
-        transition: var(--transition);
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        font-size: clamp(0.9rem, 3vw, 1rem);
-        white-space: nowrap;
-      }
-
-      .btn-primary {
-        background: var(--primary);
-        color: white;
-        box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
-      }
-
-      .btn-primary:hover {
-        background: var(--primary-dark);
-        transform: translateY(-3px);
-      }
-
-      .btn-outline {
-        border: 2px solid var(--primary);
-        color: var(--primary);
-      }
-
-      .btn-outline:hover {
-        background: var(--primary);
-        color: white;
-        transform: translateY(-3px);
-      }
-
-      .scroll-down {
-        position: absolute;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-        animation: bounce 2s infinite;
-      }
-
-      .scroll-down a {
-        color: var(--primary);
-        font-size: 2rem;
-      }
-
-      @keyframes bounce {
-        0%,
-        20%,
-        50%,
-        80%,
-        100% {
-          transform: translateY(0);
-        }
-        40% {
-          transform: translateY(-20px);
-        }
-        60% {
-          transform: translateY(-10px);
-        }
-      }
-
-      @media (max-width: 480px) {
-        section {
-          padding: 40px 0;
-        }
-
-        .cta-buttons {
-          flex-direction: column;
-          gap: 12px;
-        }
-
-        .btn {
-          width: 100%;
-          justify-content: center;
-        }
-      }
-
-      /* About Section */
-      #about {
-        background: #f1f5f9;
-      }
-      .dark-mode #about {
-        background: #1e293b;
-      }
-
-      .about-content {
-        display: flex;
-        gap: 40px;
-        align-items: flex-start;
-        flex-wrap: wrap;
-      }
-
-      .about-img {
-        flex: 1;
-        text-align: center;
-      }
-
-      .about-img img {
-        width: 100%;
-        max-width: 400px;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        loading: lazy;
-      }
-
-      .about-text {
-        flex: 1;
-      }
-
-      .about-text h3 {
-        font-size: clamp(1.5rem, 4vw, 2rem);
-        margin-bottom: 20px;
-      }
-
-      .about-text p {
-        margin-bottom: 20px;
-        font-size: clamp(1rem, 2.2vw, 1.1rem);
-        color: var(--gray);
-      }
-      .dark-mode .about-text p {
-        color: #cbd5e1;
-      }
-
-      .about-info {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 15px;
-        margin: 25px 0;
-      }
-
-      .info-item {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        font-size: clamp(0.9rem, 2vw, 1rem);
-      }
-      .info-item i {
-        color: var(--primary);
-        font-size: 1.2rem;
-      }
-
-      /* Skills Grid */
-      .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 20px;
-      }
-      @media (max-width: 480px) {
-        .skills-grid {
-          grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-        }
-      }
-
-      .skill-box {
-        background: white;
-        padding: 25px;
-        border-radius: 15px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .skill-box:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 10px 30px rgba(67, 97, 238, 0.15);
-      }
-
-      .skill-box i {
-        font-size: 2rem;
-        color: var(--primary);
-        margin-bottom: 15px;
-      }
-
-      .skill-box h4 {
-        font-size: 1.1rem;
-        margin-bottom: 10px;
-        font-weight: 600;
-      }
-
-      .skill-box p {
-        font-size: 0.95rem;
-        color: var(--gray);
-      }
-
-      .dark-mode .skill-box {
-        background: #334155;
-        color: #e2e8f0;
-      }
-      .dark-mode .skill-box p {
-        color: #cbd5e1;
-      }
-
-      /* Skills Section */
-      .skills-filter {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        margin-bottom: 40px;
-        flex-wrap: wrap;
-      }
-
-      .filter-btn {
-        padding: 8px 20px;
-        background: #e2e8f0;
-        border: none;
-        border-radius: 30px;
-        cursor: pointer;
-        transition: var(--transition);
-        font-weight: 500;
-        font-size: clamp(0.85rem, 2vw, 1rem);
-      }
-
-      .filter-btn.active {
-        background: var(--primary);
-        color: white;
-      }
-
-      .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 20px;
-      }
-
-      .skill-card {
-        background: white;
-        border-radius: 15px;
-        padding: 25px 15px;
-        text-align: center;
-        transition: var(--transition);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      }
-
-      .dark-mode .skill-card {
-        background: #1e293b;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      }
-
-      .skill-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(67, 97, 238, 0.2);
-      }
-
-      .skill-icon {
-        font-size: clamp(2rem, 5vw, 3rem);
-        margin-bottom: 15px;
-      }
-
-      .skill-icon.html {
-        color: #e34c26;
-      }
-      .skill-icon.css {
-        color: #264de4;
-      }
-      .skill-icon.js {
-        color: #f0db4f;
-      }
-      .skill-icon.bootstrap {
-        color: #563d7c;
-      }
-      .skill-icon.tailwind {
-        color: #38bdf8;
-      }
-      .skill-icon.csharp {
-        color: #239120;
-      }
-      .skill-icon.sql {
-        color: #00758f;
-      }
-      .skill-icon.oop {
-        color: #ff6b6b;
-      }
-
-      .skill-card h3 {
-        font-size: clamp(1rem, 3vw, 1.2rem);
-        font-weight: 600;
-      }
-
-      /* Projects Section */
-      #projects {
-        background: #f1f5f9;
-      }
-
-      .dark-mode #projects {
-        background: #1e293b;
-      }
-
-      .projects-filter {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        margin-bottom: 40px;
-        flex-wrap: wrap;
-      }
-
-      .projects-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 25px;
-      }
-
-      .project-card {
-        background: white;
-        border-radius: 15px;
-        overflow: hidden;
-        transition: var(--transition);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      }
-
-      .dark-mode .project-card {
-        background: #1e293b;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      }
-
-      .project-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(67, 97, 238, 0.2);
-      }
-
-      .project-img {
-        height: 200px;
-        overflow: hidden;
-      }
-
-      .project-img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: var(--transition);
-        loading: lazy;
-      }
-
-      .project-card:hover .project-img img {
-        transform: scale(1.1);
-      }
-
-      .project-content {
-        padding: 20px;
-      }
-
-      .project-content h3 {
-        font-size: clamp(1.1rem, 3vw, 1.3rem);
-        margin-bottom: 10px;
-      }
-
-      .project-content p {
-        color: var(--gray);
-        margin-bottom: 15px;
-        font-size: clamp(0.85rem, 2vw, 0.95rem);
-      }
-
-      .dark-mode .project-content p {
-        color: #94a3b8;
-      }
-
-      .project-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-bottom: 20px;
-      }
-
-      .project-tag {
-        background: #e2e8f0;
-        color: var(--dark);
-        padding: 5px 12px;
-        border-radius: 20px;
-        font-size: clamp(0.75rem, 2vw, 0.8rem);
-        font-weight: 500;
-      }
-
-      .dark-mode .project-tag {
-        background: #334155;
-        color: #e2e8f0;
-      }
-
-      .project-btn {
-        display: block;
-        width: 100%;
-        padding: 10px;
-        background: var(--primary);
-        color: white;
-        text-align: center;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: 500;
-        transition: var(--transition);
-        font-size: clamp(0.9rem, 2vw, 1rem);
-      }
-
-      .project-btn:hover {
-        background: var(--primary-dark);
-      }
-      
-
-      /* Timeline Section */
-      .timeline {
-        position: relative;
-        max-width: 800px;
-        margin: 0 auto;
-      }
-
-      .timeline::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 4px;
-        background: var(--primary);
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
-      .timeline-item {
-        display: flex;
-        margin-bottom: 50px;
-        position: relative;
-      }
-
-      .timeline-item:nth-child(even) {
-        flex-direction: row-reverse;
-      }
-
-      .timeline-content {
-        width: calc(50% - 40px);
-        padding: 20px;
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        position: relative;
-      }
-
-      .dark-mode .timeline-content {
-        background: #1e293b;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      }
-
-      .timeline-content::before {
-        content: "";
-        position: absolute;
-        top: 20px;
-        width: 0;
-        height: 0;
-        border-style: solid;
-      }
-
-      .timeline-item:nth-child(odd) .timeline-content::before {
-        right: -20px;
-        border-width: 10px 0 10px 20px;
-        border-color: transparent transparent transparent white;
-      }
-
-      .dark-mode .timeline-item:nth-child(odd) .timeline-content::before {
-        border-color: transparent transparent transparent #1e293b;
-      }
-
-      .timeline-item:nth-child(even) .timeline-content::before {
-        left: -20px;
-        border-width: 10px 20px 10px 0;
-        border-color: transparent white transparent transparent;
-      }
-
-      .dark-mode .timeline-item:nth-child(even) .timeline-content::before {
-        border-color: transparent #1e293b transparent transparent;
-      }
-
-      .timeline-dot {
-        position: absolute;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background: var(--primary);
-        border: 4px solid white;
-        z-index: 1;
-      }
-
-      .dark-mode .timeline-dot {
-        border-color: #0f172a;
-      }
-
-      .timeline-content h3 {
-        font-size: clamp(1rem, 3vw, 1.2rem);
-        margin-bottom: 5px;
-      }
-
-      .timeline-content .timeline-subtitle {
-        color: var(--primary);
-        font-weight: 600;
-        margin-bottom: 10px;
-        font-size: clamp(0.9rem, 2.5vw, 1rem);
-      }
-
-      .timeline-content p {
-        color: var(--gray);
-        font-size: clamp(0.85rem, 2vw, 0.95rem);
-      }
-
-      .dark-mode .timeline-content p {
-        color: #94a3b8;
-      }
-
-      .timeline-content .timeline-date {
-        color: var(--gray);
-        font-size: clamp(0.8rem, 2vw, 0.85rem);
-        font-style: italic;
-      }
-
-      /* Contact Section */
-      #contact {
-        background: #f1f5f9;
-        padding: 80px 0;
-      }
-
-      .dark-mode #contact {
-        background: #1e293b;
-      }
-
-      .section-title {
-        text-align: center;
-        margin-bottom: 50px;
-      }
-
-      .section-title h2 {
-        font-size: clamp(1.8rem, 5vw, 2.5rem);
-        margin-bottom: 15px;
-      }
-
-      .section-title h2 span {
-        color: var(--primary);
-      }
-
-      .divider {
-        width: 80px;
-        height: 4px;
-        background: var(--primary);
-        margin: 0 auto 20px;
-        border-radius: 2px;
-      }
-
-      .section-description {
-        max-width: 700px;
-        margin: 0 auto;
-        font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-        color: #64748b;
-        line-height: 1.6;
-      }
-
-      .dark-mode .section-description {
-        color: #94a3b8;
-      }
-
-      .contact-container {
-        display: flex;
-        gap: 40px;
-        flex-wrap: wrap;
-      }
-
-      .contact-info {
-        flex: 1;
-        min-width: 300px;
-      }
-
-      .contact-info h3 {
-        font-size: clamp(1.3rem, 4vw, 1.8rem);
-        margin-bottom: 25px;
-        color: var(--dark);
-      }
-
-      .dark-mode .contact-info h3 {
-        color: #f8fafc;
-      }
-
-      .contact-method {
-        display: flex;
-        align-items: flex-start;
-        gap: 15px;
-        margin-bottom: 25px;
-      }
-
-      .contact-icon {
-        width: 50px;
-        height: 50px;
-        background: var(--primary);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 1.2rem;
-        flex-shrink: 0;
-      }
-
-      .contact-details h4 {
-        font-size: clamp(1rem, 3vw, 1.1rem);
-        margin-bottom: 5px;
-        color: var(--dark);
-      }
-
-      .dark-mode .contact-details h4 {
-        color: #f8fafc;
-      }
-
-      .contact-details p,
-      .contact-details a {
-        font-size: clamp(0.9rem, 2.5vw, 1rem);
-        color: #64748b;
-        line-height: 1.6;
-        text-decoration: none;
-        transition: var(--transition);
-      }
-
-      .dark-mode .contact-details p,
-      .dark-mode .contact-details a {
-        color: #94a3b8;
-      }
-
-      .contact-details a:hover {
-        color: var(--primary);
-      }
-
-      .meeting-link {
-        color: var(--primary);
-        font-weight: 500;
-        text-decoration: underline;
-      }
-
-      .social-title {
-        margin-top: 40px !important;
-      }
-
-      .social-links {
-        display: flex;
-        gap: 15px;
-        margin-top: 20px;
-        flex-wrap: wrap;
-      }
-
-      .social-link {
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        background: #e2e8f0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--dark);
-        font-size: 1.2rem;
-        transition: var(--transition);
-      }
-
-      .dark-mode .social-link {
-        background: #334155;
-        color: #e2e8f0;
-      }
-
-      .social-link:hover {
-        background: var(--primary);
-        color: white;
-        transform: translateY(-5px);
-      }
-
-      .contact-form {
-        flex: 1;
-        min-width: 300px;
-        background: white;
-        padding: 30px;
-        border-radius: 15px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-      }
-
-      .dark-mode .contact-form {
-        background: #1e293b;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-      }
-
-      .form-group {
-        margin-bottom: 20px;
-      }
-
-      .form-group label {
-        display: block;
-        margin-bottom: 8px;
-        font-weight: 500;
-        font-size: clamp(0.95rem, 2vw, 1rem);
-        color: var(--dark);
-      }
-
-      .dark-mode .form-group label {
-        color: #f8fafc;
-      }
-
-      .form-control {
-        width: 100%;
-        padding: 12px 15px;
-        border: 1px solid #e2e8f0;
-        border-radius: 8px;
-        font-family: "Poppins", sans-serif;
-        font-size: clamp(0.95rem, 2vw, 1rem);
-        transition: var(--transition);
-      }
-
-      .dark-mode .form-control {
-        background: #0f172a;
-        border-color: #334155;
-        color: #e2e8f0;
-      }
-
-      .form-control:focus {
-        border-color: var(--primary);
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
-      }
-
-      textarea.form-control {
-        min-height: 150px;
-        resize: vertical;
-      }
-
-      .submit-btn {
-        width: 100%;
-        padding: 12px;
-        background: var(--primary);
-        color: white;
-        border: none;
-        border-radius: 8px;
-        font-family: "Poppins", sans-serif;
-        font-size: clamp(0.95rem, 2vw, 1rem);
-        font-weight: 500;
-        cursor: pointer;
-        transition: var(--transition);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-      }
-
-      .submit-btn:hover {
-        background: var(--primary-dark);
-      }
-
-      .btn-icon {
-        display: flex;
-      }
-
-      .consent-checkbox {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 0.9rem;
-        color: #64748b;
-      }
-
-      .dark-mode .consent-checkbox {
-        color: #94a3b8;
-      }
-
-      .consent-checkbox input {
-        min-width: 18px;
-        min-height: 18px;
-      }
-
-      .privacy-link {
-        color: var(--primary);
-        text-decoration: underline;
-      }
-
-      #thankYouMessage {
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+    
+    .gradient-text {
+      background: linear-gradient(90deg, #0ea5e9, #6366f1);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .gradient-bg {
+      background: linear-gradient(135deg, #0ea5e9, #6366f1);
+    }
+    
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    .nav-link {
+      position: relative;
+    }
+    
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #0ea5e9;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover:after {
+      width: 100%;
+    }
+    
+    .btn-primary {
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    
+    .feature-icon {
+      transition: all 0.3s ease;
+    }
+    
+    .feature-card:hover .feature-icon {
+      transform: scale(1.1);
+    }
+    
+    .how-it-works-step {
+      position: relative;
+    }
+    
+    .how-it-works-step:not(:last-child):after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -50px;
+      width: 40px;
+      height: 2px;
+      background: #cbd5e1;
+    }
+    
+    @media (max-width: 768px) {
+      .how-it-works-step:not(:last-child):after {
         display: none;
-        text-align: center;
-        padding: 20px;
       }
-
-      .success-icon {
-        font-size: 3rem;
-        color: #10b981;
-        margin-bottom: 20px;
-      }
-
-      #thankYouMessage h3 {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-        color: var(--dark);
-      }
-
-      .dark-mode #thankYouMessage h3 {
-        color: #f8fafc;
-      }
-
-      .success-message {
-        font-size: 1rem;
-        color: #64748b;
-        margin-bottom: 20px;
-        line-height: 1.6;
-      }
-
-      .dark-mode .success-message {
-        color: #94a3b8;
-      }
-
-      .back-btn {
-        padding: 10px 20px;
-        background: var(--primary);
-        color: white;
-        border: none;
-        border-radius: 8px;
-        font-family: "Poppins", sans-serif;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: var(--transition);
-      }
-
-      .back-btn:hover {
-        background: var(--primary-dark);
-      }
-
-      /* Responsive adjustments */
-      @media (max-width: 768px) {
-        .contact-container {
-          flex-direction: column;
-          gap: 30px;
-        }
-        
-        .contact-info, .contact-form {
-          width: 100%;
-        }
-        
-        .section-title {
-          margin-bottom: 30px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        #contact {
-          padding: 60px 0;
-        }
-        
-        .contact-method {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-        
-        .contact-icon {
-          margin-bottom: 10px;
-        }
-        
-        .social-links {
-          justify-content: center;
-        }
-      }
-      /* Footer */
-      footer {
-        background: var(--dark);
-        color: white;
-        padding: 50px 0 20px;
-      }
-
-      .footer-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 40px;
-        margin-bottom: 40px;
-      }
-
-      .footer-col {
-        flex: 1;
-        min-width: 250px;
-      }
-
-      .footer-col h3 {
-        font-size: clamp(1.1rem, 3vw, 1.3rem);
-        margin-bottom: 20px;
-        position: relative;
-      }
-
-      .footer-col h3::after {
-        content: "";
-        position: absolute;
-        bottom: -10px;
-        left: 0;
-        width: 40px;
-        height: 3px;
-        background: var(--primary);
-      }
-
-      .footer-col p {
-        color: #94a3b8;
-        margin-bottom: 20px;
-        font-size: clamp(0.9rem, 2vw, 0.95rem);
-      }
-
-      .footer-links {
-        list-style: none;
-      }
-
-      .footer-links li {
-        margin-bottom: 12px;
-      }
-
-      .footer-links a {
-        color: #94a3b8;
-        text-decoration: none;
-        transition: var(--transition);
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: clamp(0.9rem, 2vw, 1rem);
-      }
-
-      .footer-links a:hover {
-        color: var(--primary);
-      }
-
-      .footer-links a i {
-        width: 20px;
-      }
-
-      .footer-bottom {
-        text-align: center;
-        padding-top: 20px;
-        border-top: 1px solid #334155;
-        color: #94a3b8;
-        font-size: clamp(0.8rem, 2vw, 0.9rem);
-      }
-
-      .scroll-top {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
-        background: var(--primary);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 1.2rem;
-        cursor: pointer;
-        opacity: 0;
-        visibility: hidden;
-        transition: var(--transition);
-        box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
-        z-index: 99;
-      }
-
-      .scroll-top.active {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      .scroll-top:hover {
-        background: var(--primary-dark);
-        transform: translateY(-5px);
-      }
-
-      /* Responsive Design */
-      @media (max-width: 992px) {
-        .hero-content h1 {
-          font-size: 3rem;
-        }
-
-        .about-content {
-          flex-direction: column;
-        }
-
-        .contact-container {
-          flex-direction: column;
-        }
-
-        .timeline::before {
-          left: 20px;
-        }
-
-        .timeline-item {
-          flex-direction: row !important;
-          margin-left: 40px;
-        }
-
-        .timeline-content {
-          width: 100%;
-        }
-
-        .timeline-content::before {
-          left: -20px !important;
-          border-width: 10px 20px 10px 0 !important;
-          border-color: transparent white transparent transparent !important;
-        }
-
-        .dark-mode .timeline-content::before {
-          border-color: transparent #1e293b transparent transparent !important;
-        }
-
-        .timeline-dot {
-          left: 20px;
-        }
-      }
-
-      @media (max-width: 768px) {
-        section {
-          padding: 60px 0;
-        }
-
-        .nav-links {
-          position: fixed;
-          top: 0;
-          right: -100%;
-          height: 100vh;
-          width: 280px;
-          background: white;
-          flex-direction: column;
-          padding: 100px 30px 30px;
-          transition: var(--transition);
-          box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-          z-index: 100;
-        }
-
-        .nav-links.active {
-          right: 0;
-        }
-
-        .dark-mode .nav-links {
-          background: #1e293b;
-        }
-
-        .nav-links a {
-          padding: 10px 0;
-          font-size: 1.1rem;
-        }
-
-        .mobile-menu-btn {
-          display: block;
-        }
-
-        .hero-content h1 {
-          font-size: 2.5rem;
-        }
-
-        .hero-content p {
-          font-size: 1.2rem;
-        }
-
-        .cta-buttons {
-          flex-direction: column;
-          gap: 15px;
-        }
-
-        .skills-grid {
-          grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-        }
-
-        .projects-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .section-title h2 {
-          font-size: 2rem;
-        }
-
-        .section-title {
-          margin-bottom: 40px;
-        }
-
-        .timeline-content {
-          padding: 15px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .hero-content h1 {
-          font-size: 2.2rem;
-        }
-
-        .hero-content p {
-          font-size: 1rem;
-        }
-
-        .btn {
-          padding: 10px 20px;
-          width: 100%;
-          justify-content: center;
-        }
-
-        .about-info {
-          grid-template-columns: 1fr;
-        }
-
-        .projects-grid {
-          gap: 20px;
-        }
-
-        .contact-method {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
-        .contact-icon {
-          width: 40px;
-          height: 40px;
-          font-size: 1rem;
-        }
-
-        .footer-container {
-          gap: 30px;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .about-content {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .timeline::before {
-          left: 20px;
-        }
-
-        .timeline-item {
-          flex-direction: column;
-          align-items: flex-start;
-          margin-left: 20px;
-        }
-
-        .project-content {
-          padding: 15px;
-          text-align: center;
-        }
-
-        .project-tags {
-          justify-content: center;
-        }
-      }
-
-      .btn {
-        font-size: clamp(0.9rem, 2vw, 1.1rem);
-      }
-
-      @media (max-width: 480px) {
-        .btn {
-          width: 100%;
-          justify-content: center;
-        }
-
-        .skill-card h3,
-        .project-content h3 {
-          font-size: 1rem;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <!-- Preloader -->
-    <div id="preloader">
-      <div class="loader"></div>
-    </div> 
-
-    <!-- Navbar -->
-<nav id="navbar">
-  <div class="container nav-container">
-    <div class="logo">Muzammil<span>.</span></div>
-    <div class="nav-links" id="navLinks">
-      <a href="#hero" aria-label="Home section">Home</a>
-      <a href="#about" aria-label="About section">About</a>
-      <a href="#skills" aria-label="Skills section">Skills</a>
-      <a href="#projects" aria-label="Projects section">Projects</a>
-      <a href="#timeline" aria-label="Timeline section">Timeline</a>
-      <a href="#contact" aria-label="Contact section">Contact</a>
-    </div>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-      <i class="fas fa-moon"></i>
-    </button>
-    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Mobile menu toggle">
-      <i class="fas fa-bars"></i>
-    </button>
-  </div>
-</nav>
-
-<style>
-  /* Navbar Styles */
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    transition: var(--transition);
-  }
-
-  nav.dark-mode {
-    background: linear-gradient(90deg, #1e293b, #27374a);
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(6px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px 30px;
-  }
-
-  .logo {
-    font-size: clamp(1.2rem, 4vw, 1.5rem);
-    font-weight: 700;
-    color: var(--primary);
-    z-index: 1001;
-  }
-
-  .logo span {
-    color: var(--secondary);
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 30px;
-    transition: var(--transition);
-  }
-
-  .nav-links a {
-    text-decoration: none;
-    color: var(--dark);
-    font-weight: 500;
-    position: relative;
-    transition: var(--transition);
-    font-size: clamp(0.9rem, 3vw, 1rem);
-  }
-
-  .nav-links a::after {
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary);
-    transition: var(--transition);
-  }
-
-  .nav-links a:hover::after {
-    width: 100%;
-  }
-
-  .nav-links a:hover {
-    color: var(--primary);
-  }
-
-  .dark-mode .nav-links a {
-    color: #cbd5e1;
-  }
-
-  .dark-mode .nav-links a:hover {
-    color: var(--primary);
-  }
-
-  .theme-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: clamp(1rem, 4vw, 1.2rem);
-    color: var(--dark);
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px;
-    border-radius: 50%;
-    z-index: 1001;
-  }
-
-  .theme-toggle:hover {
-    background: rgba(67, 97, 238, 0.1);
-  }
-
-  .dark-mode .theme-toggle {
-    color: #e2e8f0;
-  }
-
-  .mobile-menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: var(--dark);
-    cursor: pointer;
-    z-index: 1001;
-    padding: 8px;
-    border-radius: 4px;
-    transition: var(--transition);
-  }
-
-  .mobile-menu-btn:hover {
-    background: rgba(67, 97, 238, 0.1);
-  }
-
-  .dark-mode .mobile-menu-btn {
-    color: #e2e8f0;
-  }
-
-  /* Mobile Menu Styles */
-  @media (max-width: 768px) {
-    .nav-container {
-      padding: 15px 20px;
     }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-primary-50 to-white text-secondary-900">
 
-    .mobile-menu-btn {
-      display: block;
-    }
+  
 
-    .nav-links {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 70%;
-      max-width: 300px;
-      height: 100vh;
-      background: white;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 30px;
-      transition: all 0.5s ease;
-      z-index: 1000;
-      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .dark-mode .nav-links {
-      background: #1e293b;
-      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
-    }
-
-    .nav-links.active {
-      right: 0;
-    }
-  }
-@media (max-width: 480px) {
-  .skills-grid,
-  .projects-grid {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 10px;
-  }
-}
-</style>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    // Mobile Menu Toggle
-    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-    const navLinks = document.getElementById("navLinks");
-    const navbar = document.getElementById("navbar");
-
-    mobileMenuBtn.addEventListener("click", function() {
-      navLinks.classList.toggle("active");
-      mobileMenuBtn.classList.toggle("active");
+<!-- Navbar -->
+<header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 shadow-sm">
+  <nav class="container mx-auto px-6 py-3">
+    <div class="flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <div class="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center">
+          <i class="fas fa-brain text-white text-xl"></i>
+        </div>
+        <a href="#" class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-indigo-600">CareerPath AI</a>
+      </div>
       
-      // Toggle between hamburger and close icon
-      const icon = mobileMenuBtn.querySelector("i");
-      if (navLinks.classList.contains("active")) {
-        icon.classList.remove("fa-bars");
-        icon.classList.add("fa-times");
-      } else {
-        icon.classList.remove("fa-times");
-        icon.classList.add("fa-bars");
-      }
-    });
-
-    // Close menu when clicking on a link (mobile only)
-    const navItems = navLinks.querySelectorAll("a");
-    navItems.forEach(item => {
-      item.addEventListener("click", function() {
-        if (window.innerWidth <= 768) {
-          navLinks.classList.remove("active");
-          mobileMenuBtn.classList.remove("active");
-          const icon = mobileMenuBtn.querySelector("i");
-          icon.classList.remove("fa-times");
-          icon.classList.add("fa-bars");
-        }
-      });
-    });
-
-    // Close menu when clicking outside (mobile only)
-    document.addEventListener("click", function(event) {
-      if (window.innerWidth <= 768 && 
-          !navbar.contains(event.target) && 
-          !event.target.classList.contains("mobile-menu-btn")) {
-        navLinks.classList.remove("active");
-        mobileMenuBtn.classList.remove("active");
-        const icon = mobileMenuBtn.querySelector("i");
-        icon.classList.remove("fa-times");
-        icon.classList.add("fa-bars");
-      }
-    });
-
-    // Dark/Light Mode Toggle
-    const themeToggle = document.getElementById("themeToggle");
-    themeToggle.addEventListener("click", function() {
-      document.body.classList.toggle("dark-mode");
-      localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
-    });
-
-    // Check for saved theme preference
-    if (localStorage.getItem("darkMode") === "true") {
-      document.body.classList.add("dark-mode");
-    }
-  });
-
-  // Close mobile menu when resizing to desktop
-  window.addEventListener("resize", function() {
-    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-    const navLinks = document.getElementById("navLinks");
-    
-    if (window.innerWidth > 768) {
-      navLinks.classList.remove("active");
-      mobileMenuBtn.classList.remove("active");
-      const icon = mobileMenuBtn.querySelector("i");
-      icon.classList.remove("fa-times");
-      icon.classList.add("fa-bars");
-    }
-  });
-</script>
-    <!-- Hero Section -->
-    <section id="hero">
-      <div class="container">
-        <div class="hero-content">
-          <h1>Hi, I'm <span>Muhammad Muzammil</span></h1>
-          <p>
-            Computer Science Undergraduate | Web Developer | Network Enthusiast
-          </p>
-          <div class="cta-buttons">
-            <a href="#contact" class="btn btn-primary" aria-label="Hire me button">
-              Hire Me <i class="fas fa-arrow-right"></i>
-            </a>
-            <a href="Muhammad_Muzammil_Resume.pdf" class="btn btn-outline" download aria-label="Download resume button">
-              Download Resume <i class="fas fa-download"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="scroll-down">
-        <a href="#about" aria-label="Scroll to about section"><i class="fas fa-chevron-down"></i></a>
-      </div>
-    </section>
-
-<!-- About Section -->
-<section id="about">
-  <div class="container">
-    <div class="section-title">
-      <h2>About <span>Me</span></h2>
-      <div class="divider"></div>
-    </div>
-    <div class="about-content">
-      <div class="about-img">
-        <img
-          src="profile.jpeg"
-          alt="Muhammad Muzammil - Web Developer Portfolio Photo"
-          loading="lazy"
-        />
-      </div>
-      <div class="about-text">
-        <h3>Web Developer & Computer Science Student</h3>
-        <p>
-          I'm Muhammad Muzammil, a Computer Science student at KIET University in Karachi, 
-          specializing in web development and networking. With expertise in HTML, CSS, 
-          JavaScript, and C#, I create responsive, modern websites that solve real-world 
-          problems. My projects demonstrate my ability to combine technical skills with 
-          creative problem-solving.
-        </p>
-
-        <div class="about-info">
-          <div class="info-item">
-            <i class="fas fa-user-graduate"></i>
-            <span>BSCS Undergraduate</span>
-          </div>
-          <div class="info-item">
-            <i class="fas fa-phone"></i>
-            <span>0317-6442334</span>
-          </div>
-          <div class="info-item">
-            <i class="fab fa-linkedin"></i>
-            <a href="https://www.linkedin.com/in/muhammad-muzammil-7562bb316" target="_blank" rel="noopener noreferrer">
-              LinkedIn Profile
-            </a>
-          </div>
-          <div class="info-item">
-            <i class="fas fa-envelope"></i>
-            <span>muzammil.thedeveloper@gmail.com</span>
-          </div>
-        </div>
-
-        <!-- Skills Grid -->
-        <div class="skills-grid">
-          <div class="skill-box">
-            <i class="fas fa-code"></i>
-            <h4>Web Development</h4>
-            <p>Modern, responsive, fast websites using HTML, CSS, JS, and Tailwind.</p>
-          </div>
-          <div class="skill-box">
-            <i class="fas fa-database"></i>
-            <h4>Database Design</h4>
-            <p>SQL & schema design with real-time integration and optimization.</p>
-          </div>
-          <div class="skill-box">
-            <i class="fas fa-network-wired"></i>
-            <h4>Networking</h4>
-            <p>Packet Tracer simulations, IP addressing, and LAN/WAN concepts.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-      <div class="container">
-        <div class="section-title">
-          <h2>My <span>Technical</span> Skills</h2>
-          <div class="divider"></div>
-        </div>
-        
-        <div class="skills-filter">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="frontend">Frontend</button>
-          <button class="filter-btn" data-filter="backend">Backend</button>
-          <button class="filter-btn" data-filter="database">Database</button>
-        </div>
-
-        <div class="skills-grid">
-          <div class="skill-card"  data-category="frontend" >
-            <div class="skill-icon html" >
-              <i class="fab fa-html5"></i>
-            </div>
-            <h3>HTML5</h3>
-          </div>
-          <div class="skill-card" data-category="frontend">
-            <div class="skill-icon css">
-              <i class="fab fa-css3-alt"></i>
-            </div>
-            <h3>CSS3</h3>
-          </div>
-          <div class="skill-card" data-category="frontend">
-            <div class="skill-icon js">
-              <i class="fab fa-js"></i>
-            </div>
-            <h3>JavaScript</h3>
-          </div>
-          <div class="skill-card" data-category="frontend">
-            <div class="skill-icon bootstrap">
-              <i class="fab fa-bootstrap"></i>
-            </div>
-            <h3>Bootstrap</h3>
-          </div>
-          <div class="skill-card" data-category="frontend">
-            <div class="skill-icon tailwind">
-              <i class="fab fa-css3"></i>
-            </div>
-            <h3>Tailwind CSS</h3>
-          </div>
-          <div class="skill-card" data-category="backend">
-            <div class="skill-icon csharp">
-              <i class="fab fa-microsoft"></i>
-            </div>
-            <h3>C#</h3>
-          </div>
-          <div class="skill-card" data-category="database">
-            <div class="skill-icon sql">
-              <i class="fas fa-database"></i>
-            </div>
-            <h3>SQL</h3>
-          </div>
-          <div class="skill-card" data-category="backend">
-            <div class="skill-icon oop">
-              <i class="fas fa-cubes"></i>
-            </div>
-            <h3>OOP</h3>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-      <div class="container">
-        <div class="section-title">
-          <h2>My <span>Projects</span></h2>
-          <div class="divider"></div>
-        </div>
-        <div class="projects-filter">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="web">Web</button>
-          <button class="filter-btn" data-filter="software">Software</button>
-          <button class="filter-btn" data-filter="network">Network</button>
-        </div>
-        <div class="projects-grid">
-          <div class="project-card" data-category="web">
-            <div class="project-img">
-              <img
-                src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
-                alt="Quiz Application project screenshot"
-                loading="lazy"
-              />
-            </div>
-            <div class="project-content">
-              <h3>Quiz Application</h3>
-              <p>
-                A web-based quiz app using JavaScript and Open Trivia Database
-                API integration.
-              </p>
-              <div class="project-tags">
-                <span class="project-tag">HTML</span>
-                <span class="project-tag">CSS</span>
-                <span class="project-tag">JavaScript</span>
-                <span class="project-tag">API</span>
-              </div>
-              <a href="https://muhammadmuzammil-thedeveloper.github.io/Quiz-Application/" class="project-btn" aria-label="View Quiz Application project">View Details</a>
-            </div>
-          </div>
-          <div class="project-card" data-category="web">
-            <div class="project-img">
-              <img
-                src="https://images.unsplash.com/photo-1601134467661-3d775b999c8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1675&q=80"
-                alt="Weather App project screenshot"
-                loading="lazy"
-              />
-            </div>
-            <div class="project-content">
-              <h3>Weather App</h3>
-              <p>
-                A weather forecasting application using OpenWeather API with
-                location detection.
-              </p>
-              <div class="project-tags">
-                <span class="project-tag">HTML</span>
-                <span class="project-tag">CSS</span>
-                <span class="project-tag">JavaScript</span>
-                <span class="project-tag">API</span>
-              </div>
-              <a href="https://muhammadmuzammil-thedeveloper.github.io/Weather-App/" class="project-btn" aria-label="View Weather App project">View Details</a>
-            </div>
-          </div>
-          <div class="project-card" data-category="software">
-            <div class="project-img">
-              <img
-                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
-                alt="Restaurant Management System project screenshot"
-                loading="lazy"
-              />
-            </div>
-            <div class="project-content">
-              <h3>Restaurant Management System</h3>
-              <p>
-                Implemented using Software Engineering concepts like models and
-                structured planning.
-              </p>
-              <div class="project-tags">
-                <span class="project-tag">C#</span>
-                <span class="project-tag">OOP</span>
-                <span class="project-tag">Software Engineering</span>
-              </div>
-              <a href="https://www.linkedin.com/posts/muhammad-muzammil-7562bb316_engineering-scalable-systems-rms-development-activity-7307939017159819265-GThk?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFAigXIBiQG4KzhjHx1KE2Wg9a-reXXY5kg" class="project-btn" aria-label="View Restaurant Management System project">View Details</a>
-            </div>
-          </div>
-          <div class="project-card" data-category="software">
-            <div class="project-img">
-              <img
-                src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
-                alt="AI-Powered Maze Solver project screenshot"
-                loading="lazy"
-              />
-            </div>
-            <div class="project-content">
-              <h3>AI-Powered Maze Solver</h3>
-              <p>
-                Solved mazes using BFS, DFS, UCS, and A* algorithms with
-                visualization.
-              </p>
-              <div class="project-tags">
-                <span class="project-tag">Python</span>
-                <span class="project-tag">AI</span>
-                <span class="project-tag">Algorithms</span>
-              </div>
-              <a href="https://github.com/MuhammadMuzammil-TheDeveloper/Maze_Solver" class="project-btn" aria-label="View AI-Powered Maze Solver project">View Details</a>
-            </div>
-          </div>
-          <div class="project-card" data-category="software">
-            <div class="project-img">
-              <img
-                src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
-                alt="Salary Management System project screenshot"
-                loading="lazy"
-              />
-            </div>
-            <div class="project-content">
-              <h3>Salary Management System</h3>
-              <p>
-                Developed using Object-Oriented Programming (OOP) concepts in
-                C#.
-              </p>
-              <div class="project-tags">
-                <span class="project-tag">C#</span>
-                <span class="project-tag">OOP</span>
-                <span class="project-tag">WinForms</span>
-              </div>
-              <a href="#" class="project-btn" aria-label="View Salary Management System project">View Details</a>
-            </div>
-          </div>
-          <div class="project-card" data-category="network">
-            <div class="project-img">
-              <img
-                src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1700&q=80"
-                alt="Hotel Management System Network project screenshot"
-                loading="lazy"
-              />
-            </div>
-            <div class="project-content">
-              <h3>Hotel Management Network</h3>
-              <p>
-                Simulated a complete hotel network using FTP, Email, DNS, DHCP,
-                and Subnetting in Cisco Packet Tracer.
-              </p>
-              <div class="project-tags">
-                <span class="project-tag">Networking</span>
-                <span class="project-tag">Cisco</span>
-                <span class="project-tag">Packet Tracer</span>
-              </div>
-              <a href="https://www.linkedin.com/posts/muhammad-muzammil-7562bb316_project-ppt-report-activity-7333920646256594946-8ZX5?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFAigXIBiQG4KzhjHx1KE2Wg9a-reXXY5kg" class="project-btn" aria-label="View Hotel Management Network project">View Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-<!-- CareerPath AI - Premium Showcase Section -->
-<section class="py-12 sm:py-16 px-4 sm:px-6 bg-gradient-to-b from-indigo-50 to-purple-50" data-no-dark-mode>
-  <div class="max-w-6xl mx-auto">
-    
-    <!-- Section Header -->
-    <div class="text-center mb-10 sm:mb-14">
-      <span class="inline-block px-4 py-2 sm:px-5 sm:py-2.5 bg-indigo-100 text-indigo-600 rounded-full text-xs sm:text-sm font-semibold mb-4 sm:mb-5 border border-indigo-200 shadow-sm">
-        <i class="fas fa-brain mr-1 sm:mr-2"></i>AI-Powered Solution
-      </span>
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-3 sm:mb-4">
-        My Best & Biggest Project
-      </h2>
-      <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-        An intelligent career guidance system that analyzes your skills and recommends optimal career paths.
-      </p>
-    </div>
-
-    <!-- Main Card -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-      
-      <!-- Left Column - Project Card -->
-      <div class="bg-white rounded-xl shadow-xl overflow-hidden border border-gray-200">
-        <div class="p-6 sm:p-8">
-          <!-- Project Header -->
-          <div class="flex items-start mb-4 sm:mb-6">
-            <div class="flex-shrink-0 mr-4 sm:mr-5">
-              <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-indigo-100 flex items-center justify-center border-2 border-indigo-200">
-                <i class="fas fa-brain text-2xl sm:text-3xl text-indigo-600"></i>
-              </div>
-            </div>
-            <div>
-              <h3 class="text-xl sm:text-2xl font-bold text-gray-800">CareerPath AI</h3>
-              <p class="text-indigo-600 text-sm sm:text-base font-medium">Smart Career Assessment Platform</p>
-            </div>
-          </div>
-          
-          <!-- Short Description -->
-          <div class="mb-6 sm:mb-8">
-            <p class="text-gray-700 text-sm sm:text-base leading-relaxed">
-              A comprehensive career guidance system featuring AI-powered assessment, career matching, and personalized roadmap generation.
-            </p>
-          </div>
-          
-          <!-- Progress -->
-          <div class="mb-6 sm:mb-8">
-            <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3">
-              <span>Development Progress</span>
-              <span class="font-semibold">70% Complete</span>
-            </div>
-            <div class="w-full bg-gray-100 rounded-full h-2 sm:h-3">
-              <div class="bg-gradient-to-r from-indigo-500 to-purple-500 h-2 sm:h-3 rounded-full relative overflow-hidden" style="width: 70%">
-                <div class="absolute inset-0 bg-gradient-to-r from-indigo-400 to-purple-400 animate-pulse-slow"></div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Buttons -->
-          <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
-            <a href="https://muhammadmuzammil-thedeveloper.github.io/CareerPath-AI/" class="flex-1 py-2.5 sm:py-3.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white rounded-lg font-semibold text-sm sm:text-base transition-all flex items-center justify-center shadow-md hover:shadow-lg" aria-label="View CareerPath AI live demo">
-              <i class="fas fa-eye mr-2 sm:mr-2.5 text-xs sm:text-sm"></i> Live Demo
-            </a>
-            <button onclick="openProjectDetails()" class="flex-1 py-2.5 sm:py-3.5 border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 rounded-lg font-semibold text-sm sm:text-base transition-all flex items-center justify-center" aria-label="View CareerPath AI project details">
-              <i class="fas fa-info-circle mr-2 sm:mr-2.5 text-xs sm:text-sm"></i> Details
-            </button>
-          </div>
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#home" class="nav-link text-secondary-700 font-medium hover:text-primary-600">Home</a>
+        <a href="#features" class="nav-link text-secondary-700 font-medium hover:text-primary-600">Features</a>
+        <a href="#how" class="nav-link text-secondary-700 font-medium hover:text-primary-600">How It Works</a>
+        <a href="#testimonials" class="nav-link text-secondary-700 font-medium hover:text-primary-600">Testimonials</a>
+        <a href="#quiz" class="btn-primary bg-gradient-to-r from-primary-600 to-indigo-600 text-white px-6 py-2 rounded-full font-medium">Start Quiz</a>
+        <div class="theme-switcher">
+          <label for="theme-select" class="gradient-text font-semibold mr-2">Theme:</label>
+          <select id="theme-select" class="rounded px-3 py-1 border focus:outline-none">
+            <option value="auto">Auto</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
         </div>
       </div>
       
-      <!-- Right Column - Visualization -->
-      <div class="bg-white rounded-xl shadow-xl overflow-hidden border border-gray-200">
-        <div class="p-4 sm:p-6 h-full flex flex-col">
-          <h4 class="text-lg sm:text-xl font-bold text-gray-800 mb-4 sm:mb-6 text-center">Key Features</h4>
-          
-          <div class="flex-1 grid grid-cols-2 gap-3 sm:gap-4">
-            <div class="bg-indigo-50/50 p-3 sm:p-4 rounded-lg border border-indigo-100">
-              <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-indigo-100 flex items-center justify-center mb-2 sm:mb-3 mx-auto text-indigo-600">
-                <i class="fas fa-user-graduate text-sm sm:text-lg"></i>
-              </div>
-              <p class="text-center text-xs sm:text-sm font-semibold text-gray-800">User Registration</p>
-            </div>
-            <div class="bg-indigo-50/50 p-3 sm:p-4 rounded-lg border border-indigo-100">
-              <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-indigo-100 flex items-center justify-center mb-2 sm:mb-3 mx-auto text-indigo-600">
-                <i class="fas fa-question-circle text-sm sm:text-lg"></i>
-              </div>
-              <p class="text-center text-xs sm:text-sm font-semibold text-gray-800">Quiz System</p>
-            </div>
-            <div class="bg-indigo-50/50 p-3 sm:p-4 rounded-lg border border-indigo-100">
-              <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-indigo-100 flex items-center justify-center mb-2 sm:mb-3 mx-auto text-indigo-600">
-                <i class="fas fa-chart-pie text-sm sm:text-lg"></i>
-              </div>
-              <p class="text-center text-xs sm:text-sm font-semibold text-gray-800">Score Analysis</p>
-            </div>
-            <div class="bg-indigo-50/50 p-3 sm:p-4 rounded-lg border border-indigo-100">
-              <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-indigo-100 flex items-center justify-center mb-2 sm:mb-3 mx-auto text-indigo-600">
-                <i class="fas fa-file-pdf text-sm sm:text-lg"></i>
-              </div>
-              <p class="text-center text-xs sm:text-sm font-semibold text-gray-800">Roadmap PDFs</p>
-            </div>
-          </div>
-          
-          <div class="mt-4 sm:mt-6 pt-3 sm:pt-5 border-t border-gray-200">
-            <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-4">
-              <div class="flex items-center">
-                <i class="fas fa-check-circle text-indigo-500 mr-1 sm:mr-2 text-xs sm:text-sm"></i>
-                <span class="text-xs sm:text-sm text-gray-600">User Registration</span>
-              </div>
-              <div class="flex items-center">
-                <i class="fas fa-check-circle text-indigo-500 mr-1 sm:mr-2 text-xs sm:text-sm"></i>
-                <span class="text-xs sm:text-sm text-gray-600">Quiz System</span>
-              </div>
-              <div class="flex items-center">
-                <i class="fas fa-spinner text-indigo-500 mr-1 sm:mr-2 text-xs sm:text-sm animate-spin"></i>
-                <span class="text-xs sm:text-sm text-gray-600">AI Analysis</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Project Details Modal -->
-<div id="projectDetailsModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-start justify-center p-4 pt-20" data-no-dark-mode>
-  <div class="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[80vh] overflow-y-auto custom-scrollbar">
-    <div class="p-4 sm:p-6">
-      <div class="flex justify-between items-start mb-4 sm:mb-6">
-        <div>
-          <h3 class="text-xl sm:text-2xl font-bold text-gray-800">CareerPath AI - Project Details</h3>
-          <p class="text-indigo-600 text-sm sm:text-base font-medium">Complete Technical Specifications</p>
+<!-- Mobile Menu Button -->
+<button id="mobile-menu-button" class="md:hidden text-secondary-700 focus:outline-none relative z-50">
+  <i class="fas fa-bars text-2xl transition-transform duration-300"></i>
+</button>
+
+<!-- Mobile Menu Card -->
+<div id="mobile-menu-card" class="fixed inset-0 z-40 hidden">
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-30 backdrop-blur-sm"></div>
+  
+  <!-- Menu Card Container -->
+  <div class="absolute right-4 top-16 w-64 origin-top">
+    <!-- Card with advanced styling -->
+     <div class="bg-white rounded-xl shadow-2xl overflow-hidden transform transition-all duration-300 scale-y-0 opacity-0 origin-top">
+      <!-- Card Header -->
+      <div class="gradient-bg p-4 flex items-center">
+        <div class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center mr-3">
+          <i class="fas fa-brain text-white text-lg"></i>
         </div>
-        <button onclick="closeProjectDetails()" class="text-gray-400 hover:text-gray-600" aria-label="Close project details">
-          <i class="fas fa-times text-xl sm:text-2xl"></i>
-        </button>
+        <h3 class="text-white font-bold">Menu</h3>
       </div>
       
-      <div class="space-y-4 sm:space-y-6">
-        <!-- Features Section -->
-        <div>
-          <h4 class="text-lg sm:text-xl font-semibold text-gray-800 mb-3 sm:mb-4 border-b pb-2">Key Features</h4>
-          <ul class="space-y-2 sm:space-y-3">
-            <li class="flex items-start">
-              <i class="fas fa-check-circle text-indigo-500 mt-0.5 sm:mt-1 mr-2 sm:mr-3 text-sm"></i>
-              <div>
-                <h5 class="font-medium text-gray-800 text-sm sm:text-base">User Registration System</h5>
-                <p class="text-gray-600 text-xs sm:text-sm">Collects basic user information and stores it for personalized recommendations</p>
-              </div>
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-check-circle text-indigo-500 mt-0.5 sm:mt-1 mr-2 sm:mr-3 text-sm"></i>
-              <div>
-                <h5 class="font-medium text-gray-800 text-sm sm:text-base">Interactive Quiz</h5>
-                <p class="text-gray-600 text-xs sm:text-sm">8-10 question assessment with multiple-choice answers and real-time progress tracking</p>
-              </div>
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-check-circle text-indigo-500 mt-0.5 sm:mt-1 mr-2 sm:mr-3 text-sm"></i>
-              <div>
-                <h5 class="font-medium text-gray-800 text-sm sm:text-base">AI-Powered Scoring</h5>
-                <p class="text-gray-600 text-xs sm:text-sm">Weighted scoring system that maps answers to career traits and skills</p>
-              </div>
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-check-circle text-indigo-500 mt-0.5 sm:mt-1 mr-2 sm:mr-3 text-sm"></i>
-              <div>
-                <h5 class="font-medium text-gray-800 text-sm sm:text-base">Career Recommendations</h5>
-                <p class="text-gray-600 text-xs sm:text-sm">Provides top 3 career matches with detailed descriptions and growth potential</p>
-              </div>
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-check-circle text-indigo-500 mt-0.5 sm:mt-1 mr-2 sm:mr-3 text-sm"></i>
-              <div>
-                <h5 class="font-medium text-gray-800 text-sm sm:text-base">Downloadable Roadmaps</h5>
-                <p class="text-gray-600 text-xs sm:text-sm">PDF guides for each recommended career with skills, learning paths, and resources</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-        
-        <!-- Tech Stack Section -->
-        <div>
-          <h4 class="text-lg sm:text-xl font-semibold text-gray-800 mb-3 sm:mb-4 border-b pb-2">Technology Stack</h4>
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
-            <div class="bg-indigo-50 p-3 sm:p-4 rounded-lg">
-              <h5 class="font-medium text-indigo-700 text-sm sm:text-base mb-1 sm:mb-2">Frontend</h5>
-              <ul class="text-gray-600 text-xs sm:text-sm space-y-1">
-                <li>HTML5 & Semantic Markup</li>
-                <li>Tailwind CSS Framework</li>
-                <li>Vanilla JavaScript (ES6+)</li>
-              </ul>
-            </div>
-            <div class="bg-indigo-50 p-3 sm:p-4 rounded-lg">
-              <h5 class="font-medium text-indigo-700 text-sm sm:text-base mb-1 sm:mb-2">Core Logic</h5>
-              <ul class="text-gray-600 text-xs sm:text-sm space-y-1">
-                <li>Object-Oriented Programming</li>
-                <li>Data Structures & Algorithms</li>
-                <li>Weighted Scoring System</li>
-              </ul>
-            </div>
-            <div class="bg-indigo-50 p-3 sm:p-4 rounded-lg">
-              <h5 class="font-medium text-indigo-700 text-sm sm:text-base mb-1 sm:mb-2">Additional Tools</h5>
-              <ul class="text-gray-600 text-xs sm:text-sm space-y-1">
-                <li>PDF.js for Roadmaps</li>
-                <li>LocalStorage for Data</li>
-                <li>Git Version Control</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Development Status -->
-        <div>
-          <h4 class="text-lg sm:text-xl font-semibold text-gray-800 mb-3 sm:mb-4 border-b pb-2">Development Status</h4>
-          <div class="space-y-3 sm:space-y-4">
-            <div>
-              <div class="flex justify-between text-gray-600 text-xs sm:text-sm mb-1 sm:mb-2">
-                <span>UI/UX Design</span>
-                <span class="font-semibold">100% Complete</span>
-              </div>
-              <div class="w-full bg-gray-100 rounded-full h-2 sm:h-2.5">
-                <div class="bg-green-500 h-2 sm:h-2.5 rounded-full" style="width: 100%"></div>
-              </div>
-            </div>
-            <div>
-              <div class="flex justify-between text-gray-600 text-xs sm:text-sm mb-1 sm:mb-2">
-                <span>Quiz System</span>
-                <span class="font-semibold">100% Complete</span>
-              </div>
-              <div class="w-full bg-gray-100 rounded-full h-2 sm:h-2.5">
-                <div class="bg-green-500 h-2 sm:h-2.5 rounded-full" style="width: 100%"></div>
-              </div>
-            </div>
-            <div>
-              <div class="flex justify-between text-gray-600 text-xs sm:text-sm mb-1 sm:mb-2">
-                <span>Scoring Logic</span>
-                <span class="font-semibold">80% Complete</span>
-              </div>
-              <div class="w-full bg-gray-100 rounded-full h-2 sm:h-2.5">
-                <div class="bg-indigo-500 h-2 sm:h-2.5 rounded-full" style="width: 80%"></div>
-              </div>
-            </div>
-            <div>
-              <div class="flex justify-between text-gray-600 text-xs sm:text-sm mb-1 sm:mb-2">
-                <span>Roadmap Generation</span>
-                <span class="font-semibold">40% Complete</span>
-              </div>
-              <div class="w-full bg-gray-100 rounded-full h-2 sm:h-2.5">
-                <div class="bg-yellow-500 h-2 sm:h-2.5 rounded-full" style="width: 40%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <!-- Menu Items -->
+      <div class="p-2 space-y-1">
+        <a href="#home" class="flex items-center px-4 py-3 rounded-lg hover:bg-primary-50 transition-colors duration-200">
+          <i class="fas fa-home text-primary-600 w-6 mr-3"></i>
+          <span class="text-secondary-700 font-medium">Home</span>
+        </a>
+        <a href="#features" class="flex items-center px-4 py-3 rounded-lg hover:bg-primary-50 transition-colors duration-200">
+          <i class="fas fa-star text-primary-600 w-6 mr-3"></i>
+          <span class="text-secondary-700 font-medium">Features</span>
+        </a>
+        <a href="#how" class="flex items-center px-4 py-3 rounded-lg hover:bg-primary-50 transition-colors duration-200">
+          <i class="fas fa-cogs text-primary-600 w-6 mr-3"></i>
+          <span class="text-secondary-700 font-medium">How It Works</span>
+        </a>
+        <a href="#testimonials" class="flex items-center px-4 py-3 rounded-lg hover:bg-primary-50 transition-colors duration-200">
+          <i class="fas fa-comment text-primary-600 w-6 mr-3"></i>
+          <span class="text-secondary-700 font-medium">Testimonials</span>
+        </a>
       </div>
       
-      <div class="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200">
-        <button onclick="closeProjectDetails()" class="w-full py-2.5 sm:py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold text-sm sm:text-base transition-all" aria-label="Close project details">
-          Close Details
-        </button>
+      <!-- CTA Button -->
+      <div class="p-4 border-t border-gray-100">
+        <a href="#quiz" class="btn-primary block text-center bg-gradient-to-r from-primary-600 to-indigo-600 text-white px-4 py-2.5 rounded-lg font-medium shadow-md hover:shadow-lg transition-all">
+          Start Quiz
+        </a>
       </div>
     </div>
   </div>
 </div>
 
-<style>
-  /* Custom Scrollbar Styles - Only Change */
-  .custom-scrollbar {
-    scrollbar-width: thin;
-    scrollbar-color: #6366f1 #f1f5ff;
-  }
-  
-  .custom-scrollbar::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-  }
-  
-  .custom-scrollbar::-webkit-scrollbar-track {
-    background: #f1f5ff;
-    border-radius: 10px;
-  }
-  
-  .custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: #6366f1;
-    border-radius: 10px;
-    border: 2px solid #f1f5ff;
-  }
-  
-  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background-color: #4f46e5;
-  }
-</style>
+  </nav>
+</header>
 
-<script>
-  function openProjectDetails() {
-    const modal = document.getElementById('projectDetailsModal');
-    modal.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-    
-    // Scroll to top of modal when opened
-    modal.querySelector('div').scrollTo(0, 0);
-  }
-  
-  function closeProjectDetails() {
-    document.getElementById('projectDetailsModal').classList.add('hidden');
-    document.body.style.overflow = 'auto';
-  }
-</script>
-<style>
-  @keyframes pulse-slow {
-    0%, 100% { opacity: 0.8; }
-    50% { opacity: 1; }
-  }
-  .animate-pulse-slow {
-    animation: pulse-slow 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
 
-  /* Force light mode colors */
-  [data-no-dark-mode] {
-    --bg-color: #ffffff;
-    --text-color: #1f2937;
-    --border-color: #e5e7eb;
-    --primary-color: #4f46e5;
-    --secondary-color: #7c3aed;
-    --light-bg: #f5f3ff;
-  }
-
-  [data-no-dark-mode] .bg-white {
-    background-color: #ffffff !important;
-  }
-
-  [data-no-dark-mode] .text-gray-800 {
-    color: #1f2937 !important;
-  }
-
-  [data-no-dark-mode] .border-gray-200 {
-    border-color: #e5e7eb !important;
-  }
-
-  [data-no-dark-mode] .bg-indigo-50 {
-    background-color: #eef2ff !important;
-  }
-</style>
-
-    <!-- Timeline Section -->
-    <section id="timeline">
-      <div class="container">
-        <div class="section-title">
-          <h2>My <span>Journey</span></h2>
-          <div class="divider"></div>
-        </div>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-content">
-              <h3>Bachelor's in Computer Science (BSCS)</h3>
-              <div class="timeline-subtitle">
-                Karachi Institute of Economics and Technology (KIET)
-              </div>
-              <p>Majors: Web Development, Networking. Currently pursuing my degree with a focus on modern web technologies and computer networking principles.</p>
-              <div class="timeline-date">2020 - Present</div>
-            </div>
-            <div class="timeline-dot"></div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-content">
-              <h3>Fresher Seeking Opportunities</h3>
-              <div class="timeline-subtitle">Web Development & Networking</div>
-              <p>
-                Actively looking for internship and job opportunities to apply
-                my skills and gain professional experience in web development and networking.
-              </p>
-              <div class="timeline-date">Present</div>
-            </div>
-            <div class="timeline-dot"></div>
-          </div>
-        </div>
+  <!-- Quiz Form -->
+<section id="quiz-form" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 p-4">
+  <div class="bg-white rounded-xl shadow-xl p-6 w-full max-w-lg mx-4 transform transition-all duration-300 overflow-y-auto max-h-[90vh]">
+    <div class="flex flex-col items-center mb-6">
+      <div class="w-10 h-10 rounded-lg bg-gradient-to-r from-primary-600 to-indigo-600 flex items-center justify-center mb-3">
+        <i class="fas fa-brain text-white text-xl"></i>
       </div>
-    </section>
-
-    <!-- Contact Section -->
-<section id="contact">
-  <div class="container">
-    <div class="section-title">
-      <h2>Get In <span>Touch</span></h2>
-      <div class="divider"></div>
-      <p class="section-description">Have a project in mind or want to discuss potential opportunities? Reach out and let's start a conversation about web development, networking, or software engineering.</p>
+      <h2 class="text-xl md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-indigo-600 text-center">
+        CareerPath AI
+      </h2>
+      <p class="text-center text-gray-500 text-xs md:text-sm mt-2">
+        Fill in your details to start your personalized career journey
+      </p>
     </div>
-    <div class="contact-container">
-      <div class="contact-info">
-        <h3>Contact Information</h3>
-        
-        <div class="contact-method">
-          <div class="contact-icon">
-            <i class="fas fa-map-marker-alt"></i>
-          </div>
-          <div class="contact-details">
-            <h4>Location</h4>
-            <p>Korangi 100 Quater<br>Karachi, Pakistan</p>
-          </div>
+
+    <form id="userForm" class="space-y-3 md:space-y-4">
+      <div>
+        <label class="block text-xs md:text-sm font-medium text-gray-700 mb-1">Full Name</label>
+        <input id="fullName" type="text" placeholder="Your Name" required
+               class="w-full px-3 py-2 text-sm md:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600" />
+      </div>
+
+      <div>
+        <label class="block text-xs md:text-sm font-medium text-gray-700 mb-1">Email Address</label>
+        <input id="email" type="email" placeholder="your.email@example.com" required
+               class="w-full px-3 py-2 text-sm md:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600" />
+      </div>
+
+      <div>
+        <label class="block text-xs md:text-sm font-medium text-gray-700 mb-1">Age</label>
+        <input id="age" type="number" placeholder="18" required
+               class="w-full px-3 py-2 text-sm md:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600" />
+      </div>
+
+      <div>
+        <label class="block text-xs md:text-sm font-medium text-gray-700 mb-1">Gender</label>
+        <select id="gender" required
+                class="w-full px-3 py-2 text-sm md:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600">
+          <option value="" disabled selected>Select your gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other / Prefer not to say</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-xs md:text-sm font-medium text-gray-700 mb-1">Education Level</label>
+        <select id="education" required
+                class="w-full px-3 py-2 text-sm md:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600">
+          <option value="" disabled selected>Select your education</option>
+          <option value="High School">High School</option>
+          <option value="Intermediate / A-Levels">Intermediate / A-Levels</option>
+          <option value="Bachelor's Degree">Bachelor's Degree</option>
+          <option value="Master's Degree">Master's Degree</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-xs md:text-sm font-medium text-gray-700 mb-1">Country</label>
+        <input id="country" type="text" placeholder="Your Country" required
+               class="w-full px-3 py-2 text-sm md:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600" />
+      </div>
+
+      <!-- In index.html, update the form footer section -->
+<div class="flex flex-col sm:flex-row justify-between items-center gap-3 mt-6">
+  <div class="flex items-center gap-3">
+    <button type="button" id="showLogin" 
+            class="text-primary-600 hover:text-primary-800 font-medium text-sm md:text-base transition px-4 py-2">
+      Already have an account? Login
+    </button>
+    <button type="button" id="closeForm"
+            class="text-red-500 hover:text-red-700 font-medium text-sm md:text-base transition px-4 py-2">
+      Cancel
+    </button>
+  </div>
+  <button type="submit"
+          class="w-full sm:w-auto bg-gradient-to-r from-primary-600 to-indigo-600 text-white px-6 py-2 rounded-full font-semibold text-sm md:text-base shadow-md hover:shadow-lg transition">
+    Start Quiz
+  </button>
+</div>
+    </form>
+  </div>
+</section>
+
+<!-- Login Form -->
+<section id="login-form" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 p-4">
+  <div class="bg-white rounded-xl shadow-xl p-6 w-full max-w-lg mx-4 transform transition-all duration-300 overflow-y-auto max-h-[90vh]">
+    <div class="flex flex-col items-center mb-6">
+      <div class="w-10 h-10 rounded-lg bg-gradient-to-r from-primary-600 to-indigo-600 flex items-center justify-center mb-3">
+        <i class="fas fa-brain text-white text-xl"></i>
+      </div>
+      <h2 class="text-xl md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-indigo-600 text-center">
+        CareerPath AI Login
+      </h2>
+      <p class="text-center text-gray-500 text-xs md:text-sm mt-2">
+        Sign in to continue your career journey
+      </p>
+    </div>
+
+    <form id="loginForm" class="space-y-3 md:space-y-4">
+      <div>
+        <label class="block text-xs md:text-sm font-medium text-gray-700 mb-1">Email Address</label>
+        <input type="email" placeholder="your.email@example.com" required
+               class="w-full px-3 py-2 text-sm md:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600" />
+      </div>
+
+      <div>
+        <label class="block text-xs md:text-sm font-medium text-gray-700 mb-1">Password</label>
+        <input type="password" placeholder="••••••••" required
+               class="w-full px-3 py-2 text-sm md:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600" />
+      </div>
+
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <input id="remember-me" type="checkbox" class="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded">
+          <label for="remember-me" class="ml-2 block text-sm text-gray-700">Remember me</label>
         </div>
-        
-        <div class="contact-method">
-          <div class="contact-icon">
-            <i class="fas fa-envelope"></i>
-          </div>
-          <div class="contact-details">
-            <h4>Email</h4>
-            <p>
-              <a href="mailto:muzammil.thedeveloper@gmail.com">muzammil.thedeveloper@gmail.com</a><br>
-            </p>
-          </div>
-        </div>
-        
-        <div class="contact-method">
-          <div class="contact-icon">
-            <i class="fas fa-phone-alt"></i>
-          </div>
-          <div class="contact-details">
-            <h4>Phone</h4>
-            <p>
-              <a href="tel:+923172855256">+92 (317) 285-5256</a><br>
-              <a href="tel:+923176442334">+92 (317) 644-2334</a>
-            </p>
-          </div>
-        </div>
-        
-        <div class="contact-method">
-          <div class="contact-icon">
-            <i class="fas fa-clock"></i>
-          </div>
-          <div class="contact-details">
-            <h4>Business Hours</h4>
-            <p>
-              Monday - Friday: 9am - 6am<br>
-              Saturday: 10am - 4am<br>
-              Sunday: Closed
-            </p>
-          </div>
-        </div>
-        
-        <div class="contact-method">
-          <div class="contact-icon">
-            <i class="fas fa-calendar-alt"></i>
-          </div>
-          <div class="contact-details">
-            <h4>Schedule a Meeting</h4>
-            <p>
-              <a href="#" class="meeting-link">Book a 30-min consultation</a>
-            </p>
-          </div>
-        </div>
-        
-        <h3 class="social-title">Connect With Me</h3>
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/muhammad-muzammil-7562bb316/" class="social-link" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://x.com/MTheDeveloper" class="social-link" aria-label="Twitter profile"><i class="fab fa-twitter"></i></a>
-          <a href="https://github.com/MuhammadMuzammil-TheDeveloper/" class="social-link" aria-label="GitHub profile"><i class="fab fa-github"></i></a>
-          <a href="https://www.instagram.com/muzammil.thedeveloper/" class="social-link" aria-label="Instagram profile" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.facebook.com/profile.php?id=61550242382522" class="social-link" aria-label="Facebook profile" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-sm text-primary-600 hover:text-primary-800">Forgot password?</a>
+      </div>
+
+      <div class="flex flex-col-reverse sm:flex-row justify-between items-center gap-3 mt-6">
+        <button type="button" id="closeLogin"
+                class="w-full sm:w-auto text-red-500 hover:text-red-700 font-medium text-sm md:text-base transition px-4 py-2">
+          Cancel
+        </button>
+        <button type="submit"
+                class="w-full sm:w-auto bg-gradient-to-r from-primary-600 to-indigo-600 text-white px-6 py-2 rounded-full font-semibold text-sm md:text-base shadow-md hover:shadow-lg transition">
+          Login
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+  <!-- Hero Section -->
+  <section id="home" class="relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-full opacity-5">
+      <div class="absolute top-20 left-10 w-64 h-64 rounded-full bg-primary-300 mix-blend-multiply filter blur-3xl opacity-70 animate-float"></div>
+      <div class="absolute top-60 right-20 w-80 h-80 rounded-full bg-indigo-300 mix-blend-multiply filter blur-3xl opacity-70 animate-float animation-delay-2000"></div>
+      <div class="absolute bottom-20 left-1/2 w-72 h-72 rounded-full bg-blue-300 mix-blend-multiply filter blur-3xl opacity-70 animate-float animation-delay-4000"></div>
+    </div>
+    
+    <div class="container mx-auto px-6 py-24 md:py-32 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+          Discover Your <span class="gradient-text">Perfect Career</span> with AI
+        </h1>
+        <p class="text-xl text-secondary-600 mb-10 max-w-2xl mx-auto">
+          Our advanced AI analyzes your skills, interests, and personality to recommend the ideal career path tailored just for you.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="#quiz" class="btn-primary gradient-bg text-white px-8 py-4 rounded-full font-medium text-lg">
+            Start Free Assessment <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+          <a href="#how" class="btn-primary bg-white text-primary-700 px-8 py-4 rounded-full font-medium text-lg border border-primary-200 hover:border-primary-300">
+            <i class="fas fa-play-circle mr-2"></i> How It Works
+          </a>
         </div>
       </div>
       
-      <div class="contact-form">
-        <form id="contactForm">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_next" value="javascript:void(0)">
-          
-          <div class="form-group">
-            <label for="name">Your Name *</label>
-            <input type="text" id="name" name="name" class="form-control" required placeholder="Muhammad Muzammil" />
-          </div>
-          
-          <div class="form-group">
-            <label for="email">Your Email *</label>
-            <input type="email" id="email" name="email" class="form-control" required placeholder="muzammil.thedeveloper@gmail.com" />
-          </div>
-          
-          <div class="form-group">
-            <label for="phone">Phone Number (Optional)</label>
-            <input type="tel" id="phone" name="phone" class="form-control" placeholder="+92 (317) 285-5256" />
-          </div>
-          
-          <div class="form-group">
-            <label for="subject">Subject *</label>
-            <select id="subject" name="subject" class="form-control" required>
-              <option value="" disabled selected>Select a subject</option>
-              <option value="General Inquiry">General Inquiry</option>
-              <option value="Project Proposal">Project Proposal</option>
-              <option value="Partnership">Partnership</option>
-              <option value="Career Opportunity">Career Opportunity</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          
-          <div class="form-group">
-            <label for="message">Your Message *</label>
-            <textarea id="message" name="message" class="form-control" required placeholder="Tell us about your project or inquiry..."></textarea>
-          </div>
-          
-          <div class="form-group">
-            <div class="consent-checkbox">
-              <input type="checkbox" id="consent" name="consent" required>
-              <label for="consent">I consent to the processing of my personal data according to your <a href="#" class="privacy-link">Privacy Policy</a>.</label>
-            </div>
-          </div>
-          
-          <button type="submit" class="submit-btn" id="submitBtn" aria-label="Send message">
-            <span class="btn-text">Send Message</span>
-            <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
-          </button>
-        </form>
-        
-        <div id="thankYouMessage" style="display:none;">
-          <div class="success-icon">
-            <i class="fas fa-check-circle"></i>
-          </div>
-          <h3>Thank you, <span id="userName"></span>!</h3>
-          <p class="success-message">Your message has been sent successfully. I'll get back to you within 24 hours.</p>
-          <button class="back-btn" id="backBtn" aria-label="Send another message">Send another message</button>
-        </div>
+      <div class="mt-20 max-w-5xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" 
+             alt="Career assessment dashboard" class="w-full h-auto object-cover">
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+ <!-- Stats Section -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div class="p-6">
+        <div class="text-4xl font-bold text-primary-600 mb-2 counter-value" data-target="10000">10,000+</div>
+        <div class="text-secondary-500">Users Helped</div>
+      </div>
+      <div class="p-6">
+        <div class="text-4xl font-bold text-primary-600 mb-2 counter-value" data-target="95">95%</div>
+        <div class="text-secondary-500">Satisfaction Rate</div>
+      </div>
+      <div class="p-6">
+        <div class="text-4xl font-bold text-primary-600 mb-2 counter-value" data-target="50">50+</div>
+        <div class="text-secondary-500">Career Paths</div>
+      </div>
+      <div class="p-6">
+        <div class="text-4xl font-bold text-primary-600 mb-2 counter-value" data-target="5">5 min</div>
+        <div class="text-secondary-500">Average Assessment</div>
       </div>
     </div>
   </div>
 </section>
 
-    <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const form = document.getElementById("contactForm");
-    const submitBtn = document.getElementById("submitBtn");
-    const thankYouMessage = document.getElementById("thankYouMessage");
-    const userNameSpan = document.getElementById("userName");
-    const backBtn = document.getElementById("backBtn");
-    const btnText = document.querySelector(".btn-text");
-    const btnIcon = document.querySelector(".btn-icon");
-
-    // Form submission handler
-    form.addEventListener("submit", async function(e) {
-      e.preventDefault();
+  <!-- Features Section -->
+  <section id="features" class="py-20 bg-gradient-to-br from-primary-50 to-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Choose <span class="gradient-text">CareerPath AI</span></h2>
+        <p class="text-secondary-600">
+          We combine cutting-edge AI with career expertise to provide personalized recommendations that match your unique profile.
+        </p>
+      </div>
       
-      // Disable submit button and show loading state
-      submitBtn.disabled = true;
-      btnText.textContent = "Sending...";
-      btnIcon.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="feature-card bg-white p-8 rounded-xl shadow-md border border-gray-100 card-hover">
+          <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center mb-6">
+            <i class="feature-icon fas fa-robot text-white text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-secondary-800">AI-Powered Analysis</h3>
+          <p class="text-secondary-600">
+            Our advanced algorithms analyze your responses to identify patterns and match you with careers that fit your personality and skills.
+          </p>
+        </div>
+        
+        <div class="feature-card bg-white p-8 rounded-xl shadow-md border border-gray-100 card-hover">
+          <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center mb-6">
+            <i class="feature-icon fas fa-chart-line text-white text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-secondary-800">Comprehensive Career Database</h3>
+          <p class="text-secondary-600">
+            Access detailed information on hundreds of careers, including salary ranges, growth projections, and required education.
+          </p>
+        </div>
+        
+        <div class="feature-card bg-white p-8 rounded-xl shadow-md border border-gray-100 card-hover">
+          <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center mb-6">
+            <i class="feature-icon fas fa-user-shield text-white text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-secondary-800">Personalized Roadmap</h3>
+          <p class="text-secondary-600">
+            Get a step-by-step plan tailored to your current situation to help you transition into your recommended career.
+          </p>
+        </div>
+        
+        <div class="feature-card bg-white p-8 rounded-xl shadow-md border border-gray-100 card-hover">
+          <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center mb-6">
+            <i class="feature-icon fas fa-bolt text-white text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-secondary-800">Quick Assessment</h3>
+          <p class="text-secondary-600">
+            Our streamlined quiz takes just 5 minutes but provides insights that would normally require hours of career counseling.
+          </p>
+        </div>
+        
+        <div class="feature-card bg-white p-8 rounded-xl shadow-md border border-gray-100 card-hover">
+          <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center mb-6">
+            <i class="feature-icon fas fa-graduation-cap text-white text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-secondary-800">Education Matching</h3>
+          <p class="text-secondary-600">
+            Discover the best educational paths and training programs to prepare you for your recommended careers.
+          </p>
+        </div>
+        
+        <div class="feature-card bg-white p-8 rounded-xl shadow-md border border-gray-100 card-hover">
+          <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center mb-6">
+            <i class="feature-icon fas fa-sync-alt text-white text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-secondary-800">Continuous Updates</h3>
+          <p class="text-secondary-600">
+            Our system evolves with the job market, ensuring you always get recommendations based on the latest trends.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">How <span class="gradient-text">CareerPath AI</span> Works</h2>
+        <p class="text-secondary-600">
+          Getting your personalized career recommendations is simple, fast, and completely free.
+        </p>
+      </div>
       
-      try {
-        // Get form data
-        const formData = new FormData(form);
-        const formObject = Object.fromEntries(formData.entries());
+      <div class="flex flex-col md:flex-row justify-center items-center md:items-start gap-12 mb-16">
+        <div class="how-it-works-step flex flex-col items-center text-center max-w-xs">
+          <div class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">1</div>
+          <h3 class="text-xl font-bold mb-3 text-secondary-800">Complete the Assessment</h3>
+          <p class="text-secondary-600">
+            Answer our quick 5-minute questionnaire about your skills, interests, and work preferences.
+          </p>
+        </div>
         
-        // Add required FormSubmit.co parameters
-        formObject._captcha = "false";
-        formObject._template = "table";
-        formObject._next = "javascript:void(0)";
+        <div class="how-it-works-step flex flex-col items-center text-center max-w-xs">
+          <div class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">2</div>
+          <h3 class="text-xl font-bold mb-3 text-secondary-800">AI Analysis</h3>
+          <p class="text-secondary-600">
+            Our algorithms process your responses against thousands of career profiles to find your best matches.
+          </p>
+        </div>
         
-        const name = formData.get("name");
-        
-        console.log("Submitting form data:", formObject);
-        
-        // Send to FormSubmit.co
-        const response = await fetch("https://formsubmit.co/ajax/muzammil.thedeveloper@gmail.com", {
-          method: "POST",
-          headers: { 
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify(formObject)
-        });
-        
-        const data = await response.json();
-        console.log("Form submission response:", data);
+        <div class="how-it-works-step flex flex-col items-center text-center max-w-xs">
+          <div class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">3</div>
+          <h3 class="text-xl font-bold mb-3 text-secondary-800">Get Your Results</h3>
+          <p class="text-secondary-600">
+            Receive your personalized career report with detailed insights and actionable next steps.
+          </p>
+        </div>
+      </div>
+      
+      <div class="text-center">
+        <a href="#quiz" class="btn-primary inline-block gradient-bg text-white px-8 py-4 rounded-full font-medium text-lg">
+          Start Your Free Assessment Now <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
 
-        if (response.ok && data.success === "true") {
-          // Success - show thank you message
-          form.style.display = "none";
-          userNameSpan.textContent = name.split(" ")[0]; 
-          thankYouMessage.style.display = "block";
-        } else {
-          throw new Error(data.message || 'Form submission failed');
-        }
-      } catch (error) {
-        console.error("Submission error:", error);
-        alert("There was an error submitting your message. Please try again later.");
-        
-        // Reset button state
-        submitBtn.disabled = false;
-        btnText.textContent = "Send Message";
-        btnIcon.innerHTML = '<i class="fas fa-paper-plane"></i>';
-      }
-    });
+<!-- Add this new dashboard section -->
+<!-- Replace the hidden quiz-dashboard div with this in index.html -->
+<section id="quiz-dashboard" class="min-h-screen bg-white hidden">
+  <header class="sticky top-0 z-40 bg-white shadow-sm">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+          <div class="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center">
+            <i class="fas fa-brain text-white text-xl"></i>
+          </div>
+          <span class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-indigo-600">
+            CareerPath AI
+          </span>
+        </div>
+        <a href="index.html" class="text-primary-600 hover:text-primary-800">
+          <i class="fas fa-arrow-left mr-2"></i> Back to Home
+        </a>
+      </div>
+    </div>
+  </header>
 
-    // Back button handler
-    backBtn.addEventListener("click", function() {
-      form.style.display = "block";
-      thankYouMessage.style.display = "none";
-      form.reset();
-      submitBtn.disabled = false;
-      btnText.textContent = "Send Message";
-      btnIcon.innerHTML = '<i class="fas fa-paper-plane"></i>';
-    });
-  });
-</script>
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <div class="footer-container">
-          <div class="footer-col">
-            <h3>Muzammil<span>.</span></h3>
+  <main class="container mx-auto px-6 py-8">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex justify-between items-center mb-8">
+        <h2 class="text-2xl font-bold text-secondary-800">Career Assessment</h2>
+        <div id="quiz-progress" class="text-sm text-secondary-500 bg-primary-50 px-3 py-1 rounded-full">
+          Question 1 of 10
+        </div>
+      </div>
+      
+      <div id="quiz-container" class="bg-white rounded-xl shadow-md p-6 mb-6">
+        <!-- Quiz questions will be inserted here -->
+      </div>
+      
+      <div class="flex justify-between">
+        <button id="prev-question" class="text-primary-600 font-medium px-4 py-2 rounded-lg disabled:opacity-50" disabled>
+          <i class="fas fa-arrow-left mr-2"></i> Previous
+        </button>
+        <button id="next-question" class="btn-primary bg-gradient-to-r from-primary-600 to-indigo-600 text-white px-6 py-2 rounded-full font-medium">
+          Next <i class="fas fa-arrow-right ml-2"></i>
+        </button>
+        <button id="submit-quiz" class="hidden btn-primary bg-gradient-to-r from-primary-600 to-indigo-600 text-white px-6 py-2 rounded-full font-medium">
+          Submit <i class="fas fa-check ml-2"></i>
+        </button>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- Quiz Modal -->
+<section id="quiz-modal" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 p-4">
+  <div class="bg-white rounded-xl shadow-xl p-6 w-full max-w-lg mx-4 transform transition-all duration-300 overflow-y-auto max-h-[90vh]">
+    <div class="flex justify-between items-center mb-6">
+      <h2 class="text-xl font-bold text-primary-600">CareerPath AI Assessment</h2>
+      <div id="quiz-progress" class="text-sm text-secondary-500">Question 1 of 10</div>
+    </div>
+    
+    <div id="quiz-container">
+      <!-- Quiz questions will be inserted here by JavaScript -->
+    </div>
+    
+    <div class="flex justify-between mt-6">
+      <button id="prev-question" class="text-primary-600 font-medium px-4 py-2 rounded-lg disabled:opacity-50" disabled>
+        <i class="fas fa-arrow-left mr-2"></i> Previous
+      </button>
+      <button id="next-question" class="btn-primary bg-gradient-to-r from-primary-600 to-indigo-600 text-white px-6 py-2 rounded-full font-medium">
+        Next <i class="fas fa-arrow-right ml-2"></i>
+      </button>
+      <button id="submit-quiz" class="hidden btn-primary bg-gradient-to-r from-primary-600 to-indigo-600 text-white px-6 py-2 rounded-full font-medium">
+        Submit <i class="fas fa-check ml-2"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Results Modal -->
+<section id="results-modal" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 p-4">
+  <div class="bg-white rounded-xl shadow-xl p-6 w-full max-w-2xl mx-4 transform transition-all duration-300 overflow-y-auto max-h-[90vh]">
+    <div class="text-center mb-6">
+      <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mx-auto mb-4">
+        <i class="fas fa-trophy text-white text-2xl"></i>
+      </div>
+      <h2 class="text-2xl font-bold text-primary-600">Your Career Path Results</h2>
+      <p class="text-secondary-500">Based on your assessment, here are your ideal career matches</p>
+    </div>
+    
+    <div id="results-content">
+      <!-- Results will be inserted here by JavaScript -->
+    </div>
+    
+    <div class="mt-6 text-center">
+      <button id="close-results" class="btn-primary bg-gradient-to-r from-primary-600 to-indigo-600 text-white px-6 py-2 rounded-full font-medium">
+        Close <i class="fas fa-times ml-2"></i>
+      </button>
+    </div>
+  </div>
+</section>
+  
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-20 bg-primary-50">
+    <div class="container mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Success <span class="gradient-text">Stories</span></h2>
+        <p class="text-secondary-600">
+          Hear from people who discovered their ideal career path with our AI assessment.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center text-primary-600 mr-4">
+              <i class="fas fa-user text-xl"></i>
+            </div>
+            <div>
+              <h4 class="font-bold">Sarah Johnson</h4>
+              <p class="text-sm text-secondary-500">Data Analyst</p>
+            </div>
+          </div>
+          <p class="text-secondary-600 italic">
+            "After years of feeling stuck in marketing, CareerPath AI suggested data analysis. I took some courses and now I'm in a career I love that pays 30% more!"
+          </p>
+          <div class="mt-4 text-primary-500">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        
+        <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center text-primary-600 mr-4">
+              <i class="fas fa-user text-xl"></i>
+            </div>
+            <div>
+              <h4 class="font-bold">Michael Chen</h4>
+              <p class="text-sm text-secondary-500">UX Designer</p>
+            </div>
+          </div>
+          <p class="text-secondary-600 italic">
+            "I never would have considered UX design without this tool. The AI picked up on my creative problem-solving skills that I didn't even value in myself."
+          </p>
+          <div class="mt-4 text-primary-500">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+        </div>
+        
+        <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center text-primary-600 mr-4">
+              <i class="fas fa-user text-xl"></i>
+            </div>
+            <div>
+              <h4 class="font-bold">David Martinez</h4>
+              <p class="text-sm text-secondary-500">Cybersecurity Specialist</p>
+            </div>
+          </div>
+          <p class="text-secondary-600 italic">
+            "The assessment suggested cybersecurity when I was considering generic IT roles. The detailed roadmap helped me get certified and land my dream job in 6 months."
+          </p>
+          <div class="mt-4 text-primary-500">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="quiz" class="py-20 gradient-bg">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Discover Your Ideal Career?</h2>
+      <p class="text-primary-100 max-w-2xl mx-auto mb-10 text-xl">
+        Take our free assessment and get personalized career recommendations in just 5 minutes.
+      </p>
+      <a href="#quiz" class="btn-primary inline-block bg-white text-primary-600 px-8 py-4 rounded-full font-medium text-lg hover:text-primary-700">
+        Start Free Assessment <i class="fas fa-arrow-right ml-2"></i>
+      </a>
+      
+      <div class="mt-8 flex flex-wrap justify-center gap-4 text-primary-100">
+        <div class="flex items-center">
+          <i class="fas fa-check-circle mr-2"></i> No registration required
+        </div>
+        <div class="flex items-center">
+          <i class="fas fa-check-circle mr-2"></i> 100% free
+        </div>
+        <div class="flex items-center">
+          <i class="fas fa-check-circle mr-2"></i> Personalized results
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Frequently Asked <span class="gradient-text">Questions</span></h2>
+        <p class="text-secondary-600">
+          Everything you need to know about the CareerPath AI assessment.
+        </p>
+      </div>
+      
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-6 border-b border-gray-200 pb-6">
+          <button class="flex justify-between items-center w-full text-left font-medium text-lg text-secondary-800 hover:text-primary-600 focus:outline-none">
+            <span>How accurate is the career assessment?</span>
+            <i class="fas fa-chevron-down text-primary-500 transition-transform duration-300"></i>
+          </button>
+          <div class="mt-4 text-secondary-600 hidden">
             <p>
-              A passionate Computer Science student with a knack for turning
-              complex problems into elegant digital solutions.
+              Our AI assessment has an 87% accuracy rate based on follow-up surveys with users. The accuracy improves as you provide more detailed answers. We combine multiple psychological models with real-world career data to provide the most accurate recommendations possible.
             </p>
           </div>
-          <div class="footer-col">
-            <h3>Quick Links</h3>
-            <ul class="footer-links">
-              <li>
-                <a href="#hero" aria-label="Home section"><i class="fas fa-chevron-right"></i> Home</a>
-              </li>
-              <li>
-                <a href="#about" aria-label="About section"><i class="fas fa-chevron-right"></i> About</a>
-              </li>
-              <li>
-                <a href="#skills" aria-label="Skills section"><i class="fas fa-chevron-right"></i> Skills</a>
-              </li>
-              <li>
-                <a href="#projects" aria-label="Projects section"><i class="fas fa-chevron-right"></i> Projects</a>
-              </li>
-              <li>
-                <a href="#contact" aria-label="Contact section"><i class="fas fa-chevron-right"></i> Contact</a>
-              </li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h3>Contact Info</h3>
-            <ul class="footer-links">
-              <li>
-                <a href="mailto:muzammil.thedeveloper@gmail.com" aria-label="Email address">
-                  <i class="fas fa-envelope"></i> muzammil.thedeveloper@gmail.com
-                </a>
-              </li>
-              <li>
-                <a href="tel:+923176442334" aria-label="Phone number"><i class="fas fa-phone"></i> 0317-6442334</a>
-              </li>
-              <li>
-                <a href="https://www.linkedin.com/in/muhammad-muzammil-7562bb316/" aria-label="LinkedIn profile"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
-              </li>
-            </ul>
-          </div>
         </div>
-        <div class="footer-bottom">
-          <p>&copy; <span id="currentYear"></span> Muhammad Muzammil. All Rights Reserved.</p>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Scroll to Top Button -->
-    <div class="scroll-top" aria-label="Scroll to top">
-      <i class="fas fa-arrow-up"></i>
-    </div>
-
-    <div class="chatbox-container">
-      <button class="chatbox-toggle-btn" aria-label="Open chat">
-        <i class="fas fa-comment-dots"></i>
-      </button>
-      <div class="chatbox-window">
-        <div class="chatbox-header">
-          <h3>Let's Chat!</h3>
-          <button class="chatbox-close-btn" aria-label="Close chat">
-            <i class="fas fa-times"></i>
+        
+        <div class="mb-6 border-b border-gray-200 pb-6">
+          <button class="flex justify-between items-center w-full text-left font-medium text-lg text-secondary-800 hover:text-primary-600 focus:outline-none">
+            <span>Is there a cost to use CareerPath AI?</span>
+            <i class="fas fa-chevron-down text-primary-500 transition-transform duration-300"></i>
           </button>
-        </div>
-        <div class="chatbox-messages">
-          <div class="chatbox-welcome-message">
-            <p>Hello! I'm here to help. How can I assist you today?</p>
-            <div class="chatbox-timestamp">Just now</div>
+          <div class="mt-4 text-secondary-600 hidden">
+            <p>
+              The basic career assessment is completely free. We offer premium features like detailed career roadmaps and one-on-one career coaching for those who want more in-depth guidance, but the core AI recommendations are available at no cost.
+            </p>
           </div>
         </div>
-        <div class="chatbox-input-area">
-          <textarea placeholder="Type your message here..." rows="1" aria-label="Chat message input"></textarea>
-          <button class="chatbox-send-btn" aria-label="Send message">
-            <i class="fas fa-paper-plane"></i>
+        
+        <div class="mb-6 border-b border-gray-200 pb-6">
+          <button class="flex justify-between items-center w-full text-left font-medium text-lg text-secondary-800 hover:text-primary-600 focus:outline-none">
+            <span>How long does the assessment take?</span>
+            <i class="fas fa-chevron-down text-primary-500 transition-transform duration-300"></i>
           </button>
-        </div>
-        <div class="chatbox-typing-indicator">
-          <div class="typing-dots">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
+          <div class="mt-4 text-secondary-600 hidden">
+            <p>
+              Most users complete the assessment in 5-7 minutes. There are 25 multiple-choice questions designed to quickly but thoroughly evaluate your skills, interests, and work preferences. You can save your progress and return later if needed.
+            </p>
           </div>
-          <span>Assistant is typing...</span>
+        </div>
+        
+        <div class="mb-6 border-b border-gray-200 pb-6">
+          <button class="flex justify-between items-center w-full text-left font-medium text-lg text-secondary-800 hover:text-primary-600 focus:outline-none">
+            <span>Can I retake the assessment later?</span>
+            <i class="fas fa-chevron-down text-primary-500 transition-transform duration-300"></i>
+          </button>
+          <div class="mt-4 text-secondary-600 hidden">
+            <p>
+              Yes! We encourage users to retake the assessment every 6-12 months or after significant life changes. Your interests and skills evolve over time, and so might your ideal career path. We store your previous results so you can track how your career preferences change.
+            </p>
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <style>
-      /* Chatbox Styles - Added without modifying existing styles */
-      .chatbox-container {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        z-index: 999;
-        font-family: "Poppins", sans-serif;
-      }
+  <!-- Footer -->
+  <footer class="bg-secondary-900 text-white py-12">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <div class="flex items-center space-x-2 mb-4">
+            <div class="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center">
+              <i class="fas fa-brain text-white text-xl"></i>
+            </div>
+            <span class="text-xl font-bold">CareerPath AI</span>
+          </div>
+          <p class="text-secondary-300 mb-4">
+            Using AI to help people discover fulfilling careers since 2023.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-secondary-300 hover:text-white transition">
+              <i class="fab fa-twitter text-xl"></i>
+            </a>
+            <a href="#" class="text-secondary-300 hover:text-white transition">
+              <i class="fab fa-linkedin text-xl"></i>
+            </a>
+            <a href="#" class="text-secondary-300 hover:text-white transition">
+              <i class="fab fa-facebook text-xl"></i>
+            </a>
+            <a href="#" class="text-secondary-300 hover:text-white transition">
+              <i class="fab fa-instagram text-xl"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Product</h3>
+          <ul class="space-y-2">
+            <li><a href="#features" class="text-secondary-300 hover:text-white transition">Features</a></li>
+            <li><a href="#how" class="text-secondary-300 hover:text-white transition">How It Works</a></li>
+            <li><a href="#testimonials" class="text-secondary-300 hover:text-white transition">Testimonials</a></li>
+            <li><a href="#quiz" class="text-secondary-300 hover:text-white transition">Assessment</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Company</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-secondary-300 hover:text-white transition">About Us</a></li>
+            <li><a href="#" class="text-secondary-300 hover:text-white transition">Careers</a></li>
+            <li><a href="#" class="text-secondary-300 hover:text-white transition">Privacy Policy</a></li>
+            <li><a href="#" class="text-secondary-300 hover:text-white transition">Terms of Service</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Resources</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-secondary-300 hover:text-white transition">Blog</a></li>
+            <li><a href="#" class="text-secondary-300 hover:text-white transition">Help Center</a></li>
+            <li><a href="#" class="text-secondary-300 hover:text-white transition">Career Guides</a></li>
+            <li><a href="#" class="text-secondary-300 hover:text-white transition">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-secondary-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-secondary-400 mb-4 md:mb-0">
+          © 2025 CareerPath AI. All rights reserved.
+        </p>
+        <div class="flex space-x-6">
+          <a href="#" class="text-secondary-400 hover:text-white transition">Privacy Policy</a>
+          <a href="#" class="text-secondary-400 hover:text-white transition">Terms of Service</a>
+          <a href="#" class="text-secondary-400 hover:text-white transition">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-      .chatbox-toggle-btn {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        background: var(--primary);
-        color: white;
-        border: none;
-        cursor: pointer;
-        box-shadow: 0 5px 20px rgba(67, 97, 238, 0.3);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        transition: all 0.3s ease;
-      }
 
-      .chatbox-toggle-btn:hover {
-        background: var(--primary-dark);
-        transform: scale(1.1);
-      }
 
-      .chatbox-window {
-        position: absolute;
-        bottom: 80px;
-        right: 0;
-        width: 350px;
-        max-width: 90vw;
-        height: 500px;
-        max-height: 70vh;
-        background: white;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        transform: translateY(20px);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-      }
 
-      .dark-mode .chatbox-window {
-        background: #1e293b;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      }
-
-      .chatbox-container.active .chatbox-window {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-      }
-
-      .chatbox-header {
-        background: var(--primary);
-        color: white;
-        padding: 15px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        font-family: "Poppins", sans-serif;
-        letter-spacing: 0.5px;
-        font-weight: 500;
-      }
-
-      .chatbox-header h3 {
-        font-size: 1.1rem;
-        font-weight: 600;
-        margin: 0;
-      }
-
-      .chatbox-close-btn {
-        background: rgba(255, 255, 255, 0.1);
-        border: none;
-        color: white;
-        font-size: 1.2rem;
-        cursor: pointer;
-        padding: 6px;
-        border-radius: 50%;
-        width: 32px;
-        height: 32px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-      }
-
-      .chatbox-close-btn:hover {
-        background: rgba(255, 255, 255, 0.3);
-        transform: rotate(90deg);
-      }
-
-      .chatbox-messages {
-        flex: 1;
-        padding: 20px;
-        overflow-y: auto;
-        background: #f8fafc;
-      }
-
-      .dark-mode .chatbox-messages {
-        background: #0f172a;
-      }
-
-      .chatbox-welcome-message {
-        background: white;
-        padding: 12px 15px;
-        border-radius: 10px;
-        margin-bottom: 15px;
-        max-width: 80%;
-        position: relative;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-      }
-
-      .dark-mode .chatbox-welcome-message {
-        background: #334155;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      }
-
-      .chatbox-welcome-message p {
-        margin: 0;
-        font-size: 0.9rem;
-        color: var(--dark);
-      }
-
-      .dark-mode .chatbox-welcome-message p {
-        color: #e2e8f0;
-      }
-
-      .chatbox-timestamp {
-        font-size: 0.7rem;
-        color: var(--gray);
-        text-align: right;
-        margin-top: 5px;
-      }
-
-      .chatbox-input-area {
-        display: flex;
-        padding: 15px;
-        border-top: 1px solid #e2e8f0;
-        background: white;
-      }
-
-      .dark-mode .chatbox-input-area {
-        background: #1e293b;
-        border-top: 1px solid #334155;
-      }
-
-      .chatbox-input-area textarea {
-        flex: 1;
-        border: 1px solid #e2e8f0;
-        border-radius: 30px;
-        padding: 10px 15px;
-        font-family: "Poppins", sans-serif;
-        resize: none;
-        max-height: 100px;
-        outline: none;
-        transition: var(--transition);
-      }
-
-      .dark-mode .chatbox-input-area textarea {
-        background: #0f172a;
-        border-color: #334155;
-        color: #e2e8f0;
-      }
-
-      .chatbox-input-area textarea:focus {
-        border-color: var(--primary);
-        box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
-      }
-
-      .chatbox-send-btn {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: var(--primary);
-        color: white;
-        border: none;
-        margin-left: 10px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: var(--transition);
-      }
-
-      .chatbox-send-btn:hover {
-        background: var(--primary-dark);
-        transform: translateY(-2px);
-      }
-
-      .chatbox-typing-indicator {
-        display: none;
-        align-items: center;
-        padding: 0 20px 15px;
-        font-size: 0.8rem;
-        color: var(--gray);
-      }
-
-      .typing-dots {
-        display: flex;
-        margin-right: 8px;
-      }
-
-      .typing-dots .dot {
-        width: 6px;
-        height: 6px;
-        background: var(--gray);
-        border-radius: 50%;
-        margin-right: 4px;
-        animation: typingAnimation 1.4s infinite ease-in-out;
-      }
-
-      .typing-dots .dot:nth-child(1) {
-        animation-delay: 0s;
-      }
-
-      .typing-dots .dot:nth-child(2) {
-        animation-delay: 0.2s;
-      }
-
-      .typing-dots .dot:nth-child(3) {
-        animation-delay: 0.4s;
-      }
-
-      @keyframes typingAnimation {
-        0%,
-        60%,
-        100% {
-          transform: translateY(0);
-        }
-        30% {
-          transform: translateY(-5px);
-        }
-      }
-
-      /* Responsive adjustments */
-      @media (max-width: 480px) {
-        .chatbox-container {
-          bottom: 20px;
-          right: 20px;
-        }
-
-        .chatbox-toggle-btn {
-          width: 50px;
-          height: 50px;
-          font-size: 1.3rem;
-        }
-
-        .chatbox-window {
-          width: calc(100vw - 40px);
-          max-width: none;
-        }
-      }
-
-      /* 🌟 Professional Chatbox Scrollbar Styling */
-      .chatbox-messages {
-        scrollbar-width: thin;
-        scrollbar-color: var(--primary) transparent;
-      }
-
-      /* For WebKit browsers */
-      .chatbox-messages::-webkit-scrollbar {
-        width: 8px;
-      }
-
-      .chatbox-messages::-webkit-scrollbar-track {
-        background: transparent;
-        border-radius: 10px;
-      }
-
-      .chatbox-messages::-webkit-scrollbar-thumb {
-        background: linear-gradient(
-          180deg,
-          var(--primary),
-          var(--primary-dark)
-        );
-        border-radius: 10px;
-        box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
-        transition: background 0.3s ease;
-      }
-
-      .chatbox-messages::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(
-          180deg,
-          var(--primary-dark),
-          var(--primary)
-        );
-      }
-
-      /* Dark mode match */
-      .dark-mode .chatbox-messages::-webkit-scrollbar-thumb {
-        background: linear-gradient(180deg, #475569, #334155);
-        box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.1);
-      }
-
-      .dark-mode .chatbox-messages::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(180deg, #334155, #475569);
-      }
-
-      /* Chat Message Alignment Fix */
-      .chatbox-message-wrapper {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 15px;
-        max-width: 80%;
-      }
-
-      .chatbox-message-wrapper.user {
-        align-self: flex-end;
-        background-color: #e2e8f0;
-        border-radius: 15px 15px 0 15px;
-        padding: 12px 15px;
-      }
-
-      .chatbox-message-wrapper.bot {
-        align-self: flex-start;
-        background-color: white;
-        border-radius: 15px 15px 15px 0;
-        padding: 12px 15px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-      }
-
-      /* Updated Message Bubbles for Dark Mode */
-      .dark-mode .chatbox-message-wrapper.bot {
-        background-color: #1e293b; /* Dark blue-gray */
-        color: #e2e8f0;
-        border-radius: 15px 15px 15px 0;
-        box-shadow: 0 2px 5px rgba(255, 255, 255, 0.05);
-      }
-
-      .dark-mode .chatbox-message-wrapper.user {
-        background-color: #3b82f6; /* Lighter primary blue for user */
-        color: white;
-        border-radius: 15px 15px 0 15px;
-        box-shadow: 0 2px 5px rgba(255, 255, 255, 0.08);
-      }
-
-      .chatbox-message-wrapper p {
-        margin: 0;
-        font-size: 0.9rem;
-      }
-
-      .chatbox-message-wrapper .chatbox-timestamp {
-        font-size: 0.7rem;
-        text-align: right;
-        margin-top: 5px;
-        opacity: 0.7;
-      }
-    </style>
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  // ==================== Chatbox Functionality ====================
-  const chatboxContainer = document.querySelector(".chatbox-container");
-  const toggleBtn = document.querySelector(".chatbox-toggle-btn");
-  const closeBtn = document.querySelector(".chatbox-close-btn");
-  const messageInput = document.querySelector(".chatbox-input-area textarea");
-  const sendBtn = document.querySelector(".chatbox-send-btn");
-  const messagesContainer = document.querySelector(".chatbox-messages");
-  const typingIndicator = document.querySelector(".chatbox-typing-indicator");
-
-  // Toggle chatbox visibility
-  function toggleChatbox() {
-    chatboxContainer.classList.toggle("active");
-  }
-
-  // Close chatbox
-  function closeChatbox() {
-    chatboxContainer.classList.remove("active");
-  }
-
-  // Add event listeners for chatbox
-  if (toggleBtn) {
-    toggleBtn.addEventListener("click", toggleChatbox);
-  }
-  if (closeBtn) {
-    closeBtn.addEventListener("click", closeChatbox);
-  }
-
-  // Message input auto-resize
-  messageInput.addEventListener("input", function () {
-    this.style.height = "auto";
-    this.style.height = this.scrollHeight + "px";
+  // Toggle settings card
+  document.getElementById('settings-icon').addEventListener('click', function () {
+    const card = document.getElementById('settings-card');
+    card.classList.toggle('hidden');
   });
 
-  // Send message functionality
-  function sendMessage() {
-    const messageText = messageInput.value.trim();
-    if (messageText) {
-      addMessage(messageText, "user");
-      messageInput.value = "";
-      messageInput.style.height = "auto";
-
-      typingIndicator.style.display = "flex";
-
-      setTimeout(() => {
-        typingIndicator.style.display = "none";
-        const response = generateReply(messageText.toLowerCase());
-        addMessage(response, "bot");
-      }, 2000);
-    }
-  }
-
-  sendBtn.addEventListener("click", sendMessage);
-  messageInput.addEventListener("keydown", function (e) {
-    if (e.key === "Enter" && !e.shiftKey) {
-      e.preventDefault();
-      sendMessage();
-    }
-  });
-
-  function generateReply(userInput) {
-    if (userInput.includes("skill")) {
-      return "My skills include HTML, CSS, JavaScript, SQL, C#, and OOP. I'm also experienced in networking and software engineering.";
-    } else if (userInput.includes("experience") || userInput.includes("work")) {
-      return "I'm currently a fresher but have built multiple real-world projects to demonstrate my experience.";
-    } else if (userInput.includes("project")) {
-      return "Some of my projects include a Quiz App, Weather App, Restaurant Management System, AI Maze Solver, and a Hotel Network Simulation.";
-    } else if (userInput.includes("education")) {
-      return "I'm pursuing a BS in Computer Science at KIET with majors in Web Development and Networking.";
-    } else if (userInput.includes("contact") || userInput.includes("email")) {
-      return "You can reach me at muzammil.thedeveloper@gmail.com or on LinkedIn: https://www.linkedin.com/in/muhammad-muzammil-7562bb316";
-    } else if (userInput.includes("resume")) {
-      return "Here's my resume: [Muhammad_Muzammil_Resume.pdf]";
-    } else {
-      return "Thanks for your message! How else can I assist you?";
-    }
-  }
-
-  function addMessage(text, sender) {
-    const wrapper = document.createElement("div");
-    wrapper.className = `chatbox-message-wrapper ${sender}`;
-
-    const message = document.createElement("p");
-    message.textContent = text;
-
-    const timestamp = document.createElement("div");
-    timestamp.className = "chatbox-timestamp";
-    const now = new Date();
-    timestamp.textContent = now.toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-    });
-
-    wrapper.appendChild(message);
-    wrapper.appendChild(timestamp);
-
-    messagesContainer.appendChild(wrapper);
-    messagesContainer.scrollTop = messagesContainer.scrollHeight;
-  }
-
-  // ==================== Filter Buttons Functionality ====================
-  function setupFilter(sectionSelector, cardSelector, btnSelector) {
-    const section = document.querySelector(sectionSelector);
-    if (!section) return;
-    
-    const filterButtons = section.querySelectorAll(btnSelector);
-    const cards = section.querySelectorAll(cardSelector);
-
-    filterButtons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const filterValue = btn.getAttribute("data-filter");
-
-        filterButtons.forEach((b) => b.classList.remove("active"));
-        btn.classList.add("active");
-
-        cards.forEach((card) => {
-          const cardCategory = card.getAttribute("data-category");
-          if (filterValue === "all" || cardCategory === filterValue) {
-            card.style.display = "block";
-          } else {
-            card.style.display = "none";
-          }
-        });
-      });
-    });
-  }
-
-  // Apply filtering for both sections
-  setupFilter("#skills", ".skill-card", ".skills-filter .filter-btn");
-  setupFilter("#projects", ".project-card", ".projects-filter .filter-btn");
-
-  // ==================== Scroll to Top Button ====================
-  const scrollTopBtn = document.querySelector(".scroll-top");
-  window.addEventListener("scroll", () => {
-    if (window.pageYOffset > 300) {
-      scrollTopBtn.classList.add("active");
-    } else {
-      scrollTopBtn.classList.remove("active");
-    }
-  });
-
-  scrollTopBtn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  });
-
-  // ==================== Current Year in Footer ====================
-  document.getElementById("currentYear").textContent = new Date().getFullYear();
-});
-</script>
-   
-<script>
-  // SKILLS FILTERING
-  document.querySelectorAll('#skills .filter-btn').forEach(button => {
+  // Theme button logic
+  const themeButtons = document.querySelectorAll('.theme-btn');
+  themeButtons.forEach(button => {
     button.addEventListener('click', () => {
-      const filter = button.getAttribute('data-filter');
-      const cards = document.querySelectorAll('#skills .skill-card');
-
-      document.querySelectorAll('#skills .filter-btn').forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
-
-      cards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        if (filter === 'all' || category === filter) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+      const selectedTheme = button.getAttribute('data-theme');
+      // Apply the theme (you can replace this with your actual logic)
+      document.documentElement.setAttribute('data-theme', selectedTheme);
+      alert('Theme set to ' + selectedTheme);
     });
   });
 
-  // PROJECTS FILTERING
-  document.querySelectorAll('#projects .filter-btn').forEach(button => {
-    button.addEventListener('click', () => {
-      const filter = button.getAttribute('data-filter').toLowerCase();
-      const cards = document.querySelectorAll('#projects .project-card');
-
-      document.querySelectorAll('#projects .filter-btn').forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
-
-      cards.forEach(card => {
-        const category = card.getAttribute('data-category').toLowerCase();
-        if (filter === 'all' || category === filter) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
+  // Close settings card if clicked outside
+  window.addEventListener('click', function (e) {
+    const settingsCard = document.getElementById('settings-card');
+    const settingsIcon = document.getElementById('settings-icon');
+    if (!settingsCard.contains(e.target) && !settingsIcon.contains(e.target)) {
+      settingsCard.classList.add('hidden');
+    }
   });
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<script>
-  window.addEventListener('load', function() {
-    const preloader = document.getElementById('preloader');
-    // Add 'loaded' class to trigger the transition
-    preloader.classList.add('loaded');
-    // Remove preloader from DOM after transition completes
-    setTimeout(() => {
-      preloader.style.display = 'none';
-    }, 500); // This should match your transition duration
-  });
-
+<script src="script.js">
 </script>
+
 </body>
 </html>
+
+
